@@ -11,238 +11,196 @@
         
         :root {
             --gw-blue: #005bac;
-            --gw-light-bg: #f0f4f8;
-            /* 컬러 팔레트 정의 */
-            --color-1: #4f46e5; /* 인디고 */
-            --color-2: #0891b2; /* 청록 */
-            --color-3: #db2777; /* 핑크 */
-            --color-4: #059669; /* 에메랄드 */
-            --color-5: #d97706; /* 오렌지 */
-            --color-6: #7c3aed; /* 보라 */
+            --color-1: #4f46e5;
+            --color-2: #0891b2;
+            --color-3: #db2777;
+            --color-4: #059669;
+            --color-5: #d97706;
+            --color-6: #7c3aed;
         }
 
         body, html {
-            height: 100%;
             margin: 0;
             font-family: 'Pretendard', sans-serif;
             background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
             color: #1a1a1a;
-        }
-
-        .portal-grid {
-            display: grid;
-            grid-template-rows: repeat(10, 1fr);
-            height: 100vh;
-            max-width: 1200px;
-            margin: 0 auto;
-            gap: 1.5rem;
-            padding: 2rem;
+            min-height: 100vh;
         }
 
         .white-card {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             overflow: hidden;
         }
 
-        /* 배지 카드 공통 스타일 */
         .badge-card {
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: all 0.25s ease-out;
             cursor: pointer;
             position: relative;
-            padding: 0 2rem;
             background: white;
             border: 2px solid transparent;
             text-decoration: none;
             display: flex;
+            align-items: center;
         }
 
         .badge-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
         }
 
-        /* 헤더 텍스트 컬러풀 그라데이션 */
         .header-title {
             background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #6366f1 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-size: clamp(2.5rem, 5vw, 4rem);
         }
 
-        /* 챗봇 섹션 컬러풀 그라데이션 배경 */
         .chatbot-section {
             background: linear-gradient(90deg, #ffffff 0%, #f8fafc 100%);
-            border-left: 8px solid var(--gw-blue);
+            border-left: 6px solid var(--gw-blue);
         }
 
         .chatbot-btn {
             background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
             transition: all 0.3s ease;
             text-decoration: none;
-            display: flex;
         }
 
-        .chatbot-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
-        }
-
-        /* 아이콘 박스 개별 컬러 설정 */
         .icon-box {
-            width: 70px;
-            height: 70px;
-            border-radius: 20px;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            transition: all 0.3s ease;
         }
 
-        .badge-card:hover .icon-box {
-            transform: rotate(-10deg);
-        }
-
-        /* 배지별 테마 컬러 */
+        /* 배지별 컬러 테마 */
         .card-1 .icon-box { background: #eef2ff; color: var(--color-1); }
         .card-1:hover { border-color: var(--color-1); }
-        
         .card-2 .icon-box { background: #ecfeff; color: var(--color-2); }
         .card-2:hover { border-color: var(--color-2); }
-
         .card-3 .icon-box { background: #fdf2f8; color: var(--color-3); }
         .card-3:hover { border-color: var(--color-3); }
-
         .card-4 .icon-box { background: #ecfdf5; color: var(--color-4); }
         .card-4:hover { border-color: var(--color-4); }
-
         .card-5 .icon-box { background: #fffbe6; color: var(--color-5); }
         .card-5:hover { border-color: var(--color-5); }
-
         .card-6 .icon-box { background: #f5f3ff; color: var(--color-6); }
         .card-6:hover { border-color: var(--color-6); }
-
-        .badge-title {
-            font-size: 1.6rem;
-            font-weight: 800;
-            letter-spacing: -0.025em;
-            color: #0f172a;
-        }
-
-        .badge-desc {
-            color: #64748b;
-            font-size: 1rem;
-            font-weight: 500;
-        }
     </style>
 </head>
-<body>
+<body class="p-4 md:p-6 lg:p-8 flex flex-col justify-center">
 
-    <div class="portal-grid">
-        <!-- 1-2행: 제목 영역 -->
-        <header class="grid-row-span-2 flex flex-col items-center justify-center relative" style="grid-row: span 2;">
-            <h2 class="text-blue-600 font-bold text-xl mb-2 tracking-tight">강원특별자치도교육청 초등학교 교감을 위한</h2>
-            <h1 class="header-title font-black tracking-tighter text-center">
+    <div class="max-w-7xl mx-auto w-full space-y-4 md:space-y-6">
+        <!-- 제목 영역 -->
+        <header class="text-center space-y-1">
+            <h2 class="text-blue-600 font-bold text-sm md:text-lg tracking-tight">강원특별자치도교육청 초등학교 교감을 위한</h2>
+            <h1 class="header-title font-black text-2xl md:text-4xl lg:text-5xl tracking-tighter leading-tight">
                 교감 인사업무 포털
             </h1>
         </header>
 
-        <!-- 3-4행: 교감 챗봇 영역 -->
-        <section class="grid-row-span-2 white-card chatbot-section flex items-center justify-between px-16" style="grid-row: span 2;">
-            <div class="flex items-center gap-10">
-                <div class="relative">
-                    <div class="absolute inset-0 bg-blue-400 rounded-3xl animate-ping opacity-20"></div>
-                    <div class="relative bg-gradient-to-br from-blue-500 to-indigo-600 p-6 rounded-3xl text-white shadow-xl">
-                        <i class="fas fa-robot text-4xl"></i>
+        <!-- 교감 챗봇 영역 -->
+        <section class="white-card chatbot-section p-4 md:p-6 lg:px-10 lg:py-6 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8">
+            <div class="flex items-center gap-4 text-left">
+                <div class="relative flex-shrink-0">
+                    <div class="absolute inset-0 bg-blue-400 rounded-2xl animate-ping opacity-20"></div>
+                    <div class="relative bg-gradient-to-br from-blue-500 to-indigo-600 p-4 rounded-2xl text-white shadow-lg">
+                        <i class="fas fa-robot text-2xl md:text-3xl"></i>
                     </div>
                 </div>
-                <div>
-                    <div class="flex items-center gap-3 mb-2">
-                        <span class="bg-red-500 text-white text-xs font-black px-3 py-1 rounded-full shadow-sm">AI POWERED</span>
-                        <h3 class="text-3xl font-extrabold text-slate-800">교감 인사 업무 챗봇</h3>
+                <div class="space-y-0.5">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-red-500 text-white text-[8px] md:text-[10px] font-black px-1.5 py-0.5 rounded shadow-sm uppercase">AI Powered</span>
+                        <h3 class="text-lg md:text-2xl font-extrabold text-slate-800">교감 인사 업무 챗봇</h3>
                     </div>
-                    <p class="text-slate-600 text-xl font-medium">인사 지침부터 복무까지, 강원교육 AI가 즉시 답변합니다.</p>
+                    <p class="text-slate-600 text-sm md:text-base font-medium">지침부터 복무까지, AI가 즉시 답변합니다.</p>
                 </div>
             </div>
-            <a href="https://letter0033-star.github.io/chatbot/" target="_blank" class="chatbot-btn w-96 text-white font-black py-6 px-10 rounded-2xl text-2xl items-center justify-center gap-4 group">
+            <a href="https://letter0033-star.github.io/chatbot/" target="_blank" class="chatbot-btn w-full md:w-auto text-white font-black py-3 md:py-4 px-8 rounded-xl text-base md:text-lg flex items-center justify-center gap-3 group">
                 <span>챗봇 시작하기</span>
-                <i class="fas fa-arrow-right text-lg group-hover:translate-x-2 transition-transform"></i>
+                <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
             </a>
         </section>
 
-        <!-- 5-10행: 6개 메인 배지 영역 -->
-        <main class="grid-row-span-6 grid grid-cols-2 grid-rows-3 gap-6" style="grid-row: span 6;">
-            <!-- 배지 1: 경력환산기 연결 -->
-            <a href="https://letter0033-star.github.io/school/" target="_blank" class="badge-card white-card card-1 flex items-center gap-6 group">
+        <!-- 메인 배지 영역 (순서 재배치됨) -->
+        <main class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+            <!-- 배지 1: 호봉획정프로그램 (순서 1) -->
+            <a href="https://letter0033-star.github.io/pay/" target="_blank" class="badge-card white-card card-1 p-4 gap-4">
                 <div class="icon-box shadow-sm">
-                    <i class="fas fa-calculator text-3xl"></i>
+                    <i class="fas fa-file-invoice-dollar text-xl"></i>
                 </div>
-                <div class="flex flex-col text-left">
-                    <span class="badge-title">경력환산기</span>
-                    <p class="badge-desc mt-1">복잡한 경력 합산 및 자동 환산</p>
+                <div class="flex flex-col">
+                    <span class="text-base md:text-lg font-extrabold text-slate-800">호봉획정프로그램</span>
+                    <p class="text-slate-500 text-xs font-medium">호봉 재산정 및 획정</p>
+                </div>
+            </a>
+
+            <!-- 배지 2: 경력환산기 -->
+            <a href="https://letter0033-star.github.io/school/" target="_blank" class="badge-card white-card card-2 p-4 gap-4">
+                <div class="icon-box shadow-sm">
+                    <i class="fas fa-calculator text-xl"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-base md:text-lg font-extrabold text-slate-800">경력환산기</span>
+                    <p class="text-slate-500 text-xs font-medium">자동 환산 및 합산</p>
                 </div>
             </a>
             
-            <!-- 배지 2: 휴가 계산기 연결 -->
-            <a href="https://letter0033-star.github.io/t_vacation/" target="_blank" class="badge-card white-card card-2 flex items-center gap-6 group">
+            <!-- 배지 3: 휴가 계산기 -->
+            <a href="https://letter0033-star.github.io/t_vacation/" target="_blank" class="badge-card white-card card-3 p-4 gap-4">
                 <div class="icon-box shadow-sm">
-                    <i class="fas fa-calendar-check text-3xl"></i>
+                    <i class="fas fa-calendar-check text-xl"></i>
                 </div>
-                <div class="flex flex-col text-left">
-                    <span class="badge-title">휴가 계산기</span>
-                    <p class="badge-desc mt-1">잔여 연가 및 특별휴가 정밀 체크</p>
+                <div class="flex flex-col">
+                    <span class="text-base md:text-lg font-extrabold text-slate-800">휴가 계산기</span>
+                    <p class="text-slate-500 text-xs font-medium">연가 및 특휴 체크</p>
                 </div>
             </a>
 
-            <!-- 배지 3: 명예퇴직수당 계산기 연결 -->
-            <a href="https://letter0033-star.github.io/retirement/" target="_blank" class="badge-card white-card card-3 flex items-center gap-6 group">
+            <!-- 배지 4: 명예퇴직수당 계산기 -->
+            <a href="https://letter0033-star.github.io/retirement/" target="_blank" class="badge-card white-card card-4 p-4 gap-4">
                 <div class="icon-box shadow-sm">
-                    <i class="fas fa-coins text-3xl"></i>
+                    <i class="fas fa-coins text-xl"></i>
                 </div>
-                <div class="flex flex-col text-left">
-                    <span class="badge-title">명예퇴직수당 계산기</span>
-                    <p class="badge-desc mt-1">퇴직 희망 시기별 수당 시뮬레이션</p>
+                <div class="flex flex-col">
+                    <span class="text-base md:text-lg font-extrabold text-slate-800">명퇴수당 계산</span>
+                    <p class="text-slate-500 text-xs font-medium">시기별 수당 산출</p>
                 </div>
             </a>
 
-            <!-- 배지 4 -->
-            <div class="badge-card white-card card-4 flex items-center gap-6 group" onclick="location.href='#'">
+            <!-- 배지 5: 생활부장 업무 -->
+            <div class="badge-card white-card card-5 p-4 gap-4" onclick="location.href='#'">
                 <div class="icon-box shadow-sm">
-                    <i class="fas fa-chalkboard-teacher text-3xl"></i>
+                    <i class="fas fa-hands-helping text-xl"></i>
                 </div>
                 <div class="flex flex-col">
-                    <span class="badge-title">교무부장 업무 챗봇</span>
-                    <p class="badge-desc mt-1">교육과정 편성 및 학사 운영 지원</p>
+                    <span class="text-base md:text-lg font-extrabold text-slate-800">생활부장 업무</span>
+                    <p class="text-slate-500 text-xs font-medium">생활지도 및 학폭 대응</p>
                 </div>
             </div>
 
-            <!-- 배지 5 -->
-            <div class="badge-card white-card card-5 flex items-center gap-6 group" onclick="location.href='#'">
+            <!-- 배지 6: 연구부장 업무 -->
+            <div class="badge-card white-card card-6 p-4 gap-4" onclick="location.href='#'">
                 <div class="icon-box shadow-sm">
-                    <i class="fas fa-hands-helping text-3xl"></i>
+                    <i class="fas fa-lightbulb text-xl"></i>
                 </div>
                 <div class="flex flex-col">
-                    <span class="badge-title">생활부장 업무 챗봇</span>
-                    <p class="badge-desc mt-1">생활 지도 및 학폭 대응 가이드라인</p>
-                </div>
-            </div>
-
-            <!-- 배지 6 -->
-            <div class="badge-card white-card card-6 flex items-center gap-6 group" onclick="location.href='#'">
-                <div class="icon-box shadow-sm">
-                    <i class="fas fa-lightbulb text-3xl"></i>
-                </div>
-                <div class="flex flex-col">
-                    <span class="badge-title">연구부장 업무 챗봇</span>
-                    <p class="badge-desc mt-1">연구 학교 실무 및 전문성 신장 지원</p>
+                    <span class="text-base md:text-lg font-extrabold text-slate-800">연구부장 업무</span>
+                    <p class="text-slate-500 text-xs font-medium">연구실무 및 전문성 신장</p>
                 </div>
             </div>
         </main>
+
+        <footer class="text-center py-4 text-slate-400 text-[10px] md:text-xs">
+            © 강원특별자치도교육청 교감 인사업무 지원 포털
+        </footer>
     </div>
 
 </body>
