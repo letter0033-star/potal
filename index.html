@@ -3,211 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>교감 인사업무 포털</title>
+    <title>2026년 교감 인사업무 챗봇 연결</title>
+    
+    <!-- 카카오톡/SNS 공유 시 나타나는 미리보기 설정 (Open Graph) -->
+    <meta property="og:title" content="2026년 교감 인사업무 챗봇으로 이동 중">
+    <meta property="og:description" content="잠시 후 인사업무 지원 챗봇으로 연결됩니다.">
+    <meta property="og:type" content="website">
+    
+    <!-- 1. Meta Refresh: 기본 리다이렉트 방식 (60초 설정) -->
+    <meta http-equiv="refresh" content="60; url=https://notebooklm.google.com/notebook/10529a61-cc89-4d82-84c6-a2a6955819cd/preview">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
-        
-        :root {
-            --gw-blue: #005bac;
-            --color-1: #4f46e5;
-            --color-2: #0891b2;
-            --color-3: #db2777;
-            --color-4: #059669;
-            --color-5: #d97706;
-            --color-6: #7c3aed;
+        @keyframes progress {
+            0% { width: 0%; }
+            100% { width: 100%; }
         }
-
-        body, html {
-            margin: 0;
-            font-family: 'Pretendard', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
-            color: #1a1a1a;
-            min-height: 100vh;
+        .progress-bar {
+            animation: progress 60s linear forwards;
         }
-
-        .white-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-        }
-
-        .badge-card {
-            transition: all 0.25s ease-out;
-            cursor: pointer;
-            position: relative;
-            background: white;
-            border: 2px solid transparent;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-
-        .badge-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-        }
-
-        .header-title {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #6366f1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .chatbot-section {
-            background: linear-gradient(90deg, #ffffff 0%, #f8fafc 100%);
-            border-left: 6px solid var(--gw-blue);
-        }
-
-        .chatbot-btn {
-            background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .icon-box {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        /* 배지별 컬러 테마 */
-        .card-1 .icon-box { background: #eef2ff; color: var(--color-1); }
-        .card-1:hover { border-color: var(--color-1); }
-        .card-2 .icon-box { background: #ecfeff; color: var(--color-2); }
-        .card-2:hover { border-color: var(--color-2); }
-        .card-3 .icon-box { background: #fdf2f8; color: var(--color-3); }
-        .card-3:hover { border-color: var(--color-3); }
-        .card-4 .icon-box { background: #ecfdf5; color: var(--color-4); }
-        .card-4:hover { border-color: var(--color-4); }
-        .card-5 .icon-box { background: #fffbe6; color: var(--color-5); }
-        .card-5:hover { border-color: var(--color-5); }
-        .card-6 .icon-box { background: #f5f3ff; color: var(--color-6); }
-        .card-6:hover { border-color: var(--color-6); }
     </style>
 </head>
-<body class="p-4 md:p-6 lg:p-8 flex flex-col justify-center">
+<body class="bg-orange-50 font-sans flex flex-col min-h-screen text-slate-900">
 
-    <div class="max-w-7xl mx-auto w-full space-y-4 md:space-y-6">
-        <!-- 제목 영역 -->
-        <header class="text-center space-y-1">
-            <h2 class="text-blue-600 font-bold text-sm md:text-lg tracking-tight">초등학교 교감을 위한</h2>
-            <h1 class="header-title font-black text-2xl md:text-4xl lg:text-5xl tracking-tighter leading-tight">
-                교감 인사업무 포털
-            </h1>
-        </header>
-
-        <!-- 교감 챗봇 영역 -->
-        <section class="white-card chatbot-section p-4 md:p-6 lg:px-10 lg:py-6 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8">
-            <div class="flex items-center gap-4 text-left">
-                <div class="relative flex-shrink-0">
-                    <div class="absolute inset-0 bg-blue-400 rounded-2xl animate-ping opacity-20"></div>
-                    <div class="relative bg-gradient-to-br from-blue-500 to-indigo-600 p-4 rounded-2xl text-white shadow-lg">
-                        <i class="fas fa-robot text-2xl md:text-3xl"></i>
-                    </div>
-                </div>
-                <div class="space-y-0.5">
-                    <div class="flex items-center gap-2">
-                        <span class="bg-red-500 text-white text-[8px] md:text-[10px] font-black px-1.5 py-0.5 rounded shadow-sm uppercase">AI Powered</span>
-                        <h3 class="text-lg md:text-2xl font-extrabold text-slate-800">교감 인사 업무 챗봇</h3>
-                    </div>
-                    <p class="text-slate-600 text-sm md:text-base font-medium">지침부터 복무까지, AI가 즉시 답변합니다.</p>
+    <!-- 상단 영역: 연결 애니메이션 및 협의회 정보 -->
+    <div class="min-h-[35vh] flex flex-col items-center justify-center p-6 bg-white border-b border-orange-100 shadow-sm z-10">
+        <div class="max-w-5xl w-full flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
+            <!-- 인사업무 상징 픽토그램 -->
+            <div class="flex-shrink-0">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 bg-orange-500 rounded-2xl flex items-center justify-center shadow-lg shadow-orange-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 sm:h-12 sm:w-12 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
                 </div>
             </div>
-            <a href="https://letter0033-star.github.io/chatbot/" target="_blank" class="chatbot-btn w-full md:w-auto text-white font-black py-3 md:py-4 px-8 rounded-xl text-base md:text-lg flex items-center justify-center gap-3 group">
-                <span>챗봇 시작하기</span>
-                <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
-            </a>
-        </section>
 
-        <!-- 메인 배지 영역 -->
-        <main class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-            <!-- 배지 1: 호봉획정프로그램 -->
-            <a href="https://letter0033-star.github.io/pay/" target="_blank" class="badge-card white-card card-1 p-4 gap-4">
-                <div class="icon-box shadow-sm">
-                    <i class="fas fa-file-invoice-dollar text-xl"></i>
+            <!-- 연결 메시지 및 프로그레스 바 영역 -->
+            <div class="flex-grow w-full text-center sm:text-left">
+                <div class="flex flex-col md:flex-row md:items-center md:gap-3 mb-1">
+                    <h1 class="text-xl sm:text-2xl font-extrabold text-slate-800">2026년 교감 인사업무 챗봇 연결</h1>
+                    <div class="inline-block self-center md:self-auto px-2 py-1 bg-orange-100 text-orange-700 text-[10px] sm:text-xs font-bold rounded-md text-nowrap">
+                        강릉시 유·초등 교(원)감 협의회
+                    </div>
                 </div>
-                <div class="flex flex-col">
-                    <span class="text-base md:text-lg font-extrabold text-slate-800">호봉획정프로그램</span>
-                    <p class="text-slate-500 text-xs font-medium">초임 호봉 획정 및 재산정</p>
+                
+                <p class="text-slate-500 mb-4 text-xs sm:text-sm font-medium">
+                    교원 인사업무 지원을 위한 전용 챗봇으로 안전하게 이동하고 있습니다. (약 1분 소요)
+                </p>
+                
+                <!-- 시간 흐름 바 (Progress Bar) -->
+                <div class="w-full bg-orange-100 h-3 rounded-full overflow-hidden border border-orange-200 mb-2">
+                    <div class="progress-bar bg-amber-500 h-full rounded-full shadow-inner"></div>
                 </div>
-            </a>
 
-            <!-- 배지 2: 경력환산기 -->
-            <a href="https://letter0033-star.github.io/school/" target="_blank" class="badge-card white-card card-2 p-4 gap-4">
-                <div class="icon-box shadow-sm">
-                    <i class="fas fa-calculator text-xl"></i>
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-base md:text-lg font-extrabold text-slate-800">경력환산기</span>
-                    <p class="text-slate-500 text-xs font-medium">민법 제160조(역(曆)에 의한 계산)</p>
-                </div>
-            </a>
-            
-            <!-- 배지 3: 휴가 계산기 -->
-            <a href="https://letter0033-star.github.io/t_vacation/" target="_blank" class="badge-card white-card card-3 p-4 gap-4">
-                <div class="icon-box shadow-sm">
-                    <i class="fas fa-calendar-check text-xl"></i>
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-base md:text-lg font-extrabold text-slate-800">휴가 계산기</span>
-                    <p class="text-slate-500 text-xs font-medium">기간제교사 연가 및 병가 계산</p>
-                </div>
-            </a>
+                <!-- 근거 자료 추가 요청 이메일 정보 -->
+                <p class="text-[10px] sm:text-xs text-slate-400 mb-4 flex items-center justify-center sm:justify-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    근거 자료 추가 요청: <span class="font-bold ml-1">letter0033@gmail.com</span>
+                </p>
 
-            <!-- 배지 4: 명예퇴직수당 계산기 -->
-            <a href="https://letter0033-star.github.io/retirement/" target="_blank" class="badge-card white-card card-4 p-4 gap-4">
-                <div class="icon-box shadow-sm">
-                    <i class="fas fa-coins text-xl"></i>
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-base md:text-lg font-extrabold text-slate-800">명예퇴직수당 계산</span>
-                    <p class="text-slate-500 text-xs font-medium">2026년 8월말 기준</p>
-                </div>
-            </a>
-
-            <!-- 배지 5: 시간제근무기간제교사 인건비 산정 -->
-            <a href="https://letter0033-star.github.io/timepay/" target="_blank" class="badge-card white-card card-5 p-4 gap-4">
-                <div class="icon-box shadow-sm">
-                    <i class="fas fa-hand-holding-usd text-xl"></i>
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-base md:text-lg font-extrabold text-slate-800 leading-tight">시간제교사 인건비 산정</span>
-                    <p class="text-slate-500 text-xs font-medium">인건비 및 급여 계산</p>
-                </div>
-            </a>
-
-            <!-- 배지 6: 준비중 -->
-            <div class="badge-card white-card card-6 p-4 gap-4 opacity-80 cursor-default">
-                <div class="icon-box shadow-sm">
-                    <i class="fas fa-hourglass-half text-xl"></i>
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-base md:text-lg font-extrabold text-slate-400">준비중</span>
-                    <p class="text-slate-400 text-xs font-medium">새로운 기능이 추가될 예정입니다</p>
-                </div>
+                <!-- 즉시 이동하기 버튼 -->
+                <a href="https://notebooklm.google.com/notebook/10529a61-cc89-4d82-84c6-a2a6955819cd/preview" 
+                   class="block w-full text-center text-base font-bold bg-orange-500 hover:bg-orange-600 text-white py-3 px-8 rounded-xl transition-all shadow-md hover:shadow-lg active:scale-[0.98]">
+                    지금 바로 이동하기
+                </a>
             </div>
-        </main>
-
-        <!-- 하단 안내 및 푸터 -->
-        <div class="text-center pt-4 space-y-2">
-            <p class="text-slate-500 text-[10px] md:text-[11px] font-medium">
-                <i class="fas fa-envelope mr-1"></i> 프로그램 요청, 문의, 오류 신고: <span class="text-blue-600">letter0033@gmail.com</span>
-            </p>
-            <footer class="text-slate-400 text-[10px] md:text-xs">
-                © 교감 인사업무 지원 포털
-            </footer>
         </div>
     </div>
 
+    <!-- 하단 영역: RAG 근거 법령 및 지침 -->
+    <div class="flex-grow md:h-[65vh] bg-orange-50/50 p-4 md:p-6 flex flex-col overflow-y-auto">
+        <div class="max-w-[1400px] mx-auto w-full flex flex-col">
+            
+            <!-- 배지와 버전 정보 -->
+            <div class="flex flex-col md:flex-row items-center justify-center gap-3 mb-5">
+                <div class="bg-amber-200 text-black px-6 py-3 rounded-2xl shadow-md border border-amber-300 flex items-center justify-center w-full md:w-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 flex-shrink-0 text-orange-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <span class="text-sm md:text-base font-black tracking-tight text-center">
+                        본 챗봇은 아래의 법령과 규정 및 지침으로 검색증강생성(RAG) 답변을 제공합니다
+                    </span>
+                </div>
+                <div class="flex-shrink-0 text-[11px] font-bold text-orange-600 bg-white px-4 py-2 rounded-full border border-orange-200 shadow-sm">
+                    법령 위계별 근거 자료 버전 2026.4월 기준
+                </div>
+            </div>
+            
+            <!-- 리스트 영역: 4단 그리드로 개편 -->
+            <div class="bg-white rounded-2xl p-4 md:p-6 border border-orange-200 shadow-sm flex flex-col mb-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-4 text-[11px] leading-tight text-slate-700 font-medium">
+                    
+                    <!-- 1열: 인사 및 기본 법령 -->
+                    <div class="flex flex-col space-y-2 lg:border-r lg:border-orange-50 lg:pr-3">
+                        <h3 class="text-orange-600 font-bold border-b border-orange-100 pb-1 mb-1 flex items-center">
+                            <span class="bg-orange-100 px-1.5 py-0.5 rounded mr-1 text-[9px]">1</span> 인사 및 기본 법령
+                        </h3>
+                        <p class="font-bold text-slate-900">• 교육기본법 / 초중등교육법</p>
+                        <p class="font-bold text-slate-900">• 국가 / 지방 / 교육공무원법</p>
+                        <p class="pl-2">• 교육공무원 임용령 / 승진규정</p>
+                        <p class="pl-2">• 교육공무원 인사관리규정</p>
+                        <p class="pl-2">• 강원 교육공무원 인사관련 규정</p>
+                        <p class="pl-2">• 2026 교육공무원 인사실무편람</p>
+                        <p class="pl-2">• 2025 교육공무직원 업무편람</p>
+                        <p class="pl-2">• 2026 강원 계약제교원 운영 지침</p>
+                        <p class="pl-2">• 강원 교육공무원 승진가산점 평정</p>
+                    </div>
+
+                    <!-- 2열: 복무·보수 및 복지 관련 -->
+                    <div class="flex flex-col space-y-2 lg:border-r lg:border-orange-50 lg:px-3">
+                        <h3 class="text-orange-600 font-bold border-b border-orange-100 pb-1 mb-1 flex items-center">
+                            <span class="bg-orange-100 px-1.5 py-0.5 rounded mr-1 text-[9px]">2</span> 복무 · 보수 · 복지
+                        </h3>
+                        <p class="font-bold text-slate-900">• 국가 / 지방공무원 복무규정</p>
+                        <p class="pl-2">• 교원 등의 연수에 관한 규정</p>
+                        <p class="pl-2">• 공무원보수 / 수당 등에 관한 규정</p>
+                        <p class="pl-2">• 2026 공무원보수 업무지침</p>
+                        <p class="pl-2">• 2026 교원 성과상여금 지급 지침</p>
+                        <p class="font-bold text-slate-900">• 공무원연금법 / 시행령 / 규칙</p>
+                        <p class="font-bold text-slate-900">• 공무원 재해보상법률</p>
+                        <p class="font-bold text-slate-900">• 교육공무원 징계령 / 양정 규칙</p>
+                        <p class="pl-2">• 공무원 행동강령 / 공직자윤리법</p>
+                        <p class="pl-2">• 2026 갑질 근절 추진 계획</p>
+                    </div>
+
+                    <!-- 3열: 교육보호 및 학생지원 -->
+                    <div class="flex flex-col space-y-2 lg:border-r lg:border-orange-50 lg:px-3">
+                        <h3 class="text-orange-600 font-bold border-b border-orange-100 pb-1 mb-1 flex items-center">
+                            <span class="bg-orange-100 px-1.5 py-0.5 rounded mr-1 text-[9px]">3</span> 교육보호 및 학생지원
+                        </h3>
+                        <p class="font-bold text-slate-900">• 교원지위법(교육활동 보호)</p>
+                        <p class="font-bold text-slate-900">• 학교폭력예방 및 대책 법률</p>
+                        <p class="pl-2">• 2026 학교폭력 사안처리 가이드북</p>
+                        <p class="font-bold text-slate-900">• 학생맞춤통합지원법</p>
+                        <p class="pl-2">• 2026 교육활동 보호 매뉴얼</p>
+                        <p class="pl-2">• 교원 학생생활지도 고시 해설서</p>
+                        <p class="font-bold text-slate-900">• 아동학대처벌법 / 학교안전법</p>
+                        <p class="pl-2">• 학교안전사고 예방 및 보상 시행령</p>
+                        <p class="pl-2">• 교원역량개발지원제도 도입 방안</p>
+                    </div>
+
+                    <!-- 4열: 학교실무 및 행정지원 (새로 분리) -->
+                    <div class="flex flex-col space-y-2 lg:pl-3">
+                        <h3 class="text-orange-600 font-bold border-b border-orange-100 pb-1 mb-1 flex items-center">
+                            <span class="bg-orange-100 px-1.5 py-0.5 rounded mr-1 text-[9px]">4</span> 학교실무 및 행정지원
+                        </h3>
+                        <p class="font-bold text-slate-900">• 민원처리법 / 개인정보보호법</p>
+                        <p class="font-bold text-slate-900">• 공공기록물 관리에 관한 법률</p>
+                        <p class="pl-2">• 공공기록물 관리법 시행령 / 규칙</p>
+                        <p class="pl-2">• 2026 초등학교 학적 업무 매뉴얼</p>
+                        <p class="pl-2">• 2026 학교생활기록부 기재요령</p>
+                        <p class="pl-2">• 2026 강원늘봄학교 운영 길라잡이</p>
+                        <p class="pl-2">• 2025 학교정보화 업무편람</p>
+                        <p class="pl-2">• 2026 학교행정 업무편람</p>
+                        <p class="pl-2">• 2026 학교회계 예산편성 지침</p>
+                        <p class="pl-2">• 2026 학교업무 최적화 추진 계획</p>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- 푸터 영역 -->
+            <div class="mt-auto pb-6 flex flex-col md:flex-row items-center justify-between text-[10px] text-slate-400 font-medium space-y-2 md:space-y-0 text-center md:text-left">
+                <p>&copy; 2026 교감 인사업무 지원 시스템 (검색증강생성 기반)</p>
+                <p>본 데이터는 국가법령정보센터 및 도교육청 지침을 기반으로 체계화되었습니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 자바스크립트 리다이렉트 보완: 60초 설정
+        window.onload = function() {
+            const targetUrl = "https://notebooklm.google.com/notebook/10529a61-cc89-4d82-84c6-a2a6955819cd/preview";
+            setTimeout(function() {
+                window.location.href = targetUrl;
+            }, 60000);
+        };
+    </script>
 </body>
 </html>
