@@ -80,6 +80,45 @@
             flex-shrink: 0;
         }
 
+        /* 하단 서브 배지 스타일 (배경색을 0.75에서 0.5로 낮춰 시인성과 조화 조절) */
+        .sub-badge {
+            background: rgba(255, 255, 255, 0.5); /* 바탕화면보다 약간 밝은 톤으로 조정 */
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 8px;
+            height: 100%;
+        }
+
+        .sub-badge:hover {
+            background: white;
+            border-color: var(--gw-blue);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transform: translateY(-1px);
+        }
+
+        .sub-text {
+            color: #64748b; 
+            font-size: 10px;
+            font-weight: 700;
+            line-height: 1.2;
+            transition: color 0.2s;
+            word-break: keep-all;
+        }
+
+        @media (min-width: 768px) {
+            .sub-text {
+                font-size: 11px;
+            }
+        }
+
+        .sub-badge:hover .sub-text {
+            color: var(--gw-blue); 
+        }
+
         /* 배지별 컬러 테마 */
         .card-1 .icon-box { background: #eef2ff; color: var(--color-1); }
         .card-1:hover { border-color: var(--color-1); }
@@ -136,7 +175,7 @@
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-file-invoice-dollar text-xl"></i>
                 </div>
-                <div class="flex flex-col">
+                <div class="flex flex-col text-left">
                     <span class="text-base md:text-lg font-extrabold text-slate-800">호봉획정프로그램</span>
                     <p class="text-slate-500 text-xs font-medium">초임 호봉 획정 및 재산정</p>
                 </div>
@@ -147,7 +186,7 @@
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-calculator text-xl"></i>
                 </div>
-                <div class="flex flex-col">
+                <div class="flex flex-col text-left">
                     <span class="text-base md:text-lg font-extrabold text-slate-800">경력환산기</span>
                     <p class="text-slate-500 text-xs font-medium">민법 제160조(역(曆)에 의한 계산)</p>
                 </div>
@@ -158,30 +197,30 @@
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-calendar-check text-xl"></i>
                 </div>
-                <div class="flex flex-col">
+                <div class="flex flex-col text-left">
                     <span class="text-base md:text-lg font-extrabold text-slate-800">휴가 계산기</span>
                     <p class="text-slate-500 text-xs font-medium">기간제교사 연가 및 병가 계산</p>
                 </div>
             </a>
 
-            <!-- 배지 4: 명예퇴직수당 계산기 -->
+            <!-- 배지 4: 명예퇴직수당 계산 -->
             <a href="https://letter0033-star.github.io/retirement/" target="_blank" class="badge-card white-card card-4 p-4 gap-4">
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-coins text-xl"></i>
                 </div>
-                <div class="flex flex-col">
+                <div class="flex flex-col text-left">
                     <span class="text-base md:text-lg font-extrabold text-slate-800">명예퇴직수당 계산</span>
                     <p class="text-slate-500 text-xs font-medium">2026년 8월말 기준</p>
                 </div>
             </a>
 
-            <!-- 배지 5: 시간제근무기간제교사 인건비 산정 -->
+            <!-- 배지 5: 시간제 인건비 산정 -->
             <a href="https://letter0033-star.github.io/timepay/" target="_blank" class="badge-card white-card card-5 p-4 gap-4">
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-hand-holding-usd text-xl"></i>
                 </div>
-                <div class="flex flex-col">
-                    <span class="text-base md:text-lg font-extrabold text-slate-800 leading-tight">시간제교사 인건비 산정</span>
+                <div class="flex flex-col text-left">
+                    <span class="text-base md:text-lg font-extrabold text-slate-800">시간제 인건비 산정</span>
                     <p class="text-slate-500 text-xs font-medium">인건비 및 급여 계산</p>
                 </div>
             </a>
@@ -191,19 +230,41 @@
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-hourglass-half text-xl"></i>
                 </div>
-                <div class="flex flex-col">
+                <div class="flex flex-col text-left">
                     <span class="text-base md:text-lg font-extrabold text-slate-400">준비중</span>
-                    <p class="text-slate-400 text-xs font-medium">새로운 기능이 추가될 예정입니다</p>
+                    <p class="text-slate-400 text-xs font-medium">기능 추가 예정</p>
                 </div>
             </div>
         </main>
 
+        <!-- 하단 서브 배지 영역 -->
+        <section class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+            <a href="https://portal.scourt.go.kr/pgp/index.on" target="_blank" class="sub-badge group">
+                <span class="sub-text">사법정보공개포털</span>
+            </a>
+            <a href="https://ssia.gwe.go.kr/main.do" target="_blank" class="sub-badge group">
+                <span class="sub-text">학교안전공제회</span>
+            </a>
+            <a href="https://mail.korea.kr/" target="_blank" class="sub-badge group">
+                <span class="sub-text">공직자메일</span>
+            </a>
+            <a href="https://shp.mogef.go.kr/shp/front/main.do" target="_blank" class="sub-badge group">
+                <span class="sub-text">예방교육통합관리</span>
+            </a>
+            <a href="https://www.schoolsafe24.or.kr/" target="_blank" class="sub-badge group">
+                <span class="sub-text">학교안전지원시스템</span>
+            </a>
+            <a href="https://office365.gwe.go.kr/main" target="_blank" class="sub-badge group">
+                <span class="sub-text">Office 365</span>
+            </a>
+        </section>
+
         <!-- 하단 안내 및 푸터 -->
-        <div class="text-center pt-4 space-y-2">
+        <div class="text-center pt-2 space-y-1">
             <p class="text-slate-500 text-[10px] md:text-[11px] font-medium">
                 <i class="fas fa-envelope mr-1"></i> 프로그램 요청, 문의, 오류 신고: <span class="text-blue-600">letter0033@gmail.com</span>
             </p>
-            <footer class="text-slate-400 text-[10px] md:text-xs">
+            <footer class="text-slate-400 text-[9px] md:text-[10px]">
                 © 교(원)감 인사업무 지원 포털
             </footer>
         </div>
