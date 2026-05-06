@@ -80,9 +80,9 @@
             flex-shrink: 0;
         }
 
-        /* 하단 서브 배지 스타일 (배경색을 0.75에서 0.5로 낮춰 시인성과 조화 조절) */
+        /* 하단 서브 배지 스타일 (텍스트 중심 직사각형) */
         .sub-badge {
-            background: rgba(255, 255, 255, 0.5); /* 바탕화면보다 약간 밝은 톤으로 조정 */
+            background: rgba(255, 255, 255, 0.5); 
             border: 1px solid rgba(255, 255, 255, 0.5);
             border-radius: 8px;
             transition: all 0.2s ease;
@@ -239,23 +239,24 @@
 
         <!-- 하단 서브 배지 영역 -->
         <section class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+            <a href="https://www.law.go.kr/main.html" target="_blank" class="sub-badge group">
+                <span class="sub-text">국가법령정보센터</span>
+            </a>
             <a href="https://portal.scourt.go.kr/pgp/index.on" target="_blank" class="sub-badge group">
                 <span class="sub-text">사법정보공개포털</span>
             </a>
             <a href="https://ssia.gwe.go.kr/main.do" target="_blank" class="sub-badge group">
                 <span class="sub-text">학교안전공제회</span>
             </a>
-            <a href="https://mail.korea.kr/" target="_blank" class="sub-badge group">
-                <span class="sub-text">공직자메일</span>
+            <!-- 학교안전사고보상지원시스템으로 변경됨 -->
+            <a href="https://www.schoolsafe.or.kr/school/login.do#none" target="_blank" class="sub-badge group">
+                <span class="sub-text">학교안전사고보상지원시스템</span>
             </a>
             <a href="https://shp.mogef.go.kr/shp/front/main.do" target="_blank" class="sub-badge group">
                 <span class="sub-text">예방교육통합관리</span>
             </a>
             <a href="https://www.schoolsafe24.or.kr/" target="_blank" class="sub-badge group">
                 <span class="sub-text">학교안전지원시스템</span>
-            </a>
-            <a href="https://office365.gwe.go.kr/main" target="_blank" class="sub-badge group">
-                <span class="sub-text">Office 365</span>
             </a>
         </section>
 
