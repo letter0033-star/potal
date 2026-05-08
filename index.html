@@ -80,7 +80,7 @@
             flex-shrink: 0;
         }
 
-        /* 하단 서브 배지 스타일 (텍스트 중심 직사각형) */
+        /* 하단 서브 배지 스타일 (세로 높이 최소화 및 한 줄 배치 적용) */
         .sub-badge {
             background: rgba(255, 255, 255, 0.5); 
             border: 1px solid rgba(255, 255, 255, 0.5);
@@ -89,8 +89,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 12px 8px;
-            height: 100%;
+            padding: 6px 4px; /* 패딩 축소로 세로 높이 최소화 */
+            min-height: 32px;
         }
 
         .sub-badge:hover {
@@ -104,9 +104,11 @@
             color: #64748b; 
             font-size: 10px;
             font-weight: 700;
-            line-height: 1.2;
+            line-height: 1;
             transition: color 0.2s;
-            word-break: keep-all;
+            white-space: nowrap; /* 텍스트 한 줄 배치 강제 */
+            text-overflow: ellipsis;
+            overflow: hidden;
         }
 
         @media (min-width: 768px) {
@@ -237,8 +239,9 @@
             </div>
         </main>
 
-        <!-- 하단 서브 배지 영역 -->
+        <!-- 하단 서브 배지 영역 (총 12개, 2단 배치, 세로 높이 최소화) -->
         <section class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+            <!-- 1단 (기존 6개) -->
             <a href="https://www.law.go.kr/main.html" target="_blank" class="sub-badge group">
                 <span class="sub-text">국가법령정보센터</span>
             </a>
@@ -248,7 +251,6 @@
             <a href="https://ssia.gwe.go.kr/main.do" target="_blank" class="sub-badge group">
                 <span class="sub-text">학교안전공제회</span>
             </a>
-            <!-- 학교안전사고보상지원시스템으로 변경됨 -->
             <a href="https://www.schoolsafe.or.kr/school/login.do#none" target="_blank" class="sub-badge group">
                 <span class="sub-text">학교안전사고보상지원시스템</span>
             </a>
@@ -258,6 +260,26 @@
             <a href="https://www.schoolsafe24.or.kr/" target="_blank" class="sub-badge group">
                 <span class="sub-text">학교안전지원시스템</span>
             </a>
+
+            <!-- 2단 (신규 추가된 정보공개포털, 학교알리미 포함 6개) -->
+            <a href="https://www.mpm.go.kr/mpm/info/infoBiz/bizIntro/" target="_blank" class="sub-badge group">
+                <span class="sub-text">인사혁신처 인사제도</span>
+            </a>
+            <a href="https://www.geps.or.kr/index" target="_blank" class="sub-badge group">
+                <span class="sub-text">공무원연금공단</span>
+            </a>
+            <a href="https://www.open.go.kr/com/main/mainView.do" target="_blank" class="sub-badge group">
+                <span class="sub-text">정보공개포털</span>
+            </a>
+            <a href="https://www.schoolinfo.go.kr/Main.do" target="_blank" class="sub-badge group">
+                <span class="sub-text">학교알리미</span>
+            </a>
+            <div class="sub-badge group cursor-default">
+                <span class="sub-text">준비 중</span>
+            </div>
+            <div class="sub-badge group cursor-default">
+                <span class="sub-text">준비 중</span>
+            </div>
         </section>
 
         <!-- 하단 안내 및 푸터 -->
