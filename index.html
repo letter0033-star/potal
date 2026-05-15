@@ -80,7 +80,7 @@
             flex-shrink: 0;
         }
 
-        /* 하단 서브 배지 스타일 (세로 높이 최소화 및 한 줄 배치 적용) */
+        /* 하단 서브 배지 스타일 */
         .sub-badge {
             background: rgba(255, 255, 255, 0.5); 
             border: 1px solid rgba(255, 255, 255, 0.5);
@@ -89,7 +89,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 6px 4px; /* 패딩 축소로 세로 높이 최소화 */
+            padding: 6px 4px;
             min-height: 32px;
         }
 
@@ -106,7 +106,7 @@
             font-weight: 700;
             line-height: 1;
             transition: color 0.2s;
-            white-space: nowrap; /* 텍스트 한 줄 배치 강제 */
+            white-space: nowrap;
             text-overflow: ellipsis;
             overflow: hidden;
         }
@@ -227,21 +227,20 @@
                 </div>
             </a>
 
-            <!-- 배지 6: 준비중 -->
-            <div class="badge-card white-card card-6 p-4 gap-4 opacity-80 cursor-default">
+            <!-- 배지 6: 더나은작은학교 컨설팅 (준비중에서 업데이트됨) -->
+            <div class="badge-card white-card card-6 p-4 gap-4">
                 <div class="icon-box shadow-sm">
-                    <i class="fas fa-hourglass-half text-xl"></i>
+                    <i class="fas fa-school text-xl"></i>
                 </div>
                 <div class="flex flex-col text-left">
-                    <span class="text-base md:text-lg font-extrabold text-slate-400">준비중</span>
-                    <p class="text-slate-400 text-xs font-medium">기능 추가 예정</p>
+                    <span class="text-base md:text-lg font-extrabold text-slate-800">더나은작은학교 컨설팅</span>
+                    <p class="text-slate-500 text-xs font-medium">작은학교 살리기 솔루션 제공</p>
                 </div>
             </div>
         </main>
 
-        <!-- 하단 서브 배지 영역 (총 12개, 2단 배치, 세로 높이 최소화) -->
+        <!-- 하단 서브 배지 영역 -->
         <section class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
-            <!-- 1단 (기존 6개) -->
             <a href="https://www.law.go.kr/main.html" target="_blank" class="sub-badge group">
                 <span class="sub-text">국가법령정보센터</span>
             </a>
@@ -261,7 +260,6 @@
                 <span class="sub-text">학교안전지원시스템</span>
             </a>
 
-            <!-- 2단 (신규 추가된 정보공개포털, 학교알리미 포함 6개) -->
             <a href="https://www.mpm.go.kr/mpm/info/infoBiz/bizIntro/" target="_blank" class="sub-badge group">
                 <span class="sub-text">인사혁신처 인사제도</span>
             </a>
@@ -285,7 +283,7 @@
         <!-- 하단 안내 및 푸터 -->
         <div class="text-center pt-2 space-y-1">
             <p class="text-slate-500 text-[10px] md:text-[11px] font-medium">
-                <i class="fas fa-envelope mr-1"></i> 프로그램 요청, 문의, 오류 신고: <span class="text-blue-600">letter0033@gmail.com</span>
+                <i class="fas fa-envelope mr-1"></i> 프로그램 요청, 문의, 오류 신고: <span class="text-blue-600">letter0033@gmail.com</span>, 이음톡 모산초 김영삼
             </p>
             <footer class="text-slate-400 text-[9px] md:text-[10px]">
                 © 교(원)감 인사업무 지원 포털
