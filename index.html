@@ -80,7 +80,7 @@
             flex-shrink: 0;
         }
 
-        /* 하단 서브 배지 스타일 */
+        /* 하단 서브 배지 스타일 (세로 높이 최소화 및 한 줄 배치 적용) */
         .sub-badge {
             background: rgba(255, 255, 255, 0.5); 
             border: 1px solid rgba(255, 255, 255, 0.5);
@@ -89,7 +89,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 6px 4px;
+            padding: 6px 4px; 
             min-height: 32px;
         }
 
@@ -106,7 +106,7 @@
             font-weight: 700;
             line-height: 1;
             transition: color 0.2s;
-            white-space: nowrap;
+            white-space: nowrap; 
             text-overflow: ellipsis;
             overflow: hidden;
         }
@@ -121,7 +121,7 @@
             color: var(--gw-blue); 
         }
 
-        /* 배지별 컬러 테마 */
+        /* Card color themes */
         .card-1 .icon-box { background: #eef2ff; color: var(--color-1); }
         .card-1:hover { border-color: var(--color-1); }
         .card-2 .icon-box { background: #ecfeff; color: var(--color-2); }
@@ -227,20 +227,21 @@
                 </div>
             </a>
 
-            <!-- 배지 6: 더나은작은학교 컨설팅 (준비중에서 업데이트됨) -->
-            <div class="badge-card white-card card-6 p-4 gap-4">
+            <!-- 배지 6: 더 나은 작은 학교 컨설팅 -->
+            <a href="https://letter0033-star.github.io/consulting/" target="_blank" class="badge-card white-card card-6 p-4 gap-4">
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-school text-xl"></i>
                 </div>
                 <div class="flex flex-col text-left">
-                    <span class="text-base md:text-lg font-extrabold text-slate-800">더나은작은학교 컨설팅</span>
-                    <p class="text-slate-500 text-xs font-medium">작은학교 살리기 솔루션 제공</p>
+                    <span class="text-base md:text-lg font-extrabold text-slate-800">더 나은 작은 학교 컨설팅</span>
+                    <p class="text-slate-500 text-xs font-medium">작은학교 활성화 솔루션 제공</p>
                 </div>
-            </div>
+            </a>
         </main>
 
-        <!-- 하단 서브 배지 영역 -->
+        <!-- 하단 서브 배지 영역 (총 12개, 2단 배치, 세로 높이 최소화) -->
         <section class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+            <!-- 1단 -->
             <a href="https://www.law.go.kr/main.html" target="_blank" class="sub-badge group">
                 <span class="sub-text">국가법령정보센터</span>
             </a>
@@ -260,6 +261,7 @@
                 <span class="sub-text">학교안전지원시스템</span>
             </a>
 
+            <!-- 2단 -->
             <a href="https://www.mpm.go.kr/mpm/info/infoBiz/bizIntro/" target="_blank" class="sub-badge group">
                 <span class="sub-text">인사혁신처 인사제도</span>
             </a>
@@ -272,12 +274,13 @@
             <a href="https://www.schoolinfo.go.kr/Main.do" target="_blank" class="sub-badge group">
                 <span class="sub-text">학교알리미</span>
             </a>
-            <div class="sub-badge group cursor-default">
-                <span class="sub-text">준비 중</span>
-            </div>
-            <div class="sub-badge group cursor-default">
-                <span class="sub-text">준비 중</span>
-            </div>
+            <!-- 신규 추가된 교육청 링크 -->
+            <a href="https://www.gwe.go.kr/main/index.do" target="_blank" class="sub-badge group">
+                <span class="sub-text">강원특별자치도교육청</span>
+            </a>
+            <a href="https://gwgned.gwe.go.kr/main.do" target="_blank" class="sub-badge group">
+                <span class="sub-text">강릉교육지원청</span>
+            </a>
         </section>
 
         <!-- 하단 안내 및 푸터 -->
