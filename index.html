@@ -80,7 +80,7 @@
             flex-shrink: 0;
         }
 
-        /* 하단 서브 배지 스타일 (세로 높이 최소화 및 한 줄 배치 적용) */
+        /* 하단 서브 배지 스타일 */
         .sub-badge {
             background: rgba(255, 255, 255, 0.5); 
             border: 1px solid rgba(255, 255, 255, 0.5);
@@ -112,14 +112,10 @@
         }
 
         @media (min-width: 768px) {
-            .sub-text {
-                font-size: 11px;
-            }
+            .sub-text { font-size: 11px; }
         }
 
-        .sub-badge:hover .sub-text {
-            color: var(--gw-blue); 
-        }
+        .sub-badge:hover .sub-text { color: var(--gw-blue); }
 
         /* Card color themes */
         .card-1 .icon-box { background: #eef2ff; color: var(--color-1); }
@@ -170,68 +166,52 @@
             </a>
         </section>
 
+        <!-- 권장사항 안내 (글자 크기 및 색상 조정) -->
+        <div class="text-center">
+            <p class="text-slate-600 text-[11px] md:text-sm font-semibold tracking-tight">
+                <i class="fas fa-info-circle text-blue-500 mr-1"></i> [권장사항] 모든 프로그램은 <span class="text-blue-700 underline underline-offset-2">크롬(Chrome)</span>에 최적화되어 있으며, <span class="text-blue-700 underline underline-offset-2">구글 계정에 로그인</span> 후 접속하시기 바랍니다.
+            </p>
+        </div>
+
         <!-- 메인 배지 영역 -->
         <main class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-            <!-- 배지 1: 호봉획정프로그램 -->
             <a href="https://letter0033-star.github.io/pay/" target="_blank" class="badge-card white-card card-1 p-4 gap-4">
-                <div class="icon-box shadow-sm">
-                    <i class="fas fa-file-invoice-dollar text-xl"></i>
-                </div>
+                <div class="icon-box shadow-sm"><i class="fas fa-file-invoice-dollar text-xl"></i></div>
                 <div class="flex flex-col text-left">
                     <span class="text-base md:text-lg font-extrabold text-slate-800">호봉획정프로그램</span>
                     <p class="text-slate-500 text-xs font-medium">초임 호봉 획정 및 재산정</p>
                 </div>
             </a>
-
-            <!-- 배지 2: 경력환산기 -->
             <a href="https://letter0033-star.github.io/school/" target="_blank" class="badge-card white-card card-2 p-4 gap-4">
-                <div class="icon-box shadow-sm">
-                    <i class="fas fa-calculator text-xl"></i>
-                </div>
+                <div class="icon-box shadow-sm"><i class="fas fa-calculator text-xl"></i></div>
                 <div class="flex flex-col text-left">
                     <span class="text-base md:text-lg font-extrabold text-slate-800">경력환산기</span>
                     <p class="text-slate-500 text-xs font-medium">민법 제160조(역(曆)에 의한 계산)</p>
                 </div>
             </a>
-            
-            <!-- 배지 3: 휴가 계산기 -->
             <a href="https://letter0033-star.github.io/t_vacation/" target="_blank" class="badge-card white-card card-3 p-4 gap-4">
-                <div class="icon-box shadow-sm">
-                    <i class="fas fa-calendar-check text-xl"></i>
-                </div>
+                <div class="icon-box shadow-sm"><i class="fas fa-calendar-check text-xl"></i></div>
                 <div class="flex flex-col text-left">
                     <span class="text-base md:text-lg font-extrabold text-slate-800">휴가 계산기</span>
                     <p class="text-slate-500 text-xs font-medium">기간제교사 연가 및 병가 계산</p>
                 </div>
             </a>
-
-            <!-- 배지 4: 명예퇴직수당 계산 -->
             <a href="https://letter0033-star.github.io/retirement/" target="_blank" class="badge-card white-card card-4 p-4 gap-4">
-                <div class="icon-box shadow-sm">
-                    <i class="fas fa-coins text-xl"></i>
-                </div>
+                <div class="icon-box shadow-sm"><i class="fas fa-coins text-xl"></i></div>
                 <div class="flex flex-col text-left">
                     <span class="text-base md:text-lg font-extrabold text-slate-800">명예퇴직수당 계산</span>
                     <p class="text-slate-500 text-xs font-medium">2026년 8월말 기준</p>
                 </div>
             </a>
-
-            <!-- 배지 5: 시간제 인건비 산정 -->
             <a href="https://letter0033-star.github.io/timepay/" target="_blank" class="badge-card white-card card-5 p-4 gap-4">
-                <div class="icon-box shadow-sm">
-                    <i class="fas fa-hand-holding-usd text-xl"></i>
-                </div>
+                <div class="icon-box shadow-sm"><i class="fas fa-hand-holding-usd text-xl"></i></div>
                 <div class="flex flex-col text-left">
                     <span class="text-base md:text-lg font-extrabold text-slate-800">시간제 인건비 산정</span>
                     <p class="text-slate-500 text-xs font-medium">인건비 및 급여 계산</p>
                 </div>
             </a>
-
-            <!-- 배지 6: 더 나은 작은 학교 컨설팅 -->
             <a href="https://letter0033-star.github.io/consulting/" target="_blank" class="badge-card white-card card-6 p-4 gap-4">
-                <div class="icon-box shadow-sm">
-                    <i class="fas fa-school text-xl"></i>
-                </div>
+                <div class="icon-box shadow-sm"><i class="fas fa-school text-xl"></i></div>
                 <div class="flex flex-col text-left">
                     <span class="text-base md:text-lg font-extrabold text-slate-800">더 나은 작은 학교 컨설팅</span>
                     <p class="text-slate-500 text-xs font-medium">작은학교 활성화 솔루션 제공</p>
@@ -239,48 +219,20 @@
             </a>
         </main>
 
-        <!-- 하단 서브 배지 영역 (총 12개, 2단 배치, 세로 높이 최소화) -->
+        <!-- 하단 서브 배지 영역 -->
         <section class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
-            <!-- 1단 -->
-            <a href="https://www.law.go.kr/main.html" target="_blank" class="sub-badge group">
-                <span class="sub-text">국가법령정보센터</span>
-            </a>
-            <a href="https://portal.scourt.go.kr/pgp/index.on" target="_blank" class="sub-badge group">
-                <span class="sub-text">사법정보공개포털</span>
-            </a>
-            <a href="https://ssia.gwe.go.kr/main.do" target="_blank" class="sub-badge group">
-                <span class="sub-text">학교안전공제회</span>
-            </a>
-            <a href="https://www.schoolsafe.or.kr/school/login.do#none" target="_blank" class="sub-badge group">
-                <span class="sub-text">학교안전사고보상지원시스템</span>
-            </a>
-            <a href="https://shp.mogef.go.kr/shp/front/main.do" target="_blank" class="sub-badge group">
-                <span class="sub-text">예방교육통합관리</span>
-            </a>
-            <a href="https://www.schoolsafe24.or.kr/" target="_blank" class="sub-badge group">
-                <span class="sub-text">학교안전지원시스템</span>
-            </a>
-
-            <!-- 2단 -->
-            <a href="https://www.mpm.go.kr/mpm/info/infoBiz/bizIntro/" target="_blank" class="sub-badge group">
-                <span class="sub-text">인사혁신처 인사제도</span>
-            </a>
-            <a href="https://www.geps.or.kr/index" target="_blank" class="sub-badge group">
-                <span class="sub-text">공무원연금공단</span>
-            </a>
-            <a href="https://www.open.go.kr/com/main/mainView.do" target="_blank" class="sub-badge group">
-                <span class="sub-text">정보공개포털</span>
-            </a>
-            <a href="https://www.schoolinfo.go.kr/Main.do" target="_blank" class="sub-badge group">
-                <span class="sub-text">학교알리미</span>
-            </a>
-            <!-- 신규 추가된 교육청 링크 -->
-            <a href="https://www.gwe.go.kr/main/index.do" target="_blank" class="sub-badge group">
-                <span class="sub-text">강원특별자치도교육청</span>
-            </a>
-            <a href="https://gwgned.gwe.go.kr/main.do" target="_blank" class="sub-badge group">
-                <span class="sub-text">강릉교육지원청</span>
-            </a>
+            <a href="https://www.law.go.kr/main.html" target="_blank" class="sub-badge group"><span class="sub-text">국가법령정보센터</span></a>
+            <a href="https://portal.scourt.go.kr/pgp/index.on" target="_blank" class="sub-badge group"><span class="sub-text">사법정보공개포털</span></a>
+            <a href="https://ssia.gwe.go.kr/main.do" target="_blank" class="sub-badge group"><span class="sub-text">학교안전공제회</span></a>
+            <a href="https://www.schoolsafe.or.kr/school/login.do#none" target="_blank" class="sub-badge group"><span class="sub-text">학교안전사고보상지원시스템</span></a>
+            <a href="https://shp.mogef.go.kr/shp/front/main.do" target="_blank" class="sub-badge group"><span class="sub-text">예방교육통합관리</span></a>
+            <a href="https://www.schoolsafe24.or.kr/" target="_blank" class="sub-badge group"><span class="sub-text">학교안전지원시스템</span></a>
+            <a href="https://www.mpm.go.kr/mpm/info/infoBiz/bizIntro/" target="_blank" class="sub-badge group"><span class="sub-text">인사혁신처 인사제도</span></a>
+            <a href="https://www.geps.or.kr/index" target="_blank" class="sub-badge group"><span class="sub-text">공무원연금공단</span></a>
+            <a href="https://www.open.go.kr/com/main/mainView.do" target="_blank" class="sub-badge group"><span class="sub-text">정보공개포털</span></a>
+            <a href="https://www.schoolinfo.go.kr/Main.do" target="_blank" class="sub-badge group"><span class="sub-text">학교알리미</span></a>
+            <a href="https://www.gwe.go.kr/main/index.do" target="_blank" class="sub-badge group"><span class="sub-text">강원특별자치도교육청</span></a>
+            <a href="https://gwgned.gwe.go.kr/main.do" target="_blank" class="sub-badge group"><span class="sub-text">강릉교육지원청</span></a>
         </section>
 
         <!-- 하단 안내 및 푸터 -->
