@@ -170,14 +170,14 @@
             </a>
         </section>
 
-        <!-- 권장사항 안내 (챗봇 바로 아래 배치) -->
+        <!-- 권장사항 안내 -->
         <div class="text-center">
             <p class="text-slate-600 text-[11px] md:text-sm font-semibold tracking-tight">
                 <i class="fas fa-info-circle text-blue-500 mr-1"></i> [권장사항] 모든 프로그램은 <span class="text-blue-700 underline underline-offset-2">크롬(Chrome)</span>에 최적화되어 있으며, <span class="text-blue-700 underline underline-offset-2">구글 계정에 로그인</span> 후 접속하시기 바랍니다.
             </p>
         </div>
 
-        <!-- 메인 배지 영역 -->
+        <!-- 메인 배지 영역 (총 9개) -->
         <main class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
             <!-- 배지 1: 호봉획정프로그램 -->
             <a href="https://letter0033-star.github.io/pay/" target="_blank" class="badge-card white-card card-1 p-4 gap-4">
@@ -256,18 +256,18 @@
                 </div>
             </a>
 
-            <!-- 배지 8 (신규 추가): 준비중 -->
-            <div class="badge-card white-card p-4 gap-4 opacity-80 cursor-default">
-                <div class="icon-box shadow-sm bg-slate-100 text-slate-400">
-                    <i class="fas fa-hourglass-half text-xl"></i>
+            <!-- 배지 8: 교(원)감 연간 업무 패들렛 (비밀번호 확인 모달 연결) -->
+            <a href="#" onclick="openPasswordModal(event)" class="badge-card white-card card-2 p-4 gap-4">
+                <div class="icon-box shadow-sm">
+                    <i class="fas fa-calendar-alt text-xl"></i>
                 </div>
                 <div class="flex flex-col text-left">
-                    <span class="text-base md:text-lg font-extrabold text-slate-400">준비중</span>
-                    <p class="text-slate-400 text-xs font-medium">기능 추가 예정</p>
+                    <span class="text-base md:text-lg font-extrabold text-slate-800">교(원)감 연간 업무 패들렛</span>
+                    <p class="text-slate-500 text-xs font-medium">신규 교(원)감을 위한 1년간의 업무 미리 보기</p>
                 </div>
-            </div>
+            </a>
 
-            <!-- 배지 9 (신규 추가): 준비중 -->
+            <!-- 배지 9: 준비중 -->
             <div class="badge-card white-card p-4 gap-4 opacity-80 cursor-default">
                 <div class="icon-box shadow-sm bg-slate-100 text-slate-400">
                     <i class="fas fa-hourglass-half text-xl"></i>
@@ -333,5 +333,78 @@
         </div>
     </div>
 
+    <!-- 프리미엄 비밀번호 확인 모달 -->
+    <div id="passwordModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
+            <div class="text-center space-y-4">
+                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600">
+                    <i class="fas fa-lock text-lg"></i>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-lg font-extrabold text-slate-800">비밀번호 확인</h3>
+                    <p class="text-xs md:text-sm text-slate-500 font-semibold leading-relaxed">
+                        비밀번호는 이음톡으로 문의 바랍니다.
+                    </p>
+                </div>
+                <div class="space-y-1.5">
+                    <input type="password" id="passwordInput" placeholder="비밀번호 입력" 
+                           class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-center tracking-wider font-extrabold text-slate-700 bg-slate-50">
+                    <p id="passwordError" class="text-[11px] text-red-500 font-bold hidden">비밀번호가 일치하지 않습니다.</p>
+                </div>
+                <div class="flex gap-2 pt-2">
+                    <button onclick="closePasswordModal()" class="flex-1 py-3 px-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold transition-colors">취소</button>
+                    <button onclick="submitPassword()" class="flex-1 py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-colors shadow-lg shadow-blue-500/20">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 모달 제어용 자바스크립트
+        function openPasswordModal(e) {
+            if (e) e.preventDefault();
+            const modal = document.getElementById('passwordModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            const input = document.getElementById('passwordInput');
+            input.focus();
+        }
+
+        function closePasswordModal() {
+            const modal = document.getElementById('passwordModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.getElementById('passwordInput').value = '';
+            document.getElementById('passwordError').classList.add('hidden');
+        }
+
+        function submitPassword() {
+            const inputVal = document.getElementById('passwordInput').value;
+            if (inputVal === '20250723') {
+                window.open('https://gw1.kr/A0afT', '_blank');
+                closePasswordModal();
+            } else {
+                const error = document.getElementById('passwordError');
+                error.classList.remove('hidden');
+                
+                // 비밀번호 틀렸을 시 흔들림 애니메이션 효과 (border 강조)
+                const inputEl = document.getElementById('passwordInput');
+                inputEl.classList.add('border-red-500', 'bg-red-50');
+                setTimeout(() => {
+                    inputEl.classList.remove('border-red-500', 'bg-red-50');
+                }, 800);
+            }
+        }
+
+        // 엔터키 키업 이벤트 핸들러 등록
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputEl = document.getElementById('passwordInput');
+            if (inputEl) {
+                inputEl.addEventListener('keyup', (e) => {
+                    if (e.key === 'Enter') submitPassword();
+                });
+            }
+        });
+    </script>
 </body>
 </html>
