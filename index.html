@@ -170,14 +170,14 @@
             </a>
         </section>
 
-        <!-- 권장사항 안내 -->
+        <!-- 권장사항 안내 (챗봇 바로 아래 배치) -->
         <div class="text-center">
             <p class="text-slate-600 text-[11px] md:text-sm font-semibold tracking-tight">
                 <i class="fas fa-info-circle text-blue-500 mr-1"></i> [권장사항] 모든 프로그램은 <span class="text-blue-700 underline underline-offset-2">크롬(Chrome)</span>에 최적화되어 있으며, <span class="text-blue-700 underline underline-offset-2">구글 계정에 로그인</span> 후 접속하시기 바랍니다.
             </p>
         </div>
 
-        <!-- 메인 배지 영역 (총 9개) -->
+        <!-- 메인 배지 영역 -->
         <main class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
             <!-- 배지 1: 호봉획정프로그램 -->
             <a href="https://letter0033-star.github.io/pay/" target="_blank" class="badge-card white-card card-1 p-4 gap-4">
@@ -256,8 +256,8 @@
                 </div>
             </a>
 
-            <!-- 배지 8: 교(원)감 연간 업무 패들렛 (비밀번호 확인 모달 연결) -->
-            <a href="#" onclick="openPasswordModal(event)" class="badge-card white-card card-2 p-4 gap-4">
+            <!-- 배지 8: 교(원)감 연간 업무 패들렛 (비밀번호 확인 연동) -->
+            <a href="#" onclick="openPasswordModal(event, 'annual_work')" class="badge-card white-card card-2 p-4 gap-4">
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-calendar-alt text-xl"></i>
                 </div>
@@ -267,16 +267,16 @@
                 </div>
             </a>
 
-            <!-- 배지 9: 준비중 -->
-            <div class="badge-card white-card p-4 gap-4 opacity-80 cursor-default">
-                <div class="icon-box shadow-sm bg-slate-100 text-slate-400">
-                    <i class="fas fa-hourglass-half text-xl"></i>
+            <!-- 배지 9: 관리자 인사말 생성기 (신규 추가) -->
+            <a href="https://letter0033-star.github.io/greeting/" target="_blank" class="badge-card white-card card-3 p-4 gap-4">
+                <div class="icon-box shadow-sm">
+                    <i class="fas fa-pen-fancy text-xl"></i>
                 </div>
                 <div class="flex flex-col text-left">
-                    <span class="text-base md:text-lg font-extrabold text-slate-400">준비중</span>
-                    <p class="text-slate-400 text-xs font-medium">기능 추가 예정</p>
+                    <span class="text-base md:text-lg font-extrabold text-slate-800">관리자 인사말 생성기</span>
+                    <p class="text-slate-500 text-xs font-medium">교장 · 교감 맞춤형 인사말 작성 및 추천</p>
                 </div>
-            </div>
+            </a>
         </main>
 
         <!-- 하단 서브 배지 영역 (총 12개, 2단 배치, 세로 높이 최소화) -->
@@ -342,7 +342,7 @@
                 </div>
                 <div class="space-y-2">
                     <h3 class="text-lg font-extrabold text-slate-800">비밀번호 확인</h3>
-                    <p class="text-xs md:text-sm text-slate-500 font-semibold leading-relaxed">
+                    <p id="passwordDesc" class="text-xs md:text-sm text-slate-500 font-semibold leading-relaxed">
                         비밀번호는 이음톡으로 문의 바랍니다.
                     </p>
                 </div>
@@ -359,35 +359,66 @@
         </div>
     </div>
 
+    <!-- 스크립트 영역 -->
     <script>
-        // 모달 제어용 자바스크립트
-        function openPasswordModal(e) {
+        // 모달 데이터 구성 객체 (더 나은 작은학교 컨설팅은 바로이동 처리로 제외)
+        const MODAL_CONFIGS = {
+            annual_work: {
+                url: 'https://gw1.kr/A0afT',
+                password: '20250723',
+                desc: '비밀번호는 이음톡으로 문의 바랍니다.'
+            }
+        };
+
+        let currentActiveType = '';
+
+        // 모달 활성화 함수
+        function openPasswordModal(e, type) {
             if (e) e.preventDefault();
+            
+            const config = MODAL_CONFIGS[type];
+            if (!config) return;
+
+            currentActiveType = type;
+            
+            // 모달 내 안내문구 동적 설정
+            const descEl = document.getElementById('passwordDesc');
+            descEl.innerText = config.desc;
+
             const modal = document.getElementById('passwordModal');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
+            
             const input = document.getElementById('passwordInput');
+            input.value = '';
+            document.getElementById('passwordError').classList.add('hidden');
             input.focus();
         }
 
+        // 모달 비활성화 함수
         function closePasswordModal() {
             const modal = document.getElementById('passwordModal');
             modal.classList.add('hidden');
             modal.classList.remove('flex');
             document.getElementById('passwordInput').value = '';
             document.getElementById('passwordError').classList.add('hidden');
+            currentActiveType = '';
         }
 
+        // 비밀번호 제출 및 유효성 확인 함수
         function submitPassword() {
+            const config = MODAL_CONFIGS[currentActiveType];
+            if (!config) return;
+
             const inputVal = document.getElementById('passwordInput').value;
-            if (inputVal === '20250723') {
-                window.open('https://gw1.kr/A0afT', '_blank');
+            if (inputVal === config.password) {
+                window.open(config.url, '_blank');
                 closePasswordModal();
             } else {
                 const error = document.getElementById('passwordError');
                 error.classList.remove('hidden');
                 
-                // 비밀번호 틀렸을 시 흔들림 애니메이션 효과 (border 강조)
+                // 틀렸을 경우 흔들림(shake) 피드백 제공을 위한 인풋 하이라이팅 효과
                 const inputEl = document.getElementById('passwordInput');
                 inputEl.classList.add('border-red-500', 'bg-red-50');
                 setTimeout(() => {
@@ -396,7 +427,7 @@
             }
         }
 
-        // 엔터키 키업 이벤트 핸들러 등록
+        // 문서 로드 완료 시 키보드 입력 및 이벤트 리스너 세팅
         document.addEventListener('DOMContentLoaded', () => {
             const inputEl = document.getElementById('passwordInput');
             if (inputEl) {
