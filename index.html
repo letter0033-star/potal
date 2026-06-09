@@ -267,8 +267,8 @@
                 </div>
             </a>
 
-            <!-- 배지 9: 관리자 인사말 생성기 (설명 문구 변경됨) -->
-            <a href="https://letter0033-star.github.io/greeting/" target="_blank" class="badge-card white-card card-3 p-4 gap-4">
+            <!-- 배지 9: 관리자 인사말 생성기 (안내 모달 연동으로 변경) -->
+            <a href="#" onclick="openGreetingInfoModal(event)" class="badge-card white-card card-3 p-4 gap-4">
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-pen-fancy text-xl"></i>
                 </div>
@@ -359,6 +359,28 @@
         </div>
     </div>
 
+    <!-- 인사말 생성기 이용 안내 모달 -->
+    <div id="greetingInfoModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
+            <div class="text-center space-y-4">
+                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-amber-100 text-amber-600">
+                    <i class="fas fa-bullhorn text-lg"></i>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-lg font-extrabold text-slate-800">📢이용 안내</h3>
+                    <p class="text-slate-500 text-xs font-bold leading-tight">(개발자가 드리는 말씀)</p>
+                    <p class="text-xs md:text-sm text-slate-600 font-semibold leading-relaxed text-left bg-slate-50 p-3.5 rounded-xl border border-slate-100 whitespace-pre-line">누구나 쓰실 수 있게 API 키를 열어두었지만, 하루 사용량이 5회 내외로 매우 적습니다. 😢
+
+                    "인사말 생성하기" 버튼을 여러 번 누르시면 API가 금방 차단되어 다른 분들이 쓸 수 없게 됩니다. 꼭 필요할 때 한두 번만 실행 부탁드려요!</p>
+                </div>
+                <div class="flex gap-2 pt-2">
+                    <button onclick="closeGreetingInfoModal()" class="flex-1 py-3 px-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold transition-colors">닫기</button>
+                    <button onclick="goToGreeting()" class="flex-1 py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-colors shadow-lg shadow-blue-500/20">이동</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- 스크립트 영역 -->
     <script>
         // 모달 데이터 구성 객체 (더 나은 작은학교 컨설팅은 바로이동 처리로 제외)
@@ -372,7 +394,7 @@
 
         let currentActiveType = '';
 
-        // 모달 활성화 함수
+        // 비밀번호 모달 활성화 함수
         function openPasswordModal(e, type) {
             if (e) e.preventDefault();
             
@@ -395,7 +417,7 @@
             input.focus();
         }
 
-        // 모달 비활성화 함수
+        // 비밀번호 모달 비활성화 함수
         function closePasswordModal() {
             const modal = document.getElementById('passwordModal');
             modal.classList.add('hidden');
@@ -425,6 +447,27 @@
                     inputEl.classList.remove('border-red-500', 'bg-red-50');
                 }, 800);
             }
+        }
+
+        // 인사말 생성기 안내 모달 열기
+        function openGreetingInfoModal(e) {
+            if (e) e.preventDefault();
+            const modal = document.getElementById('greetingInfoModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        // 인사말 생성기 안내 모달 닫기
+        function closeGreetingInfoModal() {
+            const modal = document.getElementById('greetingInfoModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // 인사말 생성기 사이트로 이동
+        function goToGreeting() {
+            window.open('https://letter0033-star.github.io/greeting/', '_blank');
+            closeGreetingInfoModal();
         }
 
         // 문서 로드 완료 시 키보드 입력 및 이벤트 리스너 세팅
