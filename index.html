@@ -278,14 +278,16 @@
                 </div>
             </a>
 
-            <!-- 배지 10: 스마트 회의록 작성기 (안내 모달 연동으로 변경) -->
+            <!-- 배지 10: 스마트 회의록 작성기 (안내 모달 연동) -->
             <a href="#" onclick="openMinutesInfoModal(event)" class="badge-card white-card card-4 p-4 gap-4">
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-microphone-alt text-xl"></i>
                 </div>
                 <div class="flex flex-col text-left">
                     <span class="text-base md:text-lg font-extrabold text-slate-800">스마트 회의록 작성기</span>
-                    <p class="text-slate-500 text-xs font-medium">공공기록물 서식을 참고한 회의록 자동 작성 지원</p>
+                    <p class="text-slate-500 text-xs font-medium">
+                        <span class="font-bold text-blue-700">공공기록물 관리에 관한 법률</span> 기반 회의록 작성 지원
+                    </p>
                 </div>
             </a>
 
@@ -414,18 +416,35 @@
         </div>
     </div>
 
-    <!-- 스마트 회의록 작성기 이용 안내 모달 -->
+    <!-- 스마트 회의록 작성기 이용 안내 모달 (스크롤 없도록 레이아웃 가로 확장 및 마진 최적화) -->
     <div id="minutesInfoModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
-        <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
+        <div class="bg-white rounded-2xl max-w-lg md:max-w-2xl lg:max-w-3xl w-full p-6 md:p-8 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
             <div class="text-center space-y-4">
                 <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-indigo-100 text-indigo-600">
-                    <i class="fas fa-bullhorn text-lg"></i>
+                    <i class="fas fa-scroll text-lg"></i>
                 </div>
-                <div class="space-y-2">
-                    <h3 class="text-lg font-extrabold text-slate-800">📢이용 안내</h3>
-                    <p class="text-slate-500 text-xs font-bold leading-tight">(개발자가 드리는 말씀)</p>
-                    <p class="text-xs md:text-sm text-slate-600 font-semibold leading-relaxed text-left bg-slate-50 p-3.5 rounded-xl border border-slate-100 whitespace-pre-line">
-                        누구나 쓰실 수 있게 API 키를 열어두었지만, 하루에 5회 이내로 사용 부탁드려요! 대략 월에 총 1200회 정도이며 소진될 경우 실행이 되지 않을 수 있습니다.
+                <div class="space-y-1">
+                    <h3 class="text-xl md:text-2xl font-black text-slate-800">"왜 회의록을 남겨야 할까요?"</h3>
+                    <p class="text-slate-400 text-xs font-bold leading-tight">(회의록 작성의 목적과 법적 의의)</p>
+                </div>
+                <!-- 가독성이 우수한 텍스트 영역: 가로 폭을 충분히 확대하여 스크롤 없이 한 눈에 들어오도록 설계 -->
+                <div class="text-left text-xs md:text-sm text-slate-600 space-y-3.5 leading-relaxed bg-slate-50 p-5 md:p-6 rounded-xl border border-slate-100 max-h-[60vh] md:max-h-none overflow-y-auto md:overflow-visible">
+                    <p>
+                        학교의 중요한 결정은 단순히 결과를 기록하는 것을 넘어, 
+                        <span class="text-blue-600 font-extrabold">적법한 절차를 거쳐 합리적으로 논의·의결되었음을 증명하는 기록</span>으로 남겨질 필요가 있습니다.
+                    </p>
+                    <p>
+                        최근 <span class="text-red-500 font-extrabold">정보공개 청구, 국민신문고 민원, 행정심판 및 소송</span> 등 학교 운영의 책임성과 투명성을 요구하는 사례가 증가하고 있습니다. 
+                        이러한 상황에서 회의록은 학교의 의사결정 과정이 
+                        <span class="text-slate-900 font-extrabold">공정하고 정당하게 이루어졌음을 보여주는 중요한 법적·행정적 증빙 자료</span>가 됩니다.
+                    </p>
+                    <p>
+                        본 회의록 작성기는 <span class="text-indigo-600 font-extrabold">「공공기록물 관리에 관한 법률」</span>, <span class="text-indigo-600 font-extrabold">같은 법 시행령 및 국가기록원 기록관리 표준</span>을 바탕으로 회의의 목적, 참석자, 논의 과정, 결정 사항 및 후속 조치 등을 체계적으로 기록하여, 
+                        학교의 <span class="text-blue-600 font-extrabold">절차적 정당성과 기록의 신뢰성을 확보</span>할 수 있도록 지원합니다.
+                    </p>
+                    <!-- 수정된 슬로건 강조 문구 (글자 크기를 줄이고 글자 굵기를 진하게로 변경) -->
+                    <p class="pt-4 mt-2 border-t border-slate-200 font-bold text-red-600 text-center text-xs md:text-sm leading-snug">
+                        "법적 기준에 부합하는 회의록은 단순한 문서가 아니라, 학교를 보호하는 가장 강력한 기록입니다."
                     </p>
                 </div>
                 <div class="flex gap-2 pt-2">
