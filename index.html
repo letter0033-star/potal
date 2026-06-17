@@ -394,7 +394,7 @@
         </div>
     </div>
 
-    <!-- 인사말 생성기 이용 안내 모달 (레이아웃 너비를 편안한 구조로 조정 및 내용 업데이트) -->
+    <!-- 인사말 생성기 이용 안내 모달 -->
     <div id="greetingInfoModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
         <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
             <div class="text-center space-y-4">
@@ -452,12 +452,13 @@
                         학교의 <span class="text-blue-600 font-extrabold">절차적 정당성과 기록의 신뢰성을 확보</span>할 수 있도록 지원합니다.
                     </p>
                     <!-- 수정된 슬로건 강조 문구 -->
-                    <p class="pt-4 mt-2 border-t border-slate-200 font-bold text-red-600 text-center text-xs md:text-sm leading-snug">
+                    <p class="pt-4 mt-2 border-t border-slate-200 font-bold text-red-600 text-center text-xs md:text-base lg:text-lg leading-snug">
                         "법적 기준에 부합하는 회의록은 단순한 문서가 아니라, 학교를 보호하는 가장 강력한 기록입니다."
                     </p>
                 </div>
                 <div class="flex gap-2 pt-2">
                     <button onclick="closeMinutesInfoModal()" class="flex-1 py-3 px-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold transition-colors">닫기</button>
+                    <!-- 이동 버튼 누르면 점검중 모달을 노출하는 goToMinutes() 호출 -->
                     <button onclick="goToMinutes()" class="flex-1 py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-colors shadow-lg shadow-blue-500/20">이동</button>
                 </div>
                 <!-- 이동 닫기 버튼 하단 안내 문구 추가 -->
@@ -468,45 +469,22 @@
         </div>
     </div>
 
-    <!-- 스마트 회의록 작성기 이용 안내 모달 -->
-    <div id="minutesInfoModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
-        <div class="bg-white rounded-2xl max-w-lg md:max-w-2xl lg:max-w-3xl w-full p-6 md:p-8 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
+    <!-- 점검 중 커스텀 안내 모달 -->
+    <div id="alertModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
             <div class="text-center space-y-4">
-                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-indigo-100 text-indigo-600">
-                    <i class="fas fa-scroll text-lg"></i>
+                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-amber-100 text-amber-600">
+                    <i class="fas fa-exclamation-triangle text-lg"></i>
                 </div>
-                <div class="space-y-1">
-                    <h3 class="text-xl md:text-2xl font-black text-slate-800">"왜 회의록을 남겨야 할까요?"</h3>
-                    <p class="text-slate-400 text-xs font-bold leading-tight">(회의록 작성의 목적과 법적 의의)</p>
-                </div>
-                <!-- 가독성이 우수한 텍스트 영역: 가로 폭을 충분히 확대하여 스크롤 없이 한 눈에 들어오도록 설계 -->
-                <div class="text-left text-xs md:text-sm text-slate-600 space-y-3.5 leading-relaxed bg-slate-50 p-5 md:p-6 rounded-xl border border-slate-100 max-h-[60vh] md:max-h-none overflow-y-auto md:overflow-visible">
-                    <p>
-                        학교의 중요한 결정은 단순히 결과를 기록하는 것을 넘어, 
-                        <span class="text-blue-600 font-extrabold">적법한 절차를 거쳐 합리적으로 논의·의결되었음을 증명하는 기록</span>으로 남겨질 필요가 있습니다.
-                    </p>
-                    <p>
-                        최근 <span class="text-red-500 font-extrabold">정보공개 청구, 국민신문고 민원, 행정심판 및 소송</span> 등 학교 운영의 책임성과 투명성을 요구하는 사례가 증가하고 있습니다. 
-                        이러한 상황에서 회의록은 학교의 의사결정 과정이 
-                        <span class="text-slate-900 font-extrabold">공정하고 정당하게 이루어졌음을 보여주는 중요한 법적·행정적 증빙 자료</span>가 됩니다.
-                    </p>
-                    <p>
-                        본 회의록 작성기는 <span class="text-indigo-600 font-extrabold">「공공기록물 관리에 관한 법률」</span>, <span class="text-indigo-600 font-extrabold">같은 법 시행령 및 국가기록원 기록관리 표준</span>을 바탕으로 회의의 목적, 참석자, 논의 과정, 결정 사항 및 후속 조치 등을 체계적으로 기록하여, 
-                        학교의 <span class="text-blue-600 font-extrabold">절차적 정당성과 기록의 신뢰성을 확보</span>할 수 있도록 지원합니다.
-                    </p>
-                    <!-- 수정된 슬로건 강조 문구 -->
-                    <p class="pt-4 mt-2 border-t border-slate-200 font-bold text-red-600 text-center text-xs md:text-sm leading-snug">
-                        "법적 기준에 부합하는 회의록은 단순한 문서가 아니라, 학교를 보호하는 가장 강력한 기록입니다."
+                <div class="space-y-2">
+                    <h3 class="text-lg font-extrabold text-slate-800">시스템 점검 안내</h3>
+                    <p class="text-xs md:text-sm text-slate-500 font-bold leading-relaxed">
+                        현재 스마트 회의록 시스템 점검 중입니다.<br>이용에 불편을 드려 죄송합니다.
                     </p>
                 </div>
-                <div class="flex gap-2 pt-2">
-                    <button onclick="closeMinutesInfoModal()" class="flex-1 py-3 px-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold transition-colors">닫기</button>
-                    <button onclick="goToMinutes()" class="flex-1 py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-colors shadow-lg shadow-blue-500/20">이동</button>
+                <div class="pt-2">
+                    <button onclick="closeAlertModal()" class="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-colors shadow-lg shadow-blue-500/20">확인</button>
                 </div>
-                <!-- 이동 닫기 버튼 하단 안내 문구 추가 -->
-                <p class="text-[10px] md:text-xs text-slate-400 font-medium tracking-tight mt-1 text-center">
-                    API 키 적용(유료), 하루에 5회 이내 사용(월 총 1200회 정도 사용 가능)
-                </p>
             </div>
         </div>
     </div>
@@ -615,10 +593,24 @@
             modal.classList.remove('flex');
         }
 
-        // 스마트 회의록 작성기 사이트로 이동
+        // 스마트 회의록 작성기 사이트 대신 점검중 알림 띄우기
         function goToMinutes() {
-            window.open('https://letter0033-star.github.io/talkboard/', '_blank');
-            closeMinutesInfoModal();
+            closeMinutesInfoModal(); // 기존 안내 모달 닫기
+            showAlertModal();        // 점검 중 경고창 열기
+        }
+
+        // 점검중 알림 모달 열기
+        function showAlertModal() {
+            const modal = document.getElementById('alertModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        // 점검중 알림 모달 닫기
+        function closeAlertModal() {
+            const modal = document.getElementById('alertModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
         }
 
         // 문서 로드 완료 시 키보드 입력 및 이벤트 리스너 세팅
@@ -630,6 +622,14 @@
                 });
             }
         });
+
+        // 모달 외부 영역 클릭 시 닫기 핸들러 추가
+        window.onclick = function(event) {
+            const alertModal = document.getElementById('alertModal');
+            if (event.target === alertModal) {
+                closeAlertModal();
+            }
+        }
     </script>
 </body>
 </html>
