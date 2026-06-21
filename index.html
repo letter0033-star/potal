@@ -141,7 +141,7 @@
     <div class="max-w-7xl mx-auto w-full space-y-4 md:space-y-6">
         <!-- 제목 영역 -->
         <header class="text-center space-y-1">
-            <h2 class="text-blue-600 font-bold text-sm md:text-lg tracking-tight">강원특별자치도교육청 초등학교 교감을 위한</h2>
+            <h2 class="text-blue-600 font-bold text-sm md:text-lg tracking-tight">유·초 교(원)감을 위한</h2>
             <h1 class="header-title font-black text-2xl md:text-4xl lg:text-5xl tracking-tighter leading-tight">
                 교(원)감 인사업무 포털
             </h1>
@@ -223,14 +223,14 @@
                 </div>
             </a>
 
-            <!-- 배지 5: 시간제 인건비 산정 -->
+            <!-- 배지 5: 시간제교사(유치원) 인건비 산정 -->
             <a href="https://letter0033-star.github.io/timepay/" target="_blank" class="badge-card white-card card-5 p-4 gap-4">
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-hand-holding-usd text-xl"></i>
                 </div>
                 <div class="flex flex-col text-left">
-                    <span class="text-base md:text-lg font-extrabold text-slate-800">시간제 인건비 산정</span>
-                    <p class="text-slate-500 text-xs font-medium">인건비 및 급여 계산</p>
+                    <span class="text-base md:text-lg font-extrabold text-slate-800 leading-tight">시간제교사(유치원) 인건비 산정</span>
+                    <p class="text-slate-500 text-xs font-medium">유치원 시간제교사 인건비 및 급여 계산</p>
                 </div>
             </a>
 
@@ -256,14 +256,14 @@
                 </div>
             </a>
 
-            <!-- 배지 8: 교(원)감 연간 업무 패들렛 (비밀번호 확인 연동) -->
+            <!-- 배지 8: 교감 연간 업무 패들렛 (비밀번호 확인 연동) -->
             <a href="#" onclick="openPasswordModal(event, 'annual_work')" class="badge-card white-card card-2 p-4 gap-4">
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-calendar-alt text-xl"></i>
                 </div>
                 <div class="flex flex-col text-left">
-                    <span class="text-base md:text-lg font-extrabold text-slate-800">교(원)감 연간 업무 패들렛</span>
-                    <p class="text-slate-500 text-xs font-medium">신규 교(원)감을 위한 1년간의 업무 미리 보기</p>
+                    <span class="text-base md:text-lg font-extrabold text-slate-800">초등 교감 연간 업무 패들렛</span>
+                    <p class="text-slate-500 text-xs font-medium">신규 교감을 위한 1년간의 업무 미리 보기</p>
                 </div>
             </a>
 
@@ -278,7 +278,7 @@
                 </div>
             </a>
 
-            <!-- 배지 10: 스마트 회의록 작성기 (안내 모달 연동 - 일관성 있는 설명 텍스트 크기 text-xs 적용) -->
+            <!-- 배지 10: 스마트 회의록 작성기 (안내 모달 연동) -->
             <a href="#" onclick="openMinutesInfoModal(event)" class="badge-card white-card card-4 p-4 gap-4">
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-microphone-alt text-xl"></i>
@@ -466,8 +466,7 @@
             </div>
         </div>
     </div>
-
-    <!-- 학급 배정 및 업무분장 이용 안내 모달 (최소화 적용 및 "테스트 중" 텍스트 크기 확대 반영) -->
+    <!-- 학급 배정 및 업무분장 이용 안내 모달 (최소화 적용 및 "사용시 주의 사항" 텍스트와 문구 변경 완벽히 반영) -->
     <div id="matchingInfoModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
         <div class="bg-white rounded-2xl max-w-sm w-full p-5 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
             <div class="text-center space-y-3">
@@ -475,20 +474,18 @@
                     <i class="fas fa-users-cog text-base"></i>
                 </div>
                 <div class="space-y-0.5">
-                    <h3 class="text-lg font-extrabold text-slate-800">📢 이용 안내</h3>
+                    <!-- 타이틀 변경: 이용 안내 -> 사용시 주의 사항 -->
+                    <h3 class="text-lg font-extrabold text-slate-800">📢 사용시 주의 사항</h3>
                     <p class="text-slate-400 text-[11px] font-bold leading-tight">(학급 배정 및 업무분장)</p>
                     <!-- "테스트 중" 글씨 크기를 기존 text-sm에서 text-xl md:text-2xl로 약 100% 확대 조정 -->
                     <p class="text-red-500 font-black text-xl md:text-2xl tracking-wide mt-1 animate-pulse">⚠️ 테스트 중</p>
                 </div>
+                <!-- 텍스트 내용 변경 및 의견 수렴 연락처 추가 -->
                 <div class="text-left text-xs text-slate-600 space-y-2 bg-slate-50 p-3.5 rounded-xl border border-slate-100 font-semibold leading-relaxed">
-                    <p>• 구성원의 희망과 업무 균형을 고려한 최적의 매칭을 제안합니다.</p>
-                    <p>• <span class="text-emerald-600 font-extrabold">최종 배정은 학교 협의와 관리자의 판단</span>에 따릅니다.</p>
-                    <p class="pt-2 border-t border-slate-200 text-center font-bold text-indigo-600 text-[11px]">사용 희망 시 이음톡으로 문의 주세요.</p>
-                </div>
-                <div class="space-y-1">
-                    <input type="password" id="matchingPasswordInput" placeholder="비밀번호 입력" 
-                           class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 text-center tracking-wider font-extrabold text-slate-700 bg-slate-50 text-sm">
-                    <p id="matchingPasswordError" class="text-[10px] text-red-500 font-bold hidden">비밀번호가 일치하지 않습니다.</p>
+                    <p>• 본 프로그램의 배정 결과는 참고용입니다.</p>
+                    <p>• 학급담임 및 업무분장의 최종 결정 권한은 학교장에게 있습니다.</p>
+                    <p class="text-blue-600">• 테스트 및 의견수렴 기간: 2026년 6월~10월</p>
+                    <p class="text-slate-500 font-medium">• 의견은 이음톡(모산초 김영삼) 또는 <span class="text-blue-600">letter0033@gmail.com</span></p>
                 </div>
                 <div class="flex gap-2 pt-1">
                     <button onclick="closeMatchingInfoModal()" class="flex-1 py-2.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold transition-colors text-sm">닫기</button>
@@ -497,7 +494,6 @@
             </div>
         </div>
     </div>
-
     <!-- 스크립트 영역 -->
     <script>
         // 모달 데이터 구성 객체
@@ -613,16 +609,6 @@
             const modal = document.getElementById('matchingInfoModal');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
-            
-            const input = document.getElementById('matchingPasswordInput');
-            if (input) {
-                input.value = '';
-                input.focus();
-            }
-            const error = document.getElementById('matchingPasswordError');
-            if (error) {
-                error.classList.add('hidden');
-            }
         }
 
         // 학급 배정 및 업무분장 안내 모달 닫기
@@ -630,35 +616,12 @@
             const modal = document.getElementById('matchingInfoModal');
             modal.classList.add('hidden');
             modal.classList.remove('flex');
-            
-            const input = document.getElementById('matchingPasswordInput');
-            if (input) {
-                input.value = '';
-                input.classList.remove('border-red-500', 'bg-red-50');
-            }
-            const error = document.getElementById('matchingPasswordError');
-            if (error) {
-                error.classList.add('hidden');
-            }
         }
 
-        // 학급 배정 및 업무분장 프로그램 사이트로 이동
+        // 학급 배정 및 업무분장 프로그램 사이트로 즉시 이동 (오류 수정 지점)
         function goToMatching() {
-            const passwordInput = document.getElementById('matchingPasswordInput');
-            const passwordError = document.getElementById('matchingPasswordError');
-            
-            if (passwordInput && passwordInput.value === '1234567890') {
-                window.open('https://letter0033-star.github.io/matching/', '_blank');
-                closeMatchingInfoModal();
-            } else if (passwordInput) {
-                if (passwordError) {
-                    passwordError.classList.remove('hidden');
-                }
-                passwordInput.classList.add('border-red-500', 'bg-red-50');
-                setTimeout(() => {
-                    passwordInput.classList.remove('border-red-500', 'bg-red-50');
-                }, 800);
-            }
+            window.open('https://letter0033-star.github.io/matching/', '_blank');
+            closeMatchingInfoModal();
         }
 
         // 문서 로드 완료 시 키보드 입력 및 이벤트 리스너 세팅
@@ -667,13 +630,6 @@
             if (inputEl) {
                 inputEl.addEventListener('keyup', (e) => {
                     if (e.key === 'Enter') submitPassword();
-                });
-            }
-
-            const matchingInputEl = document.getElementById('matchingPasswordInput');
-            if (matchingInputEl) {
-                matchingInputEl.addEventListener('keyup', (e) => {
-                    if (e.key === 'Enter') goToMatching();
                 });
             }
         });
