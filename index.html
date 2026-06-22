@@ -223,14 +223,14 @@
                 </div>
             </a>
 
-            <!-- 배지 5: 시간제교사(유치원) 인건비 산정 -->
+            <!-- 배지 5: 시간제 인건비 산정 -->
             <a href="https://letter0033-star.github.io/timepay/" target="_blank" class="badge-card white-card card-5 p-4 gap-4">
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-hand-holding-usd text-xl"></i>
                 </div>
                 <div class="flex flex-col text-left">
-                    <span class="text-base md:text-lg font-extrabold text-slate-800 leading-tight">시간제교사(유치원) 인건비 산정</span>
-                    <p class="text-slate-500 text-xs font-medium">유치원 시간제교사 인건비 및 급여 계산</p>
+                    <span class="text-base md:text-lg font-extrabold text-slate-800">시간제 인건비 산정</span>
+                    <p class="text-slate-500 text-xs font-medium">인건비 및 급여 계산</p>
                 </div>
             </a>
 
@@ -256,7 +256,7 @@
                 </div>
             </a>
 
-            <!-- 배지 8: 교감 연간 업무 패들렛 (비밀번호 확인 연동) -->
+            <!-- 배지 8: 교(원)감 연간 업무 패들렛 (비밀번호 확인 연동) -->
             <a href="#" onclick="openPasswordModal(event, 'annual_work')" class="badge-card white-card card-2 p-4 gap-4">
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-calendar-alt text-xl"></i>
@@ -412,6 +412,11 @@
                     - 행사의 특징, 대상, 강조하고 싶은 내용을 자세히 입력해 보세요. 더욱 자연스럽고 품격 있는 인사말을 만들어 드립니다.
                     
                     - 원하는 내용이 많을수록 더 좋은 결과를 얻을 수 있습니다. 핵심 키워드와 포함할 내용을 구체적으로 작성해 주세요.
+                    
+                    <!-- API 보안 및 데이터 학습 제외 안내문 추가 -->
+                    <p class="pt-3 mt-2 border-t border-dashed border-slate-200 text-slate-500 text-[10px] md:text-xs leading-relaxed">
+                        * 본 프로그램은 Gemini의 공식 API를 통해 통신합니다. 입력하신 기관정보 데이터는 AI 모델의 학습에 활용되지 않으며, 전송 즉시 암호화 처리되므로 안심하고 사용하셔도 됩니다.
+                    </p>
                 </div>
                 <div class="flex gap-2 pt-1">
                     <button onclick="closeGreetingInfoModal()" class="flex-1 py-3 px-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold transition-colors">닫기</button>
@@ -435,7 +440,6 @@
                     <h3 class="text-xl md:text-2xl font-black text-slate-800">"왜 회의록을 남겨야 할까요?"</h3>
                     <p class="text-slate-400 text-xs font-bold leading-tight">(회의록 작성의 목적과 법적 의의)</p>
                 </div>
-                <!-- 가독성이 우수한 텍스트 영역: 가로 폭을 충분히 확대하여 스크롤 없이 한 눈에 들어오도록 설계 -->
                 <div class="text-left text-xs md:text-sm text-slate-600 space-y-3.5 leading-relaxed bg-slate-50 p-5 md:p-6 rounded-xl border border-slate-100 max-h-[60vh] md:max-h-none overflow-y-auto md:overflow-visible">
                     <p>
                         학교의 중요한 결정은 단순히 결과를 기록하는 것을 넘어, 
@@ -450,23 +454,26 @@
                         본 회의록 작성기는 <span class="text-indigo-600 font-extrabold">「공공기록물 관리에 관한 법률」</span>, <span class="text-indigo-600 font-extrabold">같은 법 시행령 및 국가기록원 기록관리 표준</span>을 바탕으로 회의의 목적, 참석자, 논의 과정, 결정 사항 및 후속 조치 등을 체계적으로 기록하여, 
                         학교의 <span class="text-blue-600 font-extrabold">절차적 정당성과 기록의 신뢰성을 확보</span>할 수 있도록 지원합니다.
                     </p>
-                    <!-- 수정된 슬로건 강조 문구 -->
                     <p class="pt-4 mt-2 border-t border-slate-200 font-bold text-red-600 text-center text-xs md:text-sm leading-snug">
                         "법적 기준에 부합하는 회의록은 단순한 문서가 아니라, 학교를 보호하는 가장 강력한 기록입니다."
+                    </p>
+                    <!-- API 보안 및 데이터 학습 제외 안내문 추가 -->
+                    <p class="pt-3 mt-2 border-t border-dashed border-slate-200 text-slate-500 text-[10px] md:text-xs leading-relaxed">
+                        * 본 프로그램은 Gemini의 공식 API를 통해 통신합니다. 입력하신 회의록 데이터는 AI 모델의 학습에 활용되지 않으며, 전송 즉시 암호화 처리되므로 안심하고 사용하셔도 됩니다. (단, 민감한 학생 실명은 가급적 OOO 등으로 치환 후 입력을 권장합니다.)
                     </p>
                 </div>
                 <div class="flex gap-2 pt-2">
                     <button onclick="closeMinutesInfoModal()" class="flex-1 py-3 px-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold transition-colors">닫기</button>
                     <button onclick="goToMinutes()" class="flex-1 py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-colors shadow-lg shadow-blue-500/20">이동</button>
                 </div>
-                <!-- 이동 닫기 버튼 하단 안내 문구 추가 -->
                 <p class="text-[10px] md:text-xs text-slate-400 font-medium tracking-tight mt-1 text-center">
                     API 키 적용(유료: 개발자가 부담함), 하루에 5회 이내 사용(월 총 1200회 정도 사용 가능)
                 </p>
             </div>
         </div>
     </div>
-    <!-- 학급 배정 및 업무분장 이용 안내 모달 (최소화 적용 및 "사용시 주의 사항" 텍스트와 문구 변경 완벽히 반영) -->
+
+    <!-- 학급 배정 및 업무분장 이용 안내 모달 -->
     <div id="matchingInfoModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
         <div class="bg-white rounded-2xl max-w-sm w-full p-5 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
             <div class="text-center space-y-3">
@@ -474,18 +481,19 @@
                     <i class="fas fa-users-cog text-base"></i>
                 </div>
                 <div class="space-y-0.5">
-                    <!-- 타이틀 변경: 이용 안내 -> 사용시 주의 사항 -->
                     <h3 class="text-lg font-extrabold text-slate-800">📢 사용시 주의 사항</h3>
                     <p class="text-slate-400 text-[11px] font-bold leading-tight">(학급 배정 및 업무분장)</p>
-                    <!-- "테스트 중" 글씨 크기를 기존 text-sm에서 text-xl md:text-2xl로 약 100% 확대 조정 -->
                     <p class="text-red-500 font-black text-xl md:text-2xl tracking-wide mt-1 animate-pulse">⚠️ 테스트 중</p>
                 </div>
-                <!-- 텍스트 내용 변경 및 의견 수렴 연락처 추가 -->
                 <div class="text-left text-xs text-slate-600 space-y-2 bg-slate-50 p-3.5 rounded-xl border border-slate-100 font-semibold leading-relaxed">
                     <p>• 본 프로그램의 배정 결과는 참고용입니다.</p>
                     <p>• 학급담임 및 업무분장의 최종 결정 권한은 학교장에게 있습니다.</p>
                     <p class="text-blue-600">• 테스트 및 의견수렴 기간: 2026년 6월~10월</p>
                     <p class="text-slate-500 font-medium">• 의견은 이음톡(모산초 김영삼) 또는 <span class="text-blue-600">letter0033@gmail.com</span></p>
+                    <!-- 완전 로컬 데이터 안전 안내 추가 -->
+                    <p class="pt-2 mt-2 border-t border-dashed border-slate-200 text-slate-500 text-[9px] md:text-[10px] leading-relaxed font-medium">
+                        * 본 프로그램은 입력하신 교사명 데이터를 외부 서버로 전송하거나 수집하지 않으며, 오직 교감선생님의 브라우저(PC) 내에서만 안전하게 처리됩니다. (인터넷 연결 없이도 작동하는 완전 폐쇄형 프로그램입니다.) 다만 공용PC에서 사용하는 경우에는 사용 후 반드시 대장초기화를 하시기 바랍니다.
+                    </p>
                 </div>
                 <div class="flex gap-2 pt-1">
                     <button onclick="closeMatchingInfoModal()" class="flex-1 py-2.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold transition-colors text-sm">닫기</button>
@@ -494,9 +502,9 @@
             </div>
         </div>
     </div>
+
     <!-- 스크립트 영역 -->
     <script>
-        // 모달 데이터 구성 객체
         const MODAL_CONFIGS = {
             annual_work: {
                 url: 'https://gw1.kr/A0afT',
@@ -507,7 +515,6 @@
 
         let currentActiveType = '';
 
-        // 비밀번호 모달 활성화 함수
         function openPasswordModal(e, type) {
             if (e) e.preventDefault();
             
@@ -516,7 +523,6 @@
 
             currentActiveType = type;
             
-            // 모달 내 안내문구 동적 설정
             const descEl = document.getElementById('passwordDesc');
             descEl.innerText = config.desc;
 
@@ -530,7 +536,6 @@
             input.focus();
         }
 
-        // 비밀번호 모달 비활성화 함수
         function closePasswordModal() {
             const modal = document.getElementById('passwordModal');
             modal.classList.add('hidden');
@@ -540,7 +545,6 @@
             currentActiveType = '';
         }
 
-        // 비밀번호 제출 및 유효성 확인 함수
         function submitPassword() {
             const config = MODAL_CONFIGS[currentActiveType];
             if (!config) return;
@@ -561,7 +565,6 @@
             }
         }
 
-        // 인사말 생성기 안내 모달 열기
         function openGreetingInfoModal(e) {
             if (e) e.preventDefault();
             const modal = document.getElementById('greetingInfoModal');
@@ -569,20 +572,17 @@
             modal.classList.add('flex');
         }
 
-        // 인사말 생성기 안내 모달 닫기
         function closeGreetingInfoModal() {
             const modal = document.getElementById('greetingInfoModal');
             modal.classList.add('hidden');
             modal.classList.remove('flex');
         }
 
-        // 인사말 생성기 사이트로 이동
         function goToGreeting() {
             window.open('https://letter0033-star.github.io/greeting/', '_blank');
             closeGreetingInfoModal();
         }
 
-        // 스마트 회의록 작성기 안내 모달 열기
         function openMinutesInfoModal(e) {
             if (e) e.preventDefault();
             const modal = document.getElementById('minutesInfoModal');
@@ -590,20 +590,17 @@
             modal.classList.add('flex');
         }
 
-        // 스마트 회의록 작성기 안내 모달 닫기
         function closeMinutesInfoModal() {
             const modal = document.getElementById('minutesInfoModal');
             modal.classList.add('hidden');
             modal.classList.remove('flex');
         }
 
-        // 스마트 회의록 작성기 사이트로 이동
         function goToMinutes() {
             window.open('https://letter0033-star.github.io/talkboard/', '_blank');
             closeMinutesInfoModal();
         }
 
-        // 학급 배정 및 업무분장 안내 모달 열기
         function openMatchingInfoModal(e) {
             if (e) e.preventDefault();
             const modal = document.getElementById('matchingInfoModal');
@@ -611,20 +608,17 @@
             modal.classList.add('flex');
         }
 
-        // 학급 배정 및 업무분장 안내 모달 닫기
         function closeMatchingInfoModal() {
             const modal = document.getElementById('matchingInfoModal');
             modal.classList.add('hidden');
             modal.classList.remove('flex');
         }
 
-        // 학급 배정 및 업무분장 프로그램 사이트로 즉시 이동 (오류 수정 지점)
         function goToMatching() {
             window.open('https://letter0033-star.github.io/matching/', '_blank');
             closeMatchingInfoModal();
         }
 
-        // 문서 로드 완료 시 키보드 입력 및 이벤트 리스너 세팅
         document.addEventListener('DOMContentLoaded', () => {
             const inputEl = document.getElementById('passwordInput');
             if (inputEl) {
