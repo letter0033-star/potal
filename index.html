@@ -252,7 +252,7 @@
                 </div>
                 <div class="flex flex-col text-left">
                     <span class="text-base md:text-lg font-extrabold text-slate-800">학교규칙 제 · 개정 패들렛</span>
-                    <p class="text-slate-500 text-xs font-medium">2026년 학교규칙 및 학교생활규정 제개정 도움 자료</p>
+                    <p class="text-slate-500 text-xs font-medium">2026년 school 규칙 제개정 도움 자료</p>
                 </div>
             </a>
 
@@ -278,20 +278,20 @@
                 </div>
             </a>
 
-            <!-- 배지 10: 스마트 회의록 작성기 (안내 모달 연동) -->
+            <!-- 배지 10: 스마트 회의록 작성기(음성파일 지원) (명칭 업데이트 완료) -->
             <a href="#" onclick="openMinutesInfoModal(event)" class="badge-card white-card card-4 p-4 gap-4">
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-microphone-alt text-xl"></i>
                 </div>
                 <div class="flex flex-col text-left">
-                    <span class="text-base md:text-lg font-extrabold text-slate-800">스마트 회의록 작성기</span>
+                    <span class="text-base md:text-lg font-extrabold text-slate-800">스마트 회의록 작성기<span class="text-xs md:text-sm font-bold text-slate-500 ml-1">(음성파일 지원)</span></span>
                     <p class="text-slate-500 text-xs font-medium">
                         <span class="font-bold text-blue-700">공공기록물 관리에 관한 법률</span> 기반 회의록 작성 지원
                     </p>
                 </div>
             </a>
 
-            <!-- 배지 11: 학급 배정 및 업무분장 (안내 모달 연동) -->
+            <!-- 배지 11: 학급 배정 및 업무분장 -->
             <a href="#" onclick="openMatchingInfoModal(event)" class="badge-card white-card card-5 p-4 gap-4">
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-users-cog text-xl"></i>
@@ -302,7 +302,7 @@
                 </div>
             </a>
 
-            <!-- 배지 12: 오늘의 교육뉴스 보고드립니다 (준비중에서 전면 개편) -->
+            <!-- 배지 12: 오늘의 교육뉴스 보고드립니다 -->
             <a href="https://letter0033-star.github.io/EduBrief/" target="_blank" class="badge-card white-card card-6 p-4 gap-4">
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-newspaper text-xl"></i>
@@ -368,7 +368,7 @@
         </div>
     </div>
 
-    <!-- 프리미엄 비밀번호 확인 모달 -->
+    <!-- 프리미엄 비밀번호 확인 모달 (연간 업무 패들렛 용) -->
     <div id="passwordModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
         <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
             <div class="text-center space-y-4">
@@ -413,7 +413,6 @@
                     
                     - 원하는 내용이 많을수록 더 좋은 결과를 얻을 수 있습니다. 핵심 키워드와 포함할 내용을 구체적으로 작성해 주세요.
                     
-                    <!-- API 보안 및 데이터 학습 제외 안내문 -->
                     <p class="pt-3 mt-2 border-t border-dashed border-slate-200 text-slate-500 text-[10px] md:text-xs leading-relaxed">
                         * 본 프로그램은 Gemini의 공식 API를 통해 통신합니다. 입력하신 기관정보 데이터는 AI 모델의 학습에 활용되지 않으며, 전송 즉시 암호화 처리되므로 안심하고 사용하셔도 됩니다.
                     </p>
@@ -457,7 +456,6 @@
                     <p class="pt-4 mt-2 border-t border-slate-200 font-bold text-red-600 text-center text-xs md:text-sm leading-snug">
                         "법적 기준에 부합하는 회의록은 단순한 문서가 아니라, 학교를 보호하는 가장 강력한 기록입니다."
                     </p>
-                    <!-- API 보안 및 데이터 학습 제외 안내문 -->
                     <p class="pt-3 mt-2 border-t border-dashed border-slate-200 text-slate-500 text-[10px] md:text-xs leading-relaxed">
                         * 본 프로그램은 Gemini의 공식 API를 통해 통신합니다. 입력하신 회의록 데이터는 AI 모델의 학습에 활용되지 않으며, 전송 즉시 암호화 처리되므로 안심하고 사용하셔도 됩니다. (단, 민감한 학생 실명은 가급적 OOO 등으로 치환 후 입력을 권장합니다.)
                     </p>
@@ -473,7 +471,7 @@
         </div>
     </div>
 
-    <!-- 학급 배정 및 업무분장 이용 안내 모달 (비밀번호 없는 즉시 이동 방식) -->
+    <!-- 학급 배정 및 업무분장 이용 안내 모달 -->
     <div id="matchingInfoModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
         <div class="bg-white rounded-2xl max-w-sm w-full p-5 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
             <div class="text-center space-y-3">
@@ -488,9 +486,8 @@
                 <div class="text-left text-xs text-slate-600 space-y-2 bg-slate-50 p-3.5 rounded-xl border border-slate-100 font-semibold leading-relaxed">
                     <p>• 본 프로그램의 배정 결과는 참고용입니다.</p>
                     <p>• 학급담임 및 업무분장의 최종 결정 권한은 학교장에게 있습니다.</p>
-                    <p class="text-blue-600">• 테스트 및 의견수렴 기간: 2026년 6월~10월</p>
+                    <p class="text-blue-600 font-bold">• 테스트 및 의견수렴 기간: 2026년 6월~10월</p>
                     <p class="text-slate-500 font-medium">• 의견은 이음톡(모산초 김영삼) 또는 <span class="text-blue-600">letter0033@gmail.com</span></p>
-                    <!-- 완전 로컬 데이터 안전 안내 -->
                     <p class="pt-2 mt-2 border-t border-dashed border-slate-200 text-slate-500 text-[9px] md:text-[10px] leading-relaxed font-medium">
                         * 본 프로그램은 입력하신 교사명 데이터를 외부 서버로 전송하거나 수집하지 않으며, 오직 교감선생님의 브라우저(PC) 내에서만 안전하게 처리됩니다. (인터넷 연결 없이도 작동하는 완전 폐쇄형 프로그램입니다.) 다만 공용PC에서 사용하는 경우에는 사용 후 반드시 대장초기화를 하시기 바랍니다.
                     </p>
@@ -505,7 +502,7 @@
 
     <!-- 스크립트 영역 -->
     <script>
-        // 모달 패스워드 설정 정보 객체
+        // 모달 데이터 구성 객체
         const MODAL_CONFIGS = {
             annual_work: {
                 url: 'https://gw1.kr/A0afT',
@@ -516,7 +513,7 @@
 
         let currentActiveType = '';
 
-        // 패스워드 기반 접근 모달 활성화 함수
+        // 비밀번호 모달 활성화 함수
         function openPasswordModal(e, type) {
             if (e) e.preventDefault();
             
@@ -525,6 +522,7 @@
 
             currentActiveType = type;
             
+            // 모달 내 안내문구 동적 설정
             const descEl = document.getElementById('passwordDesc');
             descEl.innerText = config.desc;
 
@@ -538,7 +536,7 @@
             input.focus();
         }
 
-        // 패스워드 기반 접근 모달 비활성화 함수
+        // 비밀번호 모달 비활성화 함수
         function closePasswordModal() {
             const modal = document.getElementById('passwordModal');
             modal.classList.add('hidden');
@@ -548,7 +546,7 @@
             currentActiveType = '';
         }
 
-        // 비밀번호 대조 및 검증 처리
+        // 비밀번호 제출 및 유효성 확인 함수
         function submitPassword() {
             const config = MODAL_CONFIGS[currentActiveType];
             if (!config) return;
@@ -569,7 +567,7 @@
             }
         }
 
-        // 관리자 인사말 생성기 팝업 핸들러
+        // 인사말 생성기 안내 모달 열기
         function openGreetingInfoModal(e) {
             if (e) e.preventDefault();
             const modal = document.getElementById('greetingInfoModal');
@@ -577,18 +575,20 @@
             modal.classList.add('flex');
         }
 
+        // 인사말 생성기 안내 모달 닫기
         function closeGreetingInfoModal() {
             const modal = document.getElementById('greetingInfoModal');
             modal.classList.add('hidden');
             modal.classList.remove('flex');
         }
 
+        // 인사말 생성기 사이트로 이동
         function goToGreeting() {
             window.open('https://letter0033-star.github.io/greeting/', '_blank');
             closeGreetingInfoModal();
         }
 
-        // 스마트 회의록 작성기 팝업 핸들러
+        // 스마트 회의록 작성기 안내 모달 열기
         function openMinutesInfoModal(e) {
             if (e) e.preventDefault();
             const modal = document.getElementById('minutesInfoModal');
@@ -596,18 +596,20 @@
             modal.classList.add('flex');
         }
 
+        // 스마트 회의록 작성기 안내 모달 닫기
         function closeMinutesInfoModal() {
             const modal = document.getElementById('minutesInfoModal');
             modal.classList.add('hidden');
             modal.classList.remove('flex');
         }
 
+        // 스마트 회의록 작성기 사이트로 이동
         function goToMinutes() {
             window.open('https://letter0033-star.github.io/talkboard/', '_blank');
             closeMinutesInfoModal();
         }
 
-        // 학급 배정 및 업무분장 팝업 핸들러
+        // 학급 배정 및 업무분장 안내 모달 열기
         function openMatchingInfoModal(e) {
             if (e) e.preventDefault();
             const modal = document.getElementById('matchingInfoModal');
@@ -615,19 +617,20 @@
             modal.classList.add('flex');
         }
 
+        // 학급 배정 및 업무분장 안내 모달 닫기
         function closeMatchingInfoModal() {
             const modal = document.getElementById('matchingInfoModal');
             modal.classList.add('hidden');
             modal.classList.remove('flex');
         }
 
+        // 학급 배정 및 업무분장 프로그램 사이트로 이동 (비밀번호 없는 즉시이동 구현)
         function goToMatching() {
-            // 패스워드 입력 절차 없이 즉시 목적지 매칭 프로그램 사이트로 이동
             window.open('https://letter0033-star.github.io/matching/', '_blank');
             closeMatchingInfoModal();
         }
 
-        // 키 바인딩 설정 및 런타임 검사 시작
+        // 문서 로드 완료 시 키보드 입력 및 엔터 이벤트 핸들러 바인딩
         document.addEventListener('DOMContentLoaded', () => {
             const inputEl = document.getElementById('passwordInput');
             if (inputEl) {
