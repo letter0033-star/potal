@@ -278,7 +278,7 @@
                 </div>
             </a>
 
-            <!-- 배지 10: 스마트 회의록 작성기(음성파일 지원) (명칭 업데이트 완료) -->
+            <!-- 배지 10: 스마트 회의록 작성기(음성파일 지원) -->
             <a href="#" onclick="openMinutesInfoModal(event)" class="badge-card white-card card-4 p-4 gap-4">
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-microphone-alt text-xl"></i>
@@ -302,8 +302,8 @@
                 </div>
             </a>
 
-            <!-- 배지 12: 오늘의 교육뉴스 보고드립니다 -->
-            <a href="https://letter0033-star.github.io/EduBrief/" target="_blank" class="badge-card white-card card-6 p-4 gap-4">
+            <!-- 배지 12: 오늘의 교육뉴스 보고드립니다 (이동 안내 모달 연동으로 수정) -->
+            <a href="#" onclick="openNewsInfoModal(event)" class="badge-card white-card card-6 p-4 gap-4">
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-newspaper text-xl"></i>
                 </div>
@@ -500,6 +500,51 @@
         </div>
     </div>
 
+    <!-- 오늘의 교육뉴스 보고드립니다 이용 안내 모달 (신설) -->
+    <div id="newsInfoModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
+            <div class="text-center space-y-4">
+                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600">
+                    <i class="fas fa-newspaper text-lg"></i>
+                </div>
+                <div class="space-y-1">
+                    <h3 class="text-xl font-black text-slate-800">📢 뉴스 브리핑 안내</h3>
+                    <p class="text-slate-400 text-xs font-bold leading-tight">(오늘의 교육뉴스 보고드립니다)</p>
+                </div>
+                <div class="text-left text-xs md:text-sm text-slate-600 space-y-3.5 leading-relaxed bg-slate-50 p-5 rounded-xl border border-slate-100 max-h-[50vh] overflow-y-auto font-medium">
+                    <p class="font-extrabold text-slate-800">
+                        최근 7일간의 교육뉴스를 AI가 분석하여 중복 기사를 제외하고 제공합니다.
+                    </p>
+                    
+                    <div class="space-y-2 pt-1">
+                        <span class="font-black text-blue-700 block text-xs md:text-sm">[우선순위]</span>
+                        <div class="space-y-1.5 pl-1">
+                            <p class="leading-snug"><span class="font-extrabold text-slate-800">①</span> 강원특별자치도교육청 및 지역교육청 소식</p>
+                            <p class="leading-relaxed"><span class="font-extrabold text-slate-800">②</span> 교육부 정책, 시도교육청 정책, 교원 인사, 교원 정원, 교원 연금, 공무원연금, 정년연장, 임금피크제, 교원 보수, 학교 행정, 학교 안전, 학교폭력, 생활지도, 교육과정, AI교육, 디지털교과서, 늘봄학교, 초등교육, 교육 관련 법률 개정, 국회 교육위원회, 교육부 보도자료, 인사혁신처 발표, 공무원 관련 제도 변화 등 주요 교육 이슈</p>
+                        </div>
+                    </div>
+
+                    <p class="text-indigo-600 font-extrabold pt-3 border-t border-slate-200 text-xs md:text-sm">
+                        * 뉴스는 매주 금요일 오전 최신 내용으로 갱신됩니다.
+                    </p>
+
+                    <p class="pt-3 border-t border-dashed border-slate-200 text-slate-500 text-[10px] md:text-xs leading-relaxed">
+                        본 서비스는 유료 AI API를 활용하여 제작되었으며, 이용 편의를 위해 생성된 결과를 GitHub에 저장하여 모든 이용자가 함께 열람할 수 있도록 운영하고 있습니다.
+                    </p>
+                </div>
+                
+                <p class="font-bold text-emerald-600 text-xs md:text-sm leading-snug py-1">
+                    📰 교감선생님의 AI 비서가 매주 금요일 아침, 꼭 필요한 교육뉴스만 모아 전달해 드립니다.
+                </p>
+
+                <div class="flex gap-2 pt-1">
+                    <button onclick="closeNewsInfoModal()" class="flex-1 py-3 px-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold transition-colors">닫기</button>
+                    <button onclick="goToNews()" class="flex-1 py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-colors shadow-lg shadow-blue-500/20">이동</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- 스크립트 영역 -->
     <script>
         // 모달 데이터 구성 객체
@@ -624,10 +669,31 @@
             modal.classList.remove('flex');
         }
 
-        // 학급 배정 및 업무분장 프로그램 사이트로 이동 (비밀번호 없는 즉시이동 구현)
+        // 학급 배정 및 업무분장 프로그램 사이트로 이동
         function goToMatching() {
             window.open('https://letter0033-star.github.io/matching/', '_blank');
             closeMatchingInfoModal();
+        }
+
+        // 오늘의 교육뉴스 안내 모달 열기 (신설)
+        function openNewsInfoModal(e) {
+            if (e) e.preventDefault();
+            const modal = document.getElementById('newsInfoModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        // 오늘의 교육뉴스 안내 모달 닫기 (신설)
+        function closeNewsInfoModal() {
+            const modal = document.getElementById('newsInfoModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // 오늘의 교육뉴스 사이트로 이동 (신설)
+        function goToNews() {
+            window.open('https://letter0033-star.github.io/EduBrief/', '_blank');
+            closeNewsInfoModal();
         }
 
         // 문서 로드 완료 시 키보드 입력 및 엔터 이벤트 핸들러 바인딩
