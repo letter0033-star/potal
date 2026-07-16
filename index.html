@@ -177,7 +177,7 @@
             </p>
         </div>
 
-        <!-- 메인 배지 영역 (총 12개, 3열 4단 구성) -->
+        <!-- 메인 배지 영역 (총 15개, 3열 5단 구성으로 확장) -->
         <main class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
             <!-- 배지 1: 호봉획정프로그램 -->
             <a href="https://letter0033-star.github.io/pay/" target="_blank" class="badge-card white-card card-1 p-4 gap-4">
@@ -312,6 +312,39 @@
                     <p class="text-slate-500 text-xs font-medium">일일 주요 교육 소식 및 정책 동향 요약</p>
                 </div>
             </a>
+
+            <!-- 배지 13: 정기인사(전보희망원) 작성 준비중 -->
+            <div class="badge-card white-card p-4 gap-4 opacity-75 cursor-default border border-dashed border-slate-200">
+                <div class="icon-box shadow-sm bg-slate-50 text-slate-400">
+                    <i class="fas fa-file-signature text-xl"></i>
+                </div>
+                <div class="flex flex-col text-left">
+                    <span class="text-base md:text-lg font-extrabold text-slate-500">정기인사(전보희망원) 작성 준비중</span>
+                    <p class="text-slate-400 text-xs font-medium">클릭 한 번으로 전보희망원 자동 작성기 기획중</p>
+                </div>
+            </div>
+
+            <!-- 배지 14: 위원회 위원 자동 선정 준비중 -->
+            <div class="badge-card white-card p-4 gap-4 opacity-75 cursor-default border border-dashed border-slate-200">
+                <div class="icon-box shadow-sm bg-slate-50 text-slate-400">
+                    <i class="fas fa-user-check text-xl"></i>
+                </div>
+                <div class="flex flex-col text-left">
+                    <span class="text-base md:text-lg font-extrabold text-slate-500">위원회 위원 자동 선정 준비중</span>
+                    <p class="text-slate-400 text-xs font-medium">여러가지 여건을 고려한 위원회 위원 자동 선정</p>
+                </div>
+            </div>
+
+            <!-- 배지 15: 업무 웹앱 준비중 (신설 3) -->
+            <div class="badge-card white-card p-4 gap-4 opacity-75 cursor-default border border-dashed border-slate-200">
+                <div class="icon-box shadow-sm bg-slate-50 text-slate-400">
+                    <i class="fas fa-hourglass-start text-xl"></i>
+                </div>
+                <div class="flex flex-col text-left">
+                    <span class="text-base md:text-lg font-extrabold text-slate-500">업무 웹앱 준비중</span>
+                    <p class="text-slate-400 text-xs font-medium">더 나은 기능으로 준비 중입니다</p>
+                </div>
+            </div>
         </main>
 
         <!-- 하단 서브 배지 영역 (총 12개, 2단 배치, 세로 높이 최소화) -->
@@ -500,7 +533,7 @@
         </div>
     </div>
 
-    <!-- 오늘의 교육뉴스 보고드립니다 이용 안내 모달 (신설) -->
+    <!-- 오늘의 교육뉴스 보고드립니다 이용 안내 모달 -->
     <div id="newsInfoModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
         <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
             <div class="text-center space-y-4">
@@ -675,7 +708,7 @@
             closeMatchingInfoModal();
         }
 
-        // 오늘의 교육뉴스 안내 모달 열기 (신설)
+        // 오늘의 교육뉴스 안내 모달 열기
         function openNewsInfoModal(e) {
             if (e) e.preventDefault();
             const modal = document.getElementById('newsInfoModal');
@@ -683,14 +716,14 @@
             modal.classList.add('flex');
         }
 
-        // 오늘의 교육뉴스 안내 모달 닫기 (신설)
+        // 오늘의 교육뉴스 안내 모달 닫기
         function closeNewsInfoModal() {
             const modal = document.getElementById('newsInfoModal');
             modal.classList.add('hidden');
             modal.classList.remove('flex');
         }
 
-        // 오늘의 교육뉴스 사이트로 이동 (신설)
+        // 오늘의 교육뉴스 사이트로 이동
         function goToNews() {
             window.open('https://letter0033-star.github.io/EduBrief/', '_blank');
             closeNewsInfoModal();
