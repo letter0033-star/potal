@@ -147,7 +147,7 @@
             </h1>
         </header>
 
-        <!-- 교(원)감 챗봇 영역 (세로 높이 약 10% 축소 조정) -->
+        <!-- 교(원)감 챗봇 영역 -->
         <section class="white-card chatbot-section px-4 py-3 md:px-6 md:py-5 lg:px-10 lg:py-5 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8">
             <div class="flex items-center gap-4 text-left">
                 <div class="relative flex-shrink-0">
@@ -170,14 +170,14 @@
             </a>
         </section>
 
-        <!-- 권장사항 안내 (챗봇 바로 아래 배치) -->
+        <!-- 권장사항 안내 -->
         <div class="text-center">
             <p class="text-slate-600 text-[11px] md:text-sm font-semibold tracking-tight">
                 <i class="fas fa-info-circle text-blue-500 mr-1"></i> [권장사항] 모든 프로그램은 <span class="text-blue-700 underline underline-offset-2">크롬(Chrome)</span>에 최적화되어 있으며, <span class="text-blue-700 underline underline-offset-2">구글 계정에 로그인</span> 후 접속하시기 바랍니다.
             </p>
         </div>
 
-        <!-- 메인 배지 영역 (총 15개, 3열 5단 구성으로 확장, 세로 길이를 약 10% 줄이기 위해 padding을 py-3 px-4로 커스텀 조정) -->
+        <!-- 메인 배지 영역 (총 15개, 3열 5단 구성으로 확장) -->
         <main class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
             <!-- 배지 1: 호봉획정프로그램 -->
             <a href="https://letter0033-star.github.io/pay/" target="_blank" class="badge-card white-card card-1 py-3 px-4 gap-4">
@@ -252,11 +252,11 @@
                 </div>
                 <div class="flex flex-col text-left">
                     <span class="text-base md:text-lg font-extrabold text-slate-800">학교규칙 제 · 개정 패들렛</span>
-                    <p class="text-slate-500 text-xs font-medium">2026년 학교규칙 제개정 도움자료</p>
+                    <p class="text-slate-500 text-xs font-medium">2026년 school 규칙 제개정 도움자료</p>
                 </div>
             </a>
 
-            <!-- 배지 8: 초등 교감 연간 업무 패들렛 (비밀번호 확인 연동) -->
+            <!-- 배지 8: 초등 교감 연간 업무 패들렛 -->
             <a href="#" onclick="openPasswordModal(event, 'annual_work')" class="badge-card white-card card-2 py-3 px-4 gap-4">
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-calendar-alt text-xl"></i>
@@ -267,7 +267,7 @@
                 </div>
             </a>
 
-            <!-- 배지 9: 관리자 인사말 생성기 (안내 모달 연동) -->
+            <!-- 배지 9: 관리자 인사말 생성기 -->
             <a href="#" onclick="openGreetingInfoModal(event)" class="badge-card white-card card-3 py-3 px-4 gap-4">
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-pen-fancy text-xl"></i>
@@ -278,7 +278,7 @@
                 </div>
             </a>
 
-            <!-- 배지 10: 스마트 회의록 작성기(음성파일 지원) -->
+            <!-- 배지 10: 스마트 회의록 작성기 -->
             <a href="#" onclick="openMinutesInfoModal(event)" class="badge-card white-card card-4 py-3 px-4 gap-4">
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-microphone-alt text-xl"></i>
@@ -302,7 +302,7 @@
                 </div>
             </a>
 
-            <!-- 배지 12: 오늘의 교육뉴스 보고드립니다 (이동 안내 모달 연동으로 수정) -->
+            <!-- 배지 12: 오늘의 교육뉴스 보고드립니다 -->
             <a href="#" onclick="openNewsInfoModal(event)" class="badge-card white-card card-6 py-3 px-4 gap-4">
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-newspaper text-xl"></i>
@@ -335,16 +335,16 @@
                 </div>
             </div>
 
-            <!-- 배지 15: 교직원 연수 웹앱 준비중 -->
-            <div class="badge-card white-card py-3 px-4 gap-4 opacity-75 cursor-default border border-dashed border-slate-200">
-                <div class="icon-box shadow-sm bg-slate-50 text-slate-400">
-                    <i class="fas fa-hourglass-start text-xl"></i>
+            <!-- 배지 15: 교내 교직원 연수 포털 -->
+            <a href="#" onclick="openLearningInfoModal(event)" class="badge-card white-card card-3 py-3 px-4 gap-4">
+                <div class="icon-box shadow-sm">
+                    <i class="fas fa-chalkboard-teacher text-xl"></i>
                 </div>
                 <div class="flex flex-col text-left">
-                    <span class="text-base md:text-lg font-extrabold text-slate-500">교직원 연수 웹앱 준비중</span>
-                    <p class="text-slate-400 text-xs font-medium">더 빛나는 기능으로 준비 중입니다.</p>
+                    <span class="text-base md:text-lg font-extrabold text-slate-800">교내 교직원 연수 포털</span>
+                    <p class="text-slate-500 text-xs font-medium">교내 연수 자료를 한 곳에서 만나보세요</p>
                 </div>
-            </div>
+            </a>
         </main>
 
         <!-- 하단 서브 배지 영역 (총 12개, 2단 배치, 세로 높이 최소화) -->
@@ -592,6 +592,40 @@
         </div>
     </div>
 
+    <!-- 교내 교직원 연수 포털 이용 안내 모달 -->
+    <div id="learningInfoModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 md:p-8 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
+            <div class="text-center space-y-4">
+                <div class="mx-auto flex items-center justify-center h-14 w-14 rounded-full bg-violet-100 text-violet-600">
+                    <i class="fas fa-chalkboard-teacher text-xl md:text-2xl"></i>
+                </div>
+                <div class="space-y-1">
+                    <h3 class="text-xl md:text-2xl font-black text-slate-800">📢 이용 안내</h3>
+                    <p class="text-slate-400 text-xs md:text-sm font-bold leading-tight">(교내 교직원 연수 포털)</p>
+                </div>
+                <div class="text-left text-sm md:text-base text-slate-600 space-y-4 bg-slate-50 p-5 rounded-xl border border-slate-100 font-semibold leading-relaxed">
+                    <p class="text-slate-700">
+                        본 웹앱은 URL(주소)만으로 접속할 수 있습니다. 주소를 복사하여 업무용 메신저나 문자로 교직원에게 공유한 후 이용해 주세요. 공유받은 링크를 통해 언제든지 동일한 연수 페이지에 접속할 수 있습니다.
+                    </p>
+                    
+                    <!-- 링크 복사 영역 -->
+                    <div class="flex items-center gap-2 bg-white border border-slate-200 rounded-xl p-2.5 shadow-inner">
+                        <input type="text" id="learningUrlInput" readonly value="https://letter0033-star.github.io/Learning/" 
+                               class="flex-1 bg-transparent text-xs md:text-sm font-bold text-slate-500 border-none outline-none focus:ring-0 truncate px-1">
+                        <button onclick="copyLearningLink()" id="copyBtn" class="flex-shrink-0 bg-violet-100 hover:bg-violet-200 active:scale-95 text-violet-700 font-extrabold px-3 py-1.5 rounded-lg text-xs md:text-sm transition-all flex items-center gap-1.5">
+                            <i class="fas fa-copy text-xs"></i>
+                            <span id="copyBtnText">링크 복사</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="flex gap-3 pt-2">
+                    <button onclick="closeLearningInfoModal()" class="flex-1 py-3 px-5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold transition-colors text-sm md:text-base">닫기</button>
+                    <button onclick="goToLearning()" class="flex-1 py-3 px-5 bg-violet-600 hover:bg-violet-700 text-white rounded-xl font-bold transition-colors shadow-lg shadow-violet-500/20 text-sm md:text-base">이동</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- 스크립트 영역 -->
     <script>
         // 모달 데이터 구성 객체
@@ -741,6 +775,67 @@
         function goToNews() {
             window.open('https://letter0033-star.github.io/EduBrief/', '_blank');
             closeNewsInfoModal();
+        }
+
+        // 교내 교직원 연수 포털 안내 모달 열기
+        function openLearningInfoModal(e) {
+            if (e) e.preventDefault();
+            const modal = document.getElementById('learningInfoModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        // 교내 교직원 연수 포털 안내 모달 닫기
+        function closeLearningInfoModal() {
+            const modal = document.getElementById('learningInfoModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // 교내 교직원 연수 포털 사이트로 이동
+        function goToLearning() {
+            window.open('https://letter0033-star.github.io/Learning/', '_blank');
+            closeLearningInfoModal();
+        }
+
+        // 주소 클립보드 복사 함수 (iframe 대응을 위해 execCommand Fallback 방식 적용)
+        function copyLearningLink() {
+            const textToCopy = 'https://letter0033-star.github.io/Learning/';
+            
+            // 임시 textarea 엘리먼트 생성
+            const tempInput = document.createElement('textarea');
+            tempInput.value = textToCopy;
+            tempInput.style.position = 'fixed';  // 화면 바깥에 위치하여 스크롤 방지
+            tempInput.style.opacity = '0';
+            document.body.appendChild(tempInput);
+            
+            // 텍스트 선택 및 복사 수행
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999); // 모바일 디바이스 지원용
+            
+            try {
+                const successful = document.execCommand('copy');
+                const btnText = document.getElementById('copyBtnText');
+                const btnEl = document.getElementById('copyBtn');
+                
+                if (successful && btnText) {
+                    btnText.innerText = '복사 완료!';
+                    btnEl.classList.remove('bg-violet-100', 'text-violet-700');
+                    btnEl.classList.add('bg-emerald-500', 'text-white');
+                    
+                    setTimeout(() => {
+                        btnText.innerText = '링크 복사';
+                        btnEl.classList.add('bg-violet-100', 'text-violet-700');
+                        btnEl.classList.remove('bg-emerald-500', 'text-white');
+                    }, 1500);
+                } else {
+                    console.error('클립보드 복사 실패');
+                }
+            } catch (err) {
+                console.error('복사 중 오류 발생:', err);
+            }
+            
+            document.body.removeChild(tempInput);
         }
 
         // 문서 로드 완료 시 키보드 입력 및 엔터 이벤트 핸들러 바인딩
