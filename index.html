@@ -134,6 +134,23 @@
         .card-5:hover { border-color: var(--color-5); }
         .card-6 .icon-box { background: #f5f3ff; color: var(--color-6); }
         .card-6:hover { border-color: var(--color-6); }
+        
+        /* 로딩 스피너 애니메이션 */
+        .spinner {
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #2563eb;
+            border-radius: 50%;
+            width: 14px;
+            height: 14px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 4px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body class="p-4 md:p-6 lg:p-8 flex flex-col justify-center">
@@ -175,13 +192,10 @@
             <p class="text-slate-600 text-[11px] md:text-sm font-semibold tracking-tight">
                 <i class="fas fa-info-circle text-blue-500 mr-1"></i> [권장사항] 모든 프로그램은 <span class="text-blue-700 underline underline-offset-2">크롬(Chrome)</span>에 최적화되어 있으며, <span class="text-blue-700 underline underline-offset-2">구글 계정에 로그인</span> 후 접속하시기 바랍니다.
             </p>
-            <!-- 방문자 카운트 표시 영역 -->
+            <!-- 파이어베이스 텍스트 카운터 표시 영역 -->
             <div class="inline-flex items-center gap-1.5 bg-white/80 backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm border border-slate-200/80 text-slate-700 text-[11px] md:text-xs font-bold whitespace-nowrap">
                 <i class="fas fa-users text-blue-500"></i>
-                <span>일일/누적 방문자 =</span>
-                <img src="https://hitscounter.dev/hits?url=https%3A%2F%2Fletter0033-star.github.io%2Fportal_page&label=Hits&color=%232563eb&label_color=%23334155" 
-                     alt="카운터 (네트워크 방화벽 차단 시 안 보일 수 있습니다)" 
-                     class="h-5 md:h-6 w-auto drop-shadow-sm ml-0.5">
+                <span id="visitorCountText">일일/누적 방문자 = <span class="spinner"></span></span>
             </div>
         </div>
 
@@ -664,7 +678,48 @@
 
     <!-- 스크립트 영역 -->
     <script>
-        // 모달 데이터 구성 객체
+        // --- Firebase 방문자 카운터 로직 시작 ---
+        // 교감선생님의 Realtime Database URL로 변경 완료
+        const FIREBASE_DB_URL = "https://edu-portal-counter-default-rtdb.firebaseio.com"; 
+
+        async function updateVisitorCount() {
+            const today = new Date();
+            // YYYY-MM-DD 형식으로 오늘 날짜 문자열 생성 (한국 시간 기준)
+            const todayString = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+            
+            const totalUrl = `${FIREBASE_DB_URL}/visits/total.json`;
+            const dailyUrl = `${FIREBASE_DB_URL}/visits/daily/${todayString}.json`;
+
+            try {
+                // 1. 누적 및 일일 데이터 가져오기
+                let [totalRes, dailyRes] = await Promise.all([
+                    fetch(totalUrl),
+                    fetch(dailyUrl)
+                ]);
+
+                let totalCount = await totalRes.json() || 0;
+                let dailyCount = await dailyRes.json() || 0;
+
+                // 2. 카운트 1씩 증가
+                totalCount += 1;
+                dailyCount += 1;
+
+                // 3. 파이어베이스에 업데이트 (PUT 요청으로 덮어쓰기)
+                await Promise.all([
+                    fetch(totalUrl, { method: 'PUT', body: JSON.stringify(totalCount) }),
+                    fetch(dailyUrl, { method: 'PUT', body: JSON.stringify(dailyCount) })
+                ]);
+
+                // 4. 화면에 텍스트 업데이트
+                document.getElementById('visitorCountText').innerHTML = `일일/누적 방문자 = <span class="text-blue-600 font-extrabold">${dailyCount}</span> / <span class="text-blue-600 font-extrabold">${totalCount}</span>`;
+
+            } catch (error) {
+                console.error("Firebase 연결 오류:", error);
+                document.getElementById('visitorCountText').innerHTML = `일일/누적 방문자 = 연결 지연`;
+            }
+        }
+
+        // --- 모달 데이터 구성 객체 ---
         const MODAL_CONFIGS = {
             annual_work: {
                 url: 'https://gw1.kr/A0afT',
@@ -897,6 +952,9 @@
 
         // 문서 로드 완료 시 키보드 입력 및 엔터 이벤트 핸들러 바인딩
         document.addEventListener('DOMContentLoaded', () => {
+            // 카운터 실행
+            updateVisitorCount();
+
             const inputEl = document.getElementById('passwordInput');
             if (inputEl) {
                 inputEl.addEventListener('keyup', (e) => {
