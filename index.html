@@ -170,11 +170,19 @@
             </a>
         </section>
 
-        <!-- 권장사항 안내 -->
-        <div class="text-center">
+        <!-- 권장사항 및 방문자 카운터 안내 -->
+        <div class="flex flex-wrap items-center justify-center gap-y-2 gap-x-4 text-center px-2">
             <p class="text-slate-600 text-[11px] md:text-sm font-semibold tracking-tight">
                 <i class="fas fa-info-circle text-blue-500 mr-1"></i> [권장사항] 모든 프로그램은 <span class="text-blue-700 underline underline-offset-2">크롬(Chrome)</span>에 최적화되어 있으며, <span class="text-blue-700 underline underline-offset-2">구글 계정에 로그인</span> 후 접속하시기 바랍니다.
             </p>
+            <!-- 방문자 카운트 표시 영역 -->
+            <div class="inline-flex items-center gap-1.5 bg-white/80 backdrop-blur-md px-2.5 py-1 rounded-full shadow-sm border border-slate-200/80 text-slate-600 text-[10px] md:text-xs font-bold whitespace-nowrap">
+                <i class="fas fa-users text-blue-500"></i>
+                <span>일일 / 누적 방문자</span>
+                <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fletter0033-star.github.io%2Fportal_page&count_bg=%232563eb&title_bg=%23475569&icon=&icon_color=%23E2E8F0&title=Visits&edge_flat=false" 
+                     alt="방문자 카운터" 
+                     class="h-4 md:h-5 rounded min-w-[60px] object-contain">
+            </div>
         </div>
 
         <!-- 메인 배지 영역 (총 15개, 3열 5단 구성으로 확장) -->
