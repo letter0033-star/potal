@@ -199,7 +199,7 @@
             </div>
         </div>
 
-        <!-- 메인 배지 영역 (총 15개, 3열 5단 구성으로 확장) -->
+        <!-- 메인 배지 영역 (총 18개, 3열 6단 구성으로 확장) -->
         <main class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
             <!-- 배지 1: 호봉획정프로그램 -->
             <a href="https://letter0033-star.github.io/pay/" target="_blank" class="badge-card white-card card-1 py-3 px-4 gap-4">
@@ -274,7 +274,7 @@
                 </div>
                 <div class="flex flex-col text-left">
                     <span class="text-base md:text-lg font-extrabold text-slate-800">학교규칙 제 · 개정 패들렛</span>
-                    <p class="text-slate-500 text-xs font-medium">2026년 school 규칙 제개정 도움자료</p>
+                    <p class="text-slate-500 text-xs font-medium">2026년 학교규칙 제개정 도움자료</p>
                 </div>
             </a>
 
@@ -367,6 +367,39 @@
                     <p class="text-slate-500 text-xs font-medium">교내 연수 자료를 한 곳에서 만나보세요</p>
                 </div>
             </a>
+
+            <!-- 배지 16: 업무경감 웹앱 준비중 -->
+            <div class="white-card py-3 px-4 gap-4 flex items-center bg-slate-100/80 border border-dashed border-slate-300 opacity-80 transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-slate-400 hover:bg-white hover:opacity-100 cursor-pointer">
+                <div class="icon-box bg-slate-200/80 text-slate-500 shadow-none">
+                    <i class="fas fa-laptop-code text-xl"></i>
+                </div>
+                <div class="flex flex-col text-left">
+                    <span class="text-base md:text-lg font-extrabold text-slate-700">업무경감 웹앱 준비중</span>
+                    <p class="text-slate-500 text-xs font-semibold">스마트한 학교 업무 지원 프로그램 기획 중</p>
+                </div>
+            </div>
+
+            <!-- 배지 17: 업무경감 웹앱 준비중 -->
+            <div class="white-card py-3 px-4 gap-4 flex items-center bg-slate-100/80 border border-dashed border-slate-300 opacity-80 transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-slate-400 hover:bg-white hover:opacity-100 cursor-pointer">
+                <div class="icon-box bg-slate-200/80 text-slate-500 shadow-none">
+                    <i class="fas fa-lightbulb text-xl"></i>
+                </div>
+                <div class="flex flex-col text-left">
+                    <span class="text-base md:text-lg font-extrabold text-slate-700">업무경감 웹앱 준비중</span>
+                    <p class="text-slate-500 text-xs font-semibold">교직원 업무 부담 경감을 위한 도구 개발 중</p>
+                </div>
+            </div>
+
+            <!-- 배지 18: 업무경감 웹앱 준비중 -->
+            <div class="white-card py-3 px-4 gap-4 flex items-center bg-slate-100/80 border border-dashed border-slate-300 opacity-80 transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-slate-400 hover:bg-white hover:opacity-100 cursor-pointer">
+                <div class="icon-box bg-slate-200/80 text-slate-500 shadow-none">
+                    <i class="fas fa-rocket text-xl"></i>
+                </div>
+                <div class="flex flex-col text-left">
+                    <span class="text-base md:text-lg font-extrabold text-slate-700">업무경감 웹앱 준비중</span>
+                    <p class="text-slate-500 text-xs font-semibold">교감선생님을 위한 맞춤형 솔루션 준비 중</p>
+                </div>
+            </div>
         </main>
 
         <!-- 하단 서브 배지 영역 (총 12개, 2단 배치, 세로 높이 최소화) -->
@@ -435,7 +468,7 @@
                 <span class="hidden md:inline text-slate-500">|</span>
                 <span class="text-slate-500 font-semibold">교육공무원 인사업무의 표준과 효율, 업무경감을 지원합니다.</span>
                 <span class="hidden md:inline text-slate-500">|</span>
-                <span class="text-slate-500 font-semibold">시작일 2026.03.18</span>
+                <span class="text-slate-500 font-semibold">시작일 2026.03.18.</span>
             </footer>
         </div>
     </div>
@@ -681,7 +714,6 @@
     <!-- 스크립트 영역 -->
     <script>
         // --- Firebase 방문자 카운터 로직 시작 ---
-        // 교감선생님의 Realtime Database URL로 변경 완료
         const FIREBASE_DB_URL = "https://edu-portal-counter-default-rtdb.firebaseio.com"; 
 
         async function updateVisitorCount() {
@@ -916,16 +948,14 @@
         function copyLearningLink() {
             const textToCopy = 'https://letter0033-star.github.io/Learning/';
             
-            // 임시 textarea 엘리먼트 생성
             const tempInput = document.createElement('textarea');
             tempInput.value = textToCopy;
-            tempInput.style.position = 'fixed';  // 화면 바깥에 위치하여 스크롤 방지
+            tempInput.style.position = 'fixed';
             tempInput.style.opacity = '0';
             document.body.appendChild(tempInput);
             
-            // 텍스트 선택 및 복사 수행
             tempInput.select();
-            tempInput.setSelectionRange(0, 99999); // 모바일 디바이스 지원용
+            tempInput.setSelectionRange(0, 99999);
             
             try {
                 const successful = document.execCommand('copy');
