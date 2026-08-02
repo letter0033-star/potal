@@ -195,7 +195,7 @@
             <!-- 파이어베이스 텍스트 카운터 표시 영역 -->
             <div class="inline-flex items-center gap-1.5 bg-white/80 backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm border border-slate-200/80 text-slate-700 text-[11px] md:text-xs font-bold whitespace-nowrap">
                 <i class="fas fa-users text-blue-500"></i>
-                <span id="visitorCountText">일일/누적 방문자 = <span class="spinner"></span></span>
+                <span id="visitorCountText">2026. 8. 1.이후 일일/누적 방문자 = <span class="spinner"></span></span>
             </div>
         </div>
 
@@ -346,16 +346,16 @@
                 </div>
             </a>
 
-            <!-- 배지 14: 위원회 위원 자동 선정 준비중 -->
-            <div class="badge-card white-card py-3 px-4 gap-4 opacity-75 cursor-default border border-dashed border-slate-200">
-                <div class="icon-box shadow-sm bg-slate-50 text-slate-400">
+            <!-- 배지 14: 위원회 위원 자동 선정 -->
+            <a href="https://letter0033-star.github.io/committee/" target="_blank" class="badge-card white-card card-2 py-3 px-4 gap-4">
+                <div class="icon-box shadow-sm">
                     <i class="fas fa-user-check text-xl"></i>
                 </div>
                 <div class="flex flex-col text-left">
-                    <span class="text-base md:text-lg font-extrabold text-slate-500">위원회 위원 자동 선정 준비중</span>
-                    <p class="text-slate-400 text-xs font-medium">여러가지 여건을 고려한 위원회 위원 자동 선정</p>
+                    <span class="text-base md:text-lg font-extrabold text-slate-800">위원회 위원 자동 선정</span>
+                    <p class="text-slate-500 text-xs font-medium">여러가지 여건을 고려한 위원회 위원 자동 선정</p>
                 </div>
-            </div>
+            </a>
 
             <!-- 배지 15: 교내 교직원 연수 포털 -->
             <a href="#" onclick="openLearningInfoModal(event)" class="badge-card white-card card-3 py-3 px-4 gap-4">
@@ -434,6 +434,8 @@
                 <span class="font-black text-slate-500">© 교(원)감 인사업무 지원 포털 School Leadership Human Resources Support System</span>
                 <span class="hidden md:inline text-slate-500">|</span>
                 <span class="text-slate-500 font-semibold">교육공무원 인사업무의 표준과 효율, 업무경감을 지원합니다.</span>
+                <span class="hidden md:inline text-slate-500">|</span>
+                <span class="text-slate-500 font-semibold">시작일 2026.03.18</span>
             </footer>
         </div>
     </div>
@@ -711,11 +713,11 @@
                 ]);
 
                 // 4. 화면에 텍스트 업데이트
-                document.getElementById('visitorCountText').innerHTML = `일일/누적 방문자 = <span class="text-blue-600 font-extrabold">${dailyCount}</span> / <span class="text-blue-600 font-extrabold">${totalCount}</span>`;
+                document.getElementById('visitorCountText').innerHTML = `2026. 8. 1.이후 일일/누적 방문자 = <span class="text-blue-600 font-extrabold">${dailyCount}</span> / <span class="text-blue-600 font-extrabold">${totalCount}</span>`;
 
             } catch (error) {
                 console.error("Firebase 연결 오류:", error);
-                document.getElementById('visitorCountText').innerHTML = `일일/누적 방문자 = 연결 지연`;
+                document.getElementById('visitorCountText').innerHTML = `2026. 8. 1.이후 일일/누적 방문자 = 연결 지연`;
             }
         }
 
