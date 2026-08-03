@@ -199,7 +199,7 @@
             </div>
         </div>
 
-        <!-- 메인 배지 영역 (총 18개, 3열 6단 구성으로 확장) -->
+        <!-- 메인 배지 영역 (총 18개, 3열 6단 구성) -->
         <main class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
             <!-- 배지 1: 호봉획정프로그램 -->
             <a href="https://letter0033-star.github.io/pay/" target="_blank" class="badge-card white-card card-1 py-3 px-4 gap-4">
@@ -335,13 +335,13 @@
                 </div>
             </a>
 
-            <!-- 배지 13: 전보희망원(관외) 작성 도우미 -->
+            <!-- 배지 13: 초등 전보희망원(관외) 작성 도우미 -->
             <a href="#" onclick="openTransferInfoModal(event)" class="badge-card white-card card-1 py-3 px-4 gap-4">
                 <div class="icon-box shadow-sm">
                     <i class="fas fa-file-signature text-xl"></i>
                 </div>
                 <div class="flex flex-col text-left">
-                    <span class="text-base md:text-lg font-extrabold text-slate-800">전보희망원(관외) 작성 도우미</span>
+                    <span class="text-base md:text-lg font-extrabold text-slate-800">초등 전보희망원(관외) 작성 도우미</span>
                     <p class="text-slate-500 text-xs font-medium">클릭 몇 번으로 전보희망원 작성을 도와주는 프로그램</p>
                 </div>
             </a>
@@ -368,24 +368,24 @@
                 </div>
             </a>
 
-            <!-- 배지 16: 업무경감 웹앱 준비중 -->
-            <div class="white-card py-3 px-4 gap-4 flex items-center bg-slate-100/80 border border-dashed border-slate-300 opacity-80 transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-slate-400 hover:bg-white hover:opacity-100 cursor-pointer">
-                <div class="icon-box bg-slate-200/80 text-slate-500 shadow-none">
-                    <i class="fas fa-laptop-code text-xl"></i>
+            <!-- 배지 16: 유치원 전보희망원(관외) 작성 도우미 -->
+            <a href="#" onclick="openKinderTransferInfoModal(event)" class="badge-card white-card card-4 py-3 px-4 gap-4">
+                <div class="icon-box shadow-sm">
+                    <i class="fas fa-child text-xl"></i>
                 </div>
                 <div class="flex flex-col text-left">
-                    <span class="text-base md:text-lg font-extrabold text-slate-700">업무경감 웹앱 준비중</span>
-                    <p class="text-slate-500 text-xs font-semibold">스마트한 학교 업무 지원 프로그램 기획 중</p>
+                    <span class="text-base md:text-lg font-extrabold text-slate-800">유치원 전보희망원(관외) 작성 도우미</span>
+                    <p class="text-slate-500 text-xs font-medium">유치원 교사를 위한 전보희망원 작성 프로그램</p>
                 </div>
-            </div>
+            </a>
 
-            <!-- 배지 17: 업무경감 웹앱 준비중 -->
+            <!-- 배지 17: 기간제교원 채용계약서 작성기 준비중 -->
             <div class="white-card py-3 px-4 gap-4 flex items-center bg-slate-100/80 border border-dashed border-slate-300 opacity-80 transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-slate-400 hover:bg-white hover:opacity-100 cursor-pointer">
                 <div class="icon-box bg-slate-200/80 text-slate-500 shadow-none">
                     <i class="fas fa-lightbulb text-xl"></i>
                 </div>
                 <div class="flex flex-col text-left">
-                    <span class="text-base md:text-lg font-extrabold text-slate-700">업무경감 웹앱 준비중</span>
+                    <span class="text-base md:text-lg font-extrabold text-slate-700">기간제교원 채용계약서 작성기 준비중</span>
                     <p class="text-slate-500 text-xs font-semibold">교직원 업무 부담 경감을 위한 도구 개발 중</p>
                 </div>
             </div>
@@ -575,11 +575,67 @@
         </div>
     </div>
 
+    <!-- 초등 전보희망원(관외) 작성 도우미 이용 안내 모달 -->
+    <div id="transferInfoModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 md:p-8 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
+            <div class="text-center space-y-4">
+                <div class="mx-auto flex items-center justify-center h-14 w-14 rounded-full bg-blue-100 text-blue-600">
+                    <i class="fas fa-file-signature text-xl md:text-2xl"></i>
+                </div>
+                <div class="space-y-1">
+                    <h3 class="text-xl md:text-2xl font-black text-slate-800">📢 사용시 주의 사항</h3>
+                    <p class="text-slate-400 text-xs md:text-sm font-bold leading-tight">(초등 전보희망원(관외) 작성 도우미)</p>
+                    <p class="text-red-500 font-black text-2xl md:text-3xl tracking-wide mt-1 animate-pulse">⚠️ 테스트 중</p>
+                </div>
+                <div class="text-left text-sm md:text-base text-slate-600 space-y-3 bg-slate-50 p-5 rounded-xl border border-slate-100 font-semibold leading-relaxed">
+                    <p>• 본 시스템은 전보희망원 작성을 지원하기 위한 참고용 도구입니다. 작성된 내용은 제출 전 관련 규정 및 기준에 따라 반드시 본인이 최종 검토·수정하시기 바랍니다.</p>
+                    <p class="text-blue-600 font-extrabold">• 테스트 및 의견수렴 기간: 2026년 8월~10월</p>
+                    <p class="text-slate-700 font-extrabold">• 개선 의견은 <span class="text-blue-600 underline underline-offset-2">사용 후기</span>에 남겨 주세요</p>
+                    <p class="pt-3 mt-3 border-t border-dashed border-slate-200 text-slate-500 text-xs md:text-sm leading-relaxed font-semibold">
+                        본 프로그램은 입력하신 교사명 데이터를 외부 서버로 전송하거나 수집하지 않으며, 오직 교감선생님의 브라우저(PC) 내에서만 안전하게 처리됩니다. (인터넷 연결 없이도 작동하는 완전 폐쇄형 프로그램입니다.) 다만 공용PC에서 사용하는 경우에는 사용 후 반드시 <span class="text-red-600 font-black underline underline-offset-2 decoration-2">문서초기화</span>를 하시기 바랍니다.
+                    </p>
+                </div>
+                <div class="flex gap-3 pt-2">
+                    <button onclick="closeTransferInfoModal()" class="flex-1 py-3 px-5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold transition-colors text-sm md:text-base">닫기</button>
+                    <button onclick="goToTransfer()" class="flex-1 py-3 px-5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-colors shadow-lg shadow-blue-500/20 text-sm md:text-base">이동</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 유치원 전보희망원(관외) 작성 도우미 이용 안내 모달 -->
+    <div id="kinderTransferInfoModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 md:p-8 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
+            <div class="text-center space-y-4">
+                <div class="mx-auto flex items-center justify-center h-14 w-14 rounded-full bg-emerald-100 text-emerald-600">
+                    <i class="fas fa-child text-xl md:text-2xl"></i>
+                </div>
+                <div class="space-y-1">
+                    <h3 class="text-xl md:text-2xl font-black text-slate-800">📢 사용시 주의 사항</h3>
+                    <p class="text-slate-400 text-xs md:text-sm font-bold leading-tight">(유치원 전보희망원(관외) 작성 도우미)</p>
+                    <p class="text-red-500 font-black text-2xl md:text-3xl tracking-wide mt-1 animate-pulse">⚠️ 테스트 중</p>
+                </div>
+                <div class="text-left text-sm md:text-base text-slate-600 space-y-3 bg-slate-50 p-5 rounded-xl border border-slate-100 font-semibold leading-relaxed">
+                    <p>• 본 시스템은 전보희망원 작성을 지원하기 위한 참고용 도구입니다. 작성된 내용은 제출 전 관련 규정 및 기준에 따라 반드시 본인이 최종 검토·수정하시기 바랍니다.</p>
+                    <p class="text-blue-600 font-extrabold">• 테스트 및 의견수렴 기간: 2026년 8월~10월</p>
+                    <p class="text-slate-700 font-extrabold">• 개선 의견은 <span class="text-blue-600 underline underline-offset-2">사용 후기</span>에 남겨 주세요</p>
+                    <p class="pt-3 mt-3 border-t border-dashed border-slate-200 text-slate-500 text-xs md:text-sm leading-relaxed font-semibold">
+                        본 프로그램은 입력하신 교사명 데이터를 외부 서버로 전송하거나 수집하지 않으며, 오직 원감선생님의 브라우저(PC) 내에서만 안전하게 처리됩니다. (인터넷 연결 없이도 작동하는 완전 폐쇄형 프로그램입니다.) 다만 공용PC에서 사용하는 경우에는 사용 후 반드시 <span class="text-red-600 font-black underline underline-offset-2 decoration-2">문서초기화</span>를 하시기 바랍니다.
+                    </p>
+                </div>
+                <div class="flex gap-3 pt-2">
+                    <button onclick="closeKinderTransferInfoModal()" class="flex-1 py-3 px-5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold transition-colors text-sm md:text-base">닫기</button>
+                    <button onclick="goToKinderTransfer()" class="flex-1 py-3 px-5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold transition-colors shadow-lg shadow-emerald-500/20 text-sm md:text-base">이동</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- 학급 배정 및 업무분장 이용 안내 모달 -->
     <div id="matchingInfoModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
         <div class="bg-white rounded-2xl max-w-lg w-full p-6 md:p-8 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
             <div class="text-center space-y-4">
-                <div class="mx-auto flex items-center justify-center h-14 w-14 rounded-full bg-emerald-100 text-emerald-600">
+                <div class="mx-auto flex items-center justify-center h-14 w-14 rounded-full bg-blue-100 text-blue-600">
                     <i class="fas fa-users-cog text-xl md:text-2xl"></i>
                 </div>
                 <div class="space-y-1">
@@ -599,34 +655,6 @@
                 <div class="flex gap-3 pt-2">
                     <button onclick="closeMatchingInfoModal()" class="flex-1 py-3 px-5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold transition-colors text-sm md:text-base">닫기</button>
                     <button onclick="goToMatching()" class="flex-1 py-3 px-5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-colors shadow-lg shadow-blue-500/20 text-sm md:text-base">이동</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 전보희망원(관외) 작성 도우미 이용 안내 모달 -->
-    <div id="transferInfoModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
-        <div class="bg-white rounded-2xl max-w-lg w-full p-6 md:p-8 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
-            <div class="text-center space-y-4">
-                <div class="mx-auto flex items-center justify-center h-14 w-14 rounded-full bg-blue-100 text-blue-600">
-                    <i class="fas fa-file-signature text-xl md:text-2xl"></i>
-                </div>
-                <div class="space-y-1">
-                    <h3 class="text-xl md:text-2xl font-black text-slate-800">📢 사용시 주의 사항</h3>
-                    <p class="text-slate-400 text-xs md:text-sm font-bold leading-tight">(전보희망원(관외) 작성 도우미)</p>
-                    <p class="text-red-500 font-black text-2xl md:text-3xl tracking-wide mt-1 animate-pulse">⚠️ 테스트 중</p>
-                </div>
-                <div class="text-left text-sm md:text-base text-slate-600 space-y-3 bg-slate-50 p-5 rounded-xl border border-slate-100 font-semibold leading-relaxed">
-                    <p>• 본 시스템은 전보희망원 작성을 지원하기 위한 참고용 도구입니다. 작성된 내용은 제출 전 관련 규정 및 기준에 따라 반드시 본인이 최종 검토·수정하시기 바랍니다.</p>
-                    <p class="text-blue-600 font-extrabold">• 테스트 및 의견수렴 기간: 2026년 8월~10월</p>
-                    <p class="text-slate-700 font-extrabold">• 개선 의견은 <span class="text-blue-600 underline underline-offset-2">사용 후기</span>에 남겨 주세요</p>
-                    <p class="pt-3 mt-3 border-t border-dashed border-slate-200 text-slate-500 text-xs md:text-sm leading-relaxed font-semibold">
-                        본 프로그램은 입력하신 교사명 데이터를 외부 서버로 전송하거나 수집하지 않으며, 오직 교감선생님의 브라우저(PC) 내에서만 안전하게 처리됩니다. (인터넷 연결 없이도 작동하는 완전 폐쇄형 프로그램입니다.) 다만 공용PC에서 사용하는 경우에는 사용 후 반드시 <span class="text-red-600 font-black underline underline-offset-2 decoration-2">문서초기화</span>를 하시기 바랍니다.
-                    </p>
-                </div>
-                <div class="flex gap-3 pt-2">
-                    <button onclick="closeTransferInfoModal()" class="flex-1 py-3 px-5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold transition-colors text-sm md:text-base">닫기</button>
-                    <button onclick="goToTransfer()" class="flex-1 py-3 px-5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-colors shadow-lg shadow-blue-500/20 text-sm md:text-base">이동</button>
                 </div>
             </div>
         </div>
@@ -881,7 +909,7 @@
             closeMatchingInfoModal();
         }
 
-        // 전보희망원(관외) 작성 도우미 안내 모달 열기
+        // 초등 전보희망원(관외) 작성 도우미 안내 모달 열기
         function openTransferInfoModal(e) {
             if (e) e.preventDefault();
             const modal = document.getElementById('transferInfoModal');
@@ -889,17 +917,38 @@
             modal.classList.add('flex');
         }
 
-        // 전보희망원(관외) 작성 도우미 안내 모달 닫기
+        // 초등 전보희망원(관외) 작성 도우미 안내 모달 닫기
         function closeTransferInfoModal() {
             const modal = document.getElementById('transferInfoModal');
             modal.classList.add('hidden');
             modal.classList.remove('flex');
         }
 
-        // 전보희망원(관외) 작성 도우미 사이트로 이동
+        // 초등 전보희망원(관외) 작성 도우미 사이트로 이동
         function goToTransfer() {
             window.open('https://letter0033-star.github.io/transfer/', '_blank');
             closeTransferInfoModal();
+        }
+
+        // 유치원 전보희망원(관외) 작성 도우미 안내 모달 열기
+        function openKinderTransferInfoModal(e) {
+            if (e) e.preventDefault();
+            const modal = document.getElementById('kinderTransferInfoModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        // 유치원 전보희망원(관외) 작성 도우미 안내 모달 닫기
+        function closeKinderTransferInfoModal() {
+            const modal = document.getElementById('kinderTransferInfoModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // 유치원 전보희망원(관외) 작성 도우미 사이트로 이동
+        function goToKinderTransfer() {
+            window.open('https://letter0033-star.github.io/transfer-kinder/', '_blank');
+            closeKinderTransferInfoModal();
         }
 
         // 오늘의 교육뉴스 안내 모달 열기
