@@ -390,16 +390,16 @@
                 </div>
             </a>
 
-            <!-- 배지 18: 업무경감 웹앱 준비중 -->
-            <div class="white-card py-3 px-4 gap-4 flex items-center bg-slate-100/80 border border-dashed border-slate-300 opacity-80 transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-slate-400 hover:bg-white hover:opacity-100 cursor-pointer">
-                <div class="icon-box bg-slate-200/80 text-slate-500 shadow-none">
-                    <i class="fas fa-rocket text-xl"></i>
+            <!-- 배지 18: 맞춤형 퇴직 시뮬레이터 -->
+            <a href="#" onclick="openRetirementSimModal(event)" class="badge-card white-card card-6 py-3 px-4 gap-4">
+                <div class="icon-box shadow-sm">
+                    <i class="fas fa-calculator text-xl"></i>
                 </div>
                 <div class="flex flex-col text-left">
-                    <span class="text-base md:text-lg font-extrabold text-slate-700">업무경감 웹앱 준비중</span>
-                    <p class="text-slate-500 text-xs font-semibold">교감선생님을 위한 맞춤형 솔루션 준비 중</p>
+                    <span class="text-base md:text-lg font-extrabold text-slate-800">맞춤형 퇴직 시뮬레이터</span>
+                    <p class="text-slate-500 text-xs font-medium">나의 퇴직 시점과 노후자산을 미리 설계해 보세요</p>
                 </div>
-            </div>
+            </a>
         </main>
 
         <!-- 하단 서브 배지 영역 (총 12개, 2단 배치, 세로 높이 최소화) -->
@@ -767,6 +767,42 @@
         </div>
     </div>
 
+    <!-- 맞춤형 퇴직 시뮬레이터 안내 모달 -->
+    <div id="retirementSimModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 md:p-8 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
+            <div class="text-center space-y-4">
+                <div class="mx-auto flex items-center justify-center h-14 w-14 rounded-full bg-indigo-100 text-indigo-600">
+                    <i class="fas fa-user-shield text-xl md:text-2xl"></i>
+                </div>
+                <div class="space-y-1">
+                    <h3 class="text-xl md:text-2xl font-black text-slate-800">🔒 개인정보 보호 안내</h3>
+                    <p class="text-slate-400 text-xs md:text-sm font-bold leading-tight">(맞춤형 퇴직 시뮬레이터)</p>
+                </div>
+                <div class="text-left text-xs md:text-sm text-slate-600 space-y-3 bg-slate-50 p-5 rounded-xl border border-slate-100 font-medium leading-relaxed max-h-[50vh] overflow-y-auto">
+                    <p class="font-bold text-slate-800">• 본 시뮬레이터에는 개인의 예상 연금액과 퇴직·노후 관련 정보가 포함됩니다. 본인의 결과만 확인하고 타인과 공유하지 않도록 유의해 주세요.</p>
+                    <p class="text-amber-700 font-semibold bg-amber-50/80 p-3 rounded-lg border border-amber-200/60 leading-normal">
+                        ※ 본 시뮬레이션은 입력한 조건을 바탕으로 산출한 참고용 예상치이며, 실제 연금액·퇴직 관련 급여 및 노후자산과 차이가 있을 수 있습니다. 특히 누적 금액은 예상기간을 단순 적용한 계산값으로 실제 수령액을 의미하지 않습니다.
+                    </p>
+                    <p class="pt-2 border-t border-dashed border-slate-200 text-slate-500 text-[10px] md:text-xs leading-relaxed font-semibold">
+                        본 프로그램은 입력하신 교원 개인정보 데이터를 외부 서버로 전송하거나 수집하지 않으며, 오직 본인의 브라우저(PC) 내에서만 안전하게 처리됩니다. (인터넷 연결 없이도 작동하는 완전 폐쇄형 프로그램입니다.) 개인용 PC에서만 사용하기를 권장합니다.
+                    </p>
+                </div>
+                <div class="space-y-1.5 pt-1">
+                    <input type="password" id="retirementPasswordInput" placeholder="비밀번호 입력" 
+                           class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 text-center tracking-wider font-extrabold text-slate-700 bg-slate-50">
+                    <p id="retirementPasswordError" class="text-[11px] text-red-500 font-bold hidden">비밀번호가 일치하지 않습니다.</p>
+                    <p class="text-[11px] md:text-xs text-blue-600 font-bold text-center leading-relaxed pt-1 bg-blue-50/80 py-2 px-3 rounded-lg border border-blue-100">
+                        사용을 원하시는 교(원)감선생님은 사용후기에 소속과 성함 남겨주시면<br>이음톡으로 비밀번호 전송해 드리겠습니다.
+                    </p>
+                </div>
+                <div class="flex gap-3 pt-2">
+                    <button onclick="closeRetirementSimModal()" class="flex-1 py-3 px-5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold transition-colors text-sm md:text-base">닫기</button>
+                    <button onclick="submitRetirementPassword()" class="flex-1 py-3 px-5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold transition-colors shadow-lg shadow-indigo-500/20 text-sm md:text-base">이동</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- 스크립트 영역 -->
     <script>
         // --- Firebase 방문자 카운터 로직 시작 ---
@@ -1054,6 +1090,60 @@
             closeLearningInfoModal();
         }
 
+        // 맞춤형 퇴직 시뮬레이터 모달 열기
+        function openRetirementSimModal(e) {
+            if (e) e.preventDefault();
+            const modal = document.getElementById('retirementSimModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+            const input = document.getElementById('retirementPasswordInput');
+            if (input) {
+                input.value = '';
+                document.getElementById('retirementPasswordError').classList.add('hidden');
+                input.focus();
+            }
+        }
+
+        // 맞춤형 퇴직 시뮬레이터 모달 닫기
+        function closeRetirementSimModal() {
+            const modal = document.getElementById('retirementSimModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+            const input = document.getElementById('retirementPasswordInput');
+            if (input) input.value = '';
+            const err = document.getElementById('retirementPasswordError');
+            if (err) err.classList.add('hidden');
+        }
+
+        // 맞춤형 퇴직 시뮬레이터 비밀번호 검증 및 이동
+        function submitRetirementPassword() {
+            const inputVal = document.getElementById('retirementPasswordInput').value;
+            if (inputVal === '365100') {
+                window.open('https://letter0033-star.github.io/retirement-simulator/', '_blank');
+                closeRetirementSimModal();
+            } else {
+                const error = document.getElementById('retirementPasswordError');
+                if (error) error.classList.remove('hidden');
+                
+                const inputEl = document.getElementById('retirementPasswordInput');
+                if (inputEl) {
+                    inputEl.classList.add('border-red-500', 'bg-red-50');
+                    setTimeout(() => {
+                        inputEl.classList.remove('border-red-500', 'bg-red-50');
+                    }, 800);
+                }
+            }
+        }
+
+        // 전역 스크립트 명시적 바인딩
+        window.openRetirementSimModal = openRetirementSimModal;
+        window.closeRetirementSimModal = closeRetirementSimModal;
+        window.submitRetirementPassword = submitRetirementPassword;
+
         // 주소 클립보드 복사 함수 (iframe 대응을 위해 execCommand Fallback 방식 적용)
         function copyLearningLink() {
             const textToCopy = 'https://letter0033-star.github.io/Learning/';
@@ -1101,6 +1191,13 @@
             if (inputEl) {
                 inputEl.addEventListener('keyup', (e) => {
                     if (e.key === 'Enter') submitPassword();
+                });
+            }
+
+            const retirementInputEl = document.getElementById('retirementPasswordInput');
+            if (retirementInputEl) {
+                retirementInputEl.addEventListener('keyup', (e) => {
+                    if (e.key === 'Enter') submitRetirementPassword();
                 });
             }
         });
