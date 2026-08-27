@@ -437,13 +437,13 @@
             </a>
 
             <!-- 배지 21: 정년시점 연금액 예측 프로그램 -->
-            <a href="#" onclick="event.preventDefault(); alert('준비 중인 서비스입니다.');" class="badge-card white-card card-disabled py-3 px-4 gap-4">
+            <a href="#" onclick="openPensionInfoModal(event)" class="badge-card white-card card-3 py-3 px-4 gap-4">
                 <div class="icon-box shadow-sm">
-                    <i class="fas fa-tools text-xl"></i>
+                    <i class="fas fa-coins text-xl"></i>
                 </div>
                 <div class="flex flex-col text-left">
-                    <span class="text-base md:text-lg font-extrabold text-slate-500">정년시점 연금액 예측 프로그램</span>
-                    <p class="text-slate-400 text-xs font-medium">62세 정년 퇴임 기준으로 월 연금 수령액을 예측합니다.</p>
+                    <span class="text-base md:text-lg font-extrabold text-slate-800">정년시점 연금액 예측 프로그램</span>
+                    <p class="text-slate-500 text-xs font-medium">62세 정년 퇴임 기준으로 월 연금 수령액을 예측합니다.</p>
                 </div>
             </a>
         </main>
@@ -756,6 +756,41 @@
                 <div class="flex gap-3 pt-2">
                     <button onclick="closeGongo15InfoModal()" class="flex-1 py-3 px-5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold transition-colors text-sm md:text-base">닫기</button>
                     <button onclick="goToGongo15()" class="flex-1 py-3 px-5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold transition-colors shadow-lg shadow-indigo-500/20 text-sm md:text-base">이동</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 정년시점 연금액 예측 프로그램 이용 안내 모달 -->
+    <div id="pensionInfoModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 md:p-8 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
+            <div class="text-center space-y-4">
+                <div class="mx-auto flex items-center justify-center h-14 w-14 rounded-full bg-pink-100 text-pink-600">
+                    <i class="fas fa-coins text-xl md:text-2xl"></i>
+                </div>
+                <div class="space-y-1">
+                    <h3 class="text-xl md:text-2xl font-black text-slate-800">📢 사용시 주의 사항</h3>
+                    <p class="text-slate-400 text-xs md:text-sm font-bold leading-tight">(정년시점 연금액 예측 프로그램)</p>
+                </div>
+                <div class="text-left text-sm md:text-base text-slate-600 space-y-3 bg-slate-50 p-5 rounded-xl border border-slate-100 font-semibold leading-relaxed">
+                    <p>• 본 시스템은 62세 정년 퇴임 기준으로 월 연금 수령액을 예측하기 위한 참고용 프로그램입니다.</p>
+                    <p class="text-blue-600 font-extrabold">• 구체적인 사용 방법은 이동 후 연결되는 웹페이지 내에서 직접 확인하실 수 있습니다.</p>
+                    <p class="text-slate-700 font-extrabold">• 개선 의견은 <span class="text-blue-600 underline underline-offset-2">사용 후기</span>에 남겨 주세요</p>
+                    <p class="pt-3 mt-3 border-t border-dashed border-slate-200 text-slate-500 text-xs md:text-sm leading-relaxed font-semibold">
+                        본 프로그램은 입력하신 정보를 외부 서버로 전송하거나 수집하지 않으며, 오직 본인의 브라우저(PC) 내에서만 안전하게 처리됩니다. (인터넷 연결 없이도 작동하는 완전 폐쇄형 프로그램입니다.) 다만 공용PC에서 사용하는 경우에는 사용 후 반드시 대장초기화 또는 브라우저 창을 완전히 닫으시기 바랍니다.
+                    </p>
+                </div>
+                <div class="space-y-1.5 pt-1">
+                    <input type="password" id="pensionPasswordInput" placeholder="비밀번호 입력" 
+                           class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 text-center tracking-wider font-extrabold text-slate-700 bg-slate-50">
+                    <p id="pensionPasswordError" class="text-[11px] text-red-500 font-bold hidden">비밀번호가 일치하지 않습니다.</p>
+                    <p class="text-[11px] md:text-xs text-blue-600 font-bold text-center leading-relaxed pt-1 bg-blue-50/80 py-2 px-3 rounded-lg border border-blue-100">
+                        사용을 원하시는 교(원)감선생님은 사용후기에 글 남겨주세요.
+                    </p>
+                </div>
+                <div class="flex gap-3 pt-2">
+                    <button onclick="closePensionInfoModal()" class="flex-1 py-3 px-5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold transition-colors text-sm md:text-base">닫기</button>
+                    <button onclick="submitPensionPassword()" class="flex-1 py-3 px-5 bg-pink-600 hover:bg-pink-700 text-white rounded-xl font-bold transition-colors shadow-lg shadow-pink-500/20 text-sm md:text-base">이동</button>
                 </div>
             </div>
         </div>
@@ -1189,6 +1224,56 @@
             closeGongo15InfoModal();
         }
 
+        // 정년시점 연금액 예측 프로그램 안내 모달 열기
+        function openPensionInfoModal(e) {
+            if (e) e.preventDefault();
+            const modal = document.getElementById('pensionInfoModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+            const input = document.getElementById('pensionPasswordInput');
+            if (input) {
+                input.value = '';
+                const err = document.getElementById('pensionPasswordError');
+                if (err) err.classList.add('hidden');
+                input.focus();
+            }
+        }
+
+        // 정년시점 연금액 예측 프로그램 안내 모달 닫기
+        function closePensionInfoModal() {
+            const modal = document.getElementById('pensionInfoModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+            const input = document.getElementById('pensionPasswordInput');
+            if (input) input.value = '';
+            const err = document.getElementById('pensionPasswordError');
+            if (err) err.classList.add('hidden');
+        }
+
+        // 정년시점 연금액 예측 프로그램 비밀번호 검증 및 이동
+        function submitPensionPassword() {
+            const inputVal = document.getElementById('pensionPasswordInput').value;
+            if (inputVal === '62365100') {
+                window.open('https://letter0033-star.github.io/pension/', '_blank');
+                closePensionInfoModal();
+            } else {
+                const error = document.getElementById('pensionPasswordError');
+                if (error) error.classList.remove('hidden');
+                
+                const inputEl = document.getElementById('pensionPasswordInput');
+                if (inputEl) {
+                    inputEl.classList.add('border-red-500', 'bg-red-50');
+                    setTimeout(() => {
+                        inputEl.classList.remove('border-red-500', 'bg-red-50');
+                    }, 800);
+                }
+            }
+        }
+
         // 오늘의 교육뉴스 안내 모달 열기
         function openNewsInfoModal(e) {
             if (e) {
@@ -1351,6 +1436,13 @@
             if (retirementInputEl) {
                 retirementInputEl.addEventListener('keyup', (e) => {
                     if (e.key === 'Enter') submitRetirementPassword();
+                });
+            }
+
+            const pensionInputEl = document.getElementById('pensionPasswordInput');
+            if (pensionInputEl) {
+                pensionInputEl.addEventListener('keyup', (e) => {
+                    if (e.key === 'Enter') submitPensionPassword();
                 });
             }
         });
