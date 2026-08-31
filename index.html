@@ -201,15 +201,26 @@
         </section>
 
         <!-- 권장사항 및 방문자 카운터 안내 -->
-        <div class="flex flex-wrap items-center justify-center gap-y-2 gap-x-4 text-center px-2">
+        <div class="flex flex-wrap items-center justify-center gap-y-2 gap-x-3 text-center px-2">
             <p class="text-slate-600 text-[11px] md:text-sm font-semibold tracking-tight">
-                <i class="fas fa-info-circle text-blue-500 mr-1"></i> [권장사항] 모든 프로그램은 <span class="text-blue-700 underline underline-offset-2">크롬(Chrome)</span>에 최적화되어 있으며, <span class="text-blue-700 underline underline-offset-2">구글 계정에 로그인</span> 후 접속하시기 바랍니다.
+                <i class="fas fa-info-circle text-blue-500 mr-1"></i> [권장] 프로그램은 <span class="text-blue-700 underline underline-offset-2">크롬</span>에 최적화되어 있으며, <span class="text-blue-700 underline underline-offset-2">구글 계정에 로그인</span> 후 접속해 주세요.
             </p>
             <!-- 파이어베이스 텍스트 카운터 표시 영역 -->
             <div class="inline-flex items-center gap-1.5 bg-white/80 backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm border border-slate-200/80 text-slate-700 text-[11px] md:text-xs font-bold whitespace-nowrap">
                 <i class="fas fa-users text-blue-500"></i>
                 <span id="visitorCountText">2026. 8. 1.이후 일일/누적 방문자 = <span class="spinner"></span></span>
             </div>
+            <!-- 교(원)감 대나무숲 배지 -->
+            <a href="https://script.google.com/macros/s/AKfycbyEauFOgHlI21QZAC-nf6D-83vguOqFpR7gZnRBk_RlXSlYZdrd0cPoC2ZQqDUdqx7Tng/exec" target="_blank" class="inline-flex items-center gap-1.5 bg-white/80 hover:bg-emerald-50/60 hover:border-emerald-200/80 backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm hover:shadow-md border border-slate-200/80 text-slate-700 hover:text-emerald-800 text-[11px] md:text-xs font-bold whitespace-nowrap transition-all duration-150 hover:-translate-y-0.5 active:scale-95 group relative">
+                <i class="fas fa-tree text-emerald-500 group-hover:scale-110 transition-transform"></i>
+                <span>교(원)감 대나무숲</span>
+                <!-- 말풍선 툴팁 -->
+                <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2.5 hidden group-hover:block bg-slate-900/90 backdrop-blur-sm text-white text-[10px] md:text-xs py-1 px-2.5 rounded-lg shadow-lg whitespace-nowrap z-50 font-medium pointer-events-none transition-all duration-200">
+                    교(원)감선생님들이 익명으로 편하게 이야기 하는 곳
+                    <!-- 말풍선 꼬리 -->
+                    <span class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-900/90"></span>
+                </span>
+            </a>
         </div>
 
         <!-- 메인 배지 영역 (총 18개, 3열 6단 구성) -->
