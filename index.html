@@ -563,6 +563,111 @@
         </div>
     </div>
 
+    <!-- 접속시 첫 팝업: 교직원 자연 유형 검사 설문 참여 안내 모달 -->
+    <div id="surveyNoticeModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl max-w-xl w-full p-5 md:p-7 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
+            <div class="text-center space-y-3">
+                <div class="mx-auto flex items-center justify-center h-14 w-14 rounded-full bg-emerald-100 text-emerald-600 shadow-inner">
+                    <i class="fas fa-seedling text-2xl"></i>
+                </div>
+                <div class="space-y-1">
+                    <span class="inline-block bg-emerald-100 text-emerald-800 text-xs px-2.5 py-0.5 rounded-full font-black">설문 참여 부탁</span>
+                    <h3 class="text-xl md:text-2xl font-black text-slate-800 tracking-tight">교직원 자연 유형 검사 문항 점검</h3>
+                </div>
+
+                <div class="text-left text-xs md:text-sm text-slate-700 space-y-3.5 bg-slate-50 p-4 md:p-5 rounded-xl border border-slate-100 max-h-[58vh] overflow-y-auto leading-relaxed font-medium">
+                    <p class="font-semibold text-slate-800 leading-normal">
+                        안녕하십니까.<br>
+                        서로 처음 보는 새학기 만남이나 적극적인 참여가 필요한 평가회, 연수 등에서 분위기 전환이 필요한 순간이 있습니다. 이때 나를 이해하고 서로에 대해 공감하며 일하는 방식을 이해하도록 돕는 자기 이해 도구 <span class="text-emerald-700 font-extrabold">「교직원 자연 유형」</span>을 만들고 있습니다. 이 검사가 일관되고 타당하게 측정하는지 확인하기 위해 현장 선생님들의 응답을 모으고 있어, 바쁘시겠지만 참여를 부탁드립니다.
+                    </p>
+
+                    <!-- 주요 일정 및 소요시간 카드 -->
+                    <div class="bg-white p-3.5 rounded-xl border border-slate-200/80 shadow-sm space-y-2">
+                        <div class="flex items-start gap-2">
+                            <i class="fas fa-bullseye text-emerald-600 mt-0.5 text-xs"></i>
+                            <div>
+                                <span class="font-bold text-slate-800">설문 목적:</span>
+                                <span class="text-slate-700 font-medium"> 교직원 자연 유형 검사 신뢰도, 타당도 측정 및 요인분석</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <i class="fas fa-clock text-amber-500 mt-0.5 text-xs"></i>
+                            <div>
+                                <span class="font-bold text-slate-800">소요 시간:</span>
+                                <span class="text-slate-700 font-medium"> 약 8분 (학교 장면 문항 32개 + 짧은 질문 몇 개)</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <i class="fas fa-calendar-alt text-rose-500 mt-0.5 text-xs"></i>
+                            <div>
+                                <span class="font-bold text-slate-800">기한:</span>
+                                <span class="text-rose-600 font-extrabold"> 2026년 10월 16일(금)까지</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1.5 pt-1.5 border-t border-slate-100">
+                            <span class="font-bold text-slate-800 flex items-center gap-1.5"><i class="fas fa-link text-blue-500 text-xs"></i>참여 링크:</span>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf2iXNdridpqxyVfK3wh1WrYjzs3AnQebuyyecS55EQO4rKTg/viewform" target="_blank" class="text-blue-600 underline font-extrabold text-[11px] md:text-xs break-all hover:text-blue-800">
+                                구글 폼 설문 바로가기
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 안내 사항 -->
+                    <div class="space-y-1.5">
+                        <span class="font-extrabold text-slate-800 text-xs md:text-sm block text-emerald-800">■ 안내</span>
+                        <ul class="list-disc pl-4 space-y-1 text-[11px] md:text-xs text-slate-600">
+                            <li>이름, 이메일, 학교명은 받지 않는 익명 설문이며, 응답은 통계로만 분석합니다.</li>
+                            <li>정답은 없습니다. 되고 싶은 모습보다 평소 학교에서 일하시는 모습 그대로 답해 주세요.</li>
+                            <li>참여는 자유이며, 중간에 그만두셔도 불이익이 없습니다.</li>
+                            <li>초대드린 분들만 참여하는 연구라 링크는 다른 분께 전달하지 말아 주세요.</li>
+                            <li>답변해 주시는 분들께는 검사도구가 완료되면 주소와 비번(변경 예정)을 공개하겠습니다.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 내 결과 확인 -->
+                    <div class="space-y-1.5 pt-2 border-t border-dashed border-slate-200">
+                        <span class="font-extrabold text-slate-800 text-xs md:text-sm block text-emerald-800">■ 내 결과도 볼 수 있습니다</span>
+                        <p class="text-[11px] md:text-xs text-slate-600">
+                            설문을 마치신 뒤 아래 웹 검사로 내 결과(해·숲·바위·물)를 바로 확인하실 수 있습니다. 설문 응답과는 연결되지 않습니다. 주소는 설문후에 나옵니다.
+                        </p>
+                        <div class="inline-flex items-center gap-2 bg-emerald-50/80 border border-emerald-200/80 px-2.5 py-1 rounded-lg text-[11px] md:text-xs">
+                            <span class="font-bold text-emerald-800">· 비밀번호:</span>
+                            <code class="font-mono font-black text-emerald-700 bg-white px-1.5 py-0.5 rounded border border-emerald-200 select-all">93k9-8q4g-9xdg</code>
+                        </div>
+                    </div>
+
+                    <!-- 문항 검토자 모집 -->
+                    <div class="space-y-1.5 pt-2 border-t border-dashed border-slate-200">
+                        <span class="font-extrabold text-slate-800 text-xs md:text-sm block text-emerald-800">■ 문항 검토자도 모십니다</span>
+                        <p class="text-[11px] md:text-xs text-slate-600">
+                            설문 완료 화면에 문항 내용 검토(약 20분) 신청 안내가 있습니다. 교육학·상담심리 석사, 상담교사, 특수교육 전문가 선생님들의 관심 부탁드립니다.
+                        </p>
+                    </div>
+
+                    <div class="pt-2 border-t border-slate-200 text-[11px] md:text-xs text-slate-500 font-semibold space-y-0.5 text-center">
+                        <p>문의: <a href="mailto:letter0033@gmail.com" class="text-blue-600 underline">letter0033@gmail.com</a></p>
+                        <p class="text-slate-600 font-bold">귀한 시간 내어 주셔서 감사합니다.</p>
+                    </div>
+                </div>
+
+                <!-- 하단 액션 컨트롤 -->
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
+                    <label class="flex items-center gap-1.5 text-slate-500 text-xs font-semibold cursor-pointer select-none">
+                        <input type="checkbox" id="hideSurveyTodayCheckbox" class="rounded border-slate-300 text-emerald-600 focus:ring-emerald-500">
+                        <span>오늘 하루 열지 않기</span>
+                    </label>
+                    <div class="flex items-center gap-2 w-full sm:w-auto">
+                        <button onclick="closeSurveyModal()" class="flex-1 sm:flex-none py-2.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold transition-colors text-xs md:text-sm">닫기</button>
+                        <button onclick="goToSurvey()" class="flex-1 sm:flex-none py-2.5 px-5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white rounded-xl font-bold transition-all shadow-lg shadow-emerald-600/20 text-xs md:text-sm flex items-center justify-center gap-1.5">
+                            <span>설문 참여하기</span>
+                            <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- 프리미엄 비밀번호 확인 모달 (연간 업무 패들렛 용) -->
     <div id="passwordModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
         <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
@@ -1484,10 +1589,62 @@
             document.body.removeChild(tempInput);
         }
 
+        // 접속시 처음 보이는 설문 참여 안내 모달 열기 및 제어
+        function checkAndOpenSurveyModal() {
+            try {
+                const hideDate = localStorage.getItem('hideSurveyNoticeDate');
+                const today = new Date().toISOString().slice(0, 10);
+                if (hideDate !== today) {
+                    const modal = document.getElementById('surveyNoticeModal');
+                    if (modal) {
+                        modal.classList.remove('hidden');
+                        modal.classList.add('flex');
+                    }
+                }
+            } catch (e) {
+                console.error("설문 모달 로드 오류:", e);
+                const modal = document.getElementById('surveyNoticeModal');
+                if (modal) {
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                }
+            }
+        }
+
+        // 설문 안내 모달 닫기
+        function closeSurveyModal(neverToday) {
+            const modal = document.getElementById('surveyNoticeModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+            try {
+                const checkbox = document.getElementById('hideSurveyTodayCheckbox');
+                if (neverToday || (checkbox && checkbox.checked)) {
+                    const today = new Date().toISOString().slice(0, 10);
+                    localStorage.setItem('hideSurveyNoticeDate', today);
+                }
+            } catch (e) {
+                console.error("localStorage 저장 오류:", e);
+            }
+        }
+
+        // 설문 폼 새창 이동
+        function goToSurvey() {
+            window.open('https://docs.google.com/forms/d/e/1FAIpQLSf2iXNdridpqxyVfK3wh1WrYjzs3AnQebuyyecS55EQO4rKTg/viewform', '_blank');
+            closeSurveyModal(false);
+        }
+
+        window.closeSurveyModal = closeSurveyModal;
+        window.goToSurvey = goToSurvey;
+
         // 문서 로드 완료 시 키보드 입력 및 엔터 이벤트 핸들러 바인딩
         document.addEventListener('DOMContentLoaded', () => {
             // 카운터 실행
             updateVisitorCount();
+
+            // 접속 시 첫 팝업(설문 참여 안내) 표시
+            checkAndOpenSurveyModal();
 
             const inputEl = document.getElementById('passwordInput');
             if (inputEl) {
