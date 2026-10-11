@@ -469,27 +469,27 @@
                 </div>
             </div>
 
-            <!-- 배지 23: 준비중 -->
-            <div class="badge-card white-card card-disabled py-3 px-4 gap-4">
+            <!-- 배지 23: [학생 소통도구] 1-2학년 숲속 나 찾기 -->
+            <a href="#" onclick="openForest12InfoModal(event)" class="badge-card white-card card-5 py-3 px-4 gap-4">
                 <div class="icon-box shadow-sm">
-                    <i class="fas fa-clock text-xl"></i>
+                    <i class="fas fa-tree text-xl"></i>
                 </div>
                 <div class="flex flex-col text-left">
-                    <span class="text-base md:text-lg font-extrabold text-slate-800">준비중</span>
-                    <p class="text-slate-500 text-xs font-medium">새로운 서비스를 준비하고 있습니다.</p>
+                    <span class="text-base md:text-lg font-extrabold text-slate-800">[학생 소통도구] 1-2학년 숲속 나 찾기</span>
+                    <p class="text-slate-500 text-xs font-medium">개별학생교육지원 및 학생상담 시 활용</p>
                 </div>
-            </div>
+            </a>
 
-            <!-- 배지 24: 준비중 -->
-            <div class="badge-card white-card card-disabled py-3 px-4 gap-4">
+            <!-- 배지 24: [학생 소통도구] 3-6학년 숲속 나 찾기 -->
+            <a href="#" onclick="openForestInfoModal(event)" class="badge-card white-card card-6 py-3 px-4 gap-4">
                 <div class="icon-box shadow-sm">
-                    <i class="fas fa-clock text-xl"></i>
+                    <i class="fas fa-tree text-xl"></i>
                 </div>
                 <div class="flex flex-col text-left">
-                    <span class="text-base md:text-lg font-extrabold text-slate-800">준비중</span>
-                    <p class="text-slate-500 text-xs font-medium">새로운 서비스를 준비하고 있습니다.</p>
+                    <span class="text-base md:text-lg font-extrabold text-slate-800">[학생 소통도구] 3-6학년 숲속 나 찾기</span>
+                    <p class="text-slate-500 text-xs font-medium">개별학생교육지원 및 학생상담 시 활용</p>
                 </div>
-            </div>
+            </a>
         </main>
 
         <!-- 하단 서브 배지 영역 (총 12개, 2단 배치, 세로 높이 최소화) -->
@@ -1104,6 +1104,74 @@
         </div>
     </div>
 
+    <!-- [학생 소통도구] 1-2학년 숲속 나 찾기 이용 안내 모달 -->
+    <div id="forest12InfoModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 md:p-8 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
+            <div class="text-center space-y-4">
+                <div class="mx-auto flex items-center justify-center h-14 w-14 rounded-full bg-emerald-100 text-emerald-600">
+                    <i class="fas fa-tree text-xl md:text-2xl"></i>
+                </div>
+                <div class="space-y-1">
+                    <h3 class="text-xl md:text-2xl font-black text-slate-800">📢 학생에게 보내기 공유 안내</h3>
+                    <p class="text-slate-400 text-xs md:text-sm font-bold leading-tight">([학생 소통도구] 1-2학년 숲속 나 찾기)</p>
+                </div>
+                <div class="text-left text-sm md:text-base text-slate-600 space-y-4 bg-slate-50 p-5 rounded-xl border border-slate-100 font-semibold leading-relaxed">
+                    <p class="text-slate-700">
+                        본 프로그램은 URL(주소)만으로 간편하게 접속할 수 있습니다. 아래 주소를 복사하여 교사, 학생에게 공유해 주세요.<br>접속 즉시 1-2학년 학생용 숲속 나 찾기 활동을 진행할 수 있습니다.
+                    </p>
+                    
+                    <!-- 링크 복사 영역 -->
+                    <div class="flex items-center gap-2 bg-white border border-slate-200 rounded-xl p-2.5 shadow-inner">
+                        <input type="text" id="forest12UrlInput" readonly value="https://letter0033-star.github.io/forest_12/" 
+                               class="flex-1 bg-transparent text-xs md:text-sm font-bold text-slate-500 border-none outline-none focus:ring-0 truncate px-1">
+                        <button onclick="copyForest12Link()" id="forest12CopyBtn" class="flex-shrink-0 bg-emerald-100 hover:bg-emerald-200 active:scale-95 text-emerald-700 font-extrabold px-3 py-1.5 rounded-lg text-xs md:text-sm transition-all flex items-center gap-1.5">
+                            <i class="fas fa-copy text-xs"></i>
+                            <span id="forest12CopyBtnText">주소 복사</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="flex gap-3 pt-2">
+                    <button onclick="closeForest12InfoModal()" class="flex-1 py-3 px-5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold transition-colors text-sm md:text-base">닫기</button>
+                    <button onclick="goToForest12()" class="flex-1 py-3 px-5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold transition-colors shadow-lg shadow-emerald-500/20 text-sm md:text-base">바로 이동</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- [학생 소통도구] 3-6학년 숲속 나 찾기 이용 안내 모달 -->
+    <div id="forestInfoModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 md:p-8 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
+            <div class="text-center space-y-4">
+                <div class="mx-auto flex items-center justify-center h-14 w-14 rounded-full bg-teal-100 text-teal-600">
+                    <i class="fas fa-tree text-xl md:text-2xl"></i>
+                </div>
+                <div class="space-y-1">
+                    <h3 class="text-xl md:text-2xl font-black text-slate-800">📢 학생에게 보내기 공유 안내</h3>
+                    <p class="text-slate-400 text-xs md:text-sm font-bold leading-tight">([학생 소통도구] 3-6학년 숲속 나 찾기)</p>
+                </div>
+                <div class="text-left text-sm md:text-base text-slate-600 space-y-4 bg-slate-50 p-5 rounded-xl border border-slate-100 font-semibold leading-relaxed">
+                    <p class="text-slate-700">
+                        본 프로그램은 URL(주소)만으로 간편하게 접속할 수 있습니다. 아래 주소를 복사하여 교사, 학생에게 공유해 주세요.<br>접속 즉시 3-6학년 학생용 숲속 나 찾기 활동을 진행할 수 있습니다.
+                    </p>
+                    
+                    <!-- 링크 복사 영역 -->
+                    <div class="flex items-center gap-2 bg-white border border-slate-200 rounded-xl p-2.5 shadow-inner">
+                        <input type="text" id="forestUrlInput" readonly value="https://letter0033-star.github.io/forest/" 
+                               class="flex-1 bg-transparent text-xs md:text-sm font-bold text-slate-500 border-none outline-none focus:ring-0 truncate px-1">
+                        <button onclick="copyForestLink()" id="forestCopyBtn" class="flex-shrink-0 bg-teal-100 hover:bg-teal-200 active:scale-95 text-teal-700 font-extrabold px-3 py-1.5 rounded-lg text-xs md:text-sm transition-all flex items-center gap-1.5">
+                            <i class="fas fa-copy text-xs"></i>
+                            <span id="forestCopyBtnText">주소 복사</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="flex gap-3 pt-2">
+                    <button onclick="closeForestInfoModal()" class="flex-1 py-3 px-5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold transition-colors text-sm md:text-base">닫기</button>
+                    <button onclick="goToForest()" class="flex-1 py-3 px-5 bg-teal-600 hover:bg-teal-700 text-white rounded-xl font-bold transition-colors shadow-lg shadow-teal-500/20 text-sm md:text-base">바로 이동</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- 스크립트 영역 -->
     <script>
         // --- Firebase 방문자 카운터 로직 시작 ---
@@ -1583,6 +1651,115 @@
             
             document.body.removeChild(tempInput);
         }
+
+        // [학생 소통도구] 1-2학년 숲속 나 찾기 모달 열기/닫기/이동/복사
+        function openForest12InfoModal(e) {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            const modal = document.getElementById('forest12InfoModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+        }
+
+        function closeForest12InfoModal() {
+            const modal = document.getElementById('forest12InfoModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        function goToForest12() {
+            window.open('https://letter0033-star.github.io/forest_12/', '_blank');
+            closeForest12InfoModal();
+        }
+
+        function copyForest12Link() {
+            const textToCopy = 'https://letter0033-star.github.io/forest_12/';
+            copyTextWithFeedback(textToCopy, 'forest12CopyBtn', 'forest12CopyBtnText', 'bg-emerald-100', 'text-emerald-700');
+        }
+
+        // [학생 소통도구] 3-6학년 숲속 나 찾기 모달 열기/닫기/이동/복사
+        function openForestInfoModal(e) {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            const modal = document.getElementById('forestInfoModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+        }
+
+        function closeForestInfoModal() {
+            const modal = document.getElementById('forestInfoModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        function goToForest() {
+            window.open('https://letter0033-star.github.io/forest/', '_blank');
+            closeForestInfoModal();
+        }
+
+        function copyForestLink() {
+            const textToCopy = 'https://letter0033-star.github.io/forest/';
+            copyTextWithFeedback(textToCopy, 'forestCopyBtn', 'forestCopyBtnText', 'bg-teal-100', 'text-teal-700');
+        }
+
+        // 공통 복사 피드백 함수
+        function copyTextWithFeedback(text, btnId, textId, defaultBg, defaultText) {
+            const tempInput = document.createElement('textarea');
+            tempInput.value = text;
+            tempInput.style.position = 'fixed';
+            tempInput.style.opacity = '0';
+            document.body.appendChild(tempInput);
+            
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999);
+            
+            try {
+                const successful = document.execCommand('copy');
+                const btnText = document.getElementById(textId);
+                const btnEl = document.getElementById(btnId);
+                
+                if (successful && btnText) {
+                    btnText.innerText = '복사 완료!';
+                    btnEl.classList.remove(defaultBg, defaultText);
+                    btnEl.classList.add('bg-emerald-500', 'text-white');
+                    
+                    setTimeout(() => {
+                        btnText.innerText = '주소 복사';
+                        btnEl.classList.add(defaultBg, defaultText);
+                        btnEl.classList.remove('bg-emerald-500', 'text-white');
+                    }, 1500);
+                } else {
+                    console.error('클립보드 복사 실패');
+                }
+            } catch (err) {
+                console.error('복사 중 오류 발생:', err);
+            }
+            
+            document.body.removeChild(tempInput);
+        }
+
+        // 전역 스크립트 명시적 바인딩
+        window.openForest12InfoModal = openForest12InfoModal;
+        window.closeForest12InfoModal = closeForest12InfoModal;
+        window.goToForest12 = goToForest12;
+        window.copyForest12Link = copyForest12Link;
+
+        window.openForestInfoModal = openForestInfoModal;
+        window.closeForestInfoModal = closeForestInfoModal;
+        window.goToForest = goToForest;
+        window.copyForestLink = copyForestLink;
 
         // 접속시 처음 보이는 설문 참여 안내 모달 열기 및 제어
         function checkAndOpenSurveyModal() {
