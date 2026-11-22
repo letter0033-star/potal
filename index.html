@@ -513,14 +513,14 @@
                 </div>
             </a>
 
-            <!-- 배지 27: 업무경감 웹앱 준비중 -->
-            <a href="#" onclick="event.preventDefault(); alert('준비 중인 서비스입니다.');" class="badge-card white-card card-disabled py-3 px-4 gap-4">
+            <!-- 배지 27: 2026-4차 교장자격연수 분임발표 자료 -->
+            <a href="#" onclick="openPresentationInfoModal(event)" class="badge-card white-card card-3 py-3 px-4 gap-4">
                 <div class="icon-box shadow-sm">
-                    <i class="fas fa-tools text-xl"></i>
+                    <i class="fas fa-tv text-xl"></i>
                 </div>
                 <div class="flex flex-col text-left">
-                    <span class="text-base md:text-lg font-extrabold text-slate-500">업무경감 웹앱 준비중</span>
-                    <p class="text-slate-400 text-xs font-medium">인사업무 문서 자동화 웹앱을 준비중입니다.</p>
+                    <span class="text-base md:text-lg font-extrabold text-slate-800">2026-4차 교장자격연수 분임발표 자료</span>
+                    <p class="text-slate-500 text-xs font-medium">12개 시도 현장구성원(564명)이 응답한 교장의 역할 기대와 성찰</p>
                 </div>
             </a>
         </main>
@@ -1057,6 +1057,72 @@
                 <div class="flex gap-3 pt-2">
                     <button onclick="closeForestInfoModal()" class="flex-1 py-3 px-5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold transition-colors text-sm md:text-base">닫기</button>
                     <button onclick="goToForest()" class="flex-1 py-3 px-5 bg-teal-600 hover:bg-teal-700 text-white rounded-xl font-bold transition-colors shadow-lg shadow-teal-500/20 text-sm md:text-base">바로 이동</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2026-4차 교장자격연수 분임발표 자료 안내 모달 -->
+    <div id="presentationInfoModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl max-w-lg md:max-w-2xl w-full p-6 md:p-8 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-200">
+            <div class="text-center space-y-4">
+                <div class="mx-auto flex items-center justify-center h-14 w-14 rounded-full bg-pink-100 text-pink-600">
+                    <i class="fas fa-tv text-xl md:text-2xl"></i>
+                </div>
+                <div class="space-y-1">
+                    <h3 class="text-xl md:text-2xl font-black text-slate-800">「교장의 역할 기대와 성찰」 발표자료</h3>
+                    <p class="text-slate-400 text-xs md:text-sm font-bold leading-tight">(2026년 교장자격연수 제4차 연수자 6분임 분임 발표 자료)</p>
+                </div>
+                <div class="text-left text-xs md:text-sm text-slate-600 space-y-3.5 bg-slate-50 p-5 rounded-xl border border-slate-100 font-semibold leading-relaxed max-h-[60vh] overflow-y-auto">
+                    <p class="text-slate-700">
+                        곧 교장자격연수를 받으실 선생님, 그리고 교장 승진을 앞두신 교감선생님께 이 자료를 참고자료로 나눕니다.
+                    </p>
+                    <p class="text-slate-700">
+                        이 자료는 2026년 교장자격연수 제4차 연수자 6분임의 분임 발표 결과입니다. 같은 설문을 두 집단에 똑같이 묻고 답을 비교했습니다.
+                    </p>
+                    <div class="bg-white p-3 rounded-lg border border-slate-200 space-y-1 text-xs md:text-sm">
+                        <p><strong class="text-pink-600">• 6분임:</strong> 교장자격연수생 24명</p>
+                        <p><strong class="text-blue-600">• 현장구성원:</strong> 전국 12개 시도 학교 구성원 564명(교사, 교감, 공무직·일반직, 2026. 9. 16.~10. 2. 조사)</p>
+                    </div>
+                    <p class="text-slate-700">
+                        비교해 보니 리더십에서 가장 중요한 가치는 두 집단이 같았습니다. 바로 <strong class="text-slate-900">'소통과 공감'</strong>과 <strong class="text-slate-900">'책임성'</strong>입니다. 하지만 교장이 가장 먼저 해야 할 역할은 달랐습니다. 교장을 준비하는 저희는 <strong class="text-indigo-600">'학교 비전 제시'</strong>를 꼽았고, 현장은 <strong class="text-red-600">'교권 보호와 민원 대응'</strong>을 1순위로 꼽았습니다.
+                    </p>
+                    <p class="text-slate-700">
+                        교장의 자리에 서면 교사의 목소리는 저절로 들려오지 않습니다. 교장실 문을 열기 전에 현장이 어떤 교장을 기다리는지 먼저 살펴보시는 데 이 자료가 작은 도움이 되기를 바랍니다.
+                    </p>
+
+                    <div class="bg-white p-3.5 rounded-lg border border-slate-200 space-y-1.5">
+                        <h4 class="font-bold text-slate-800 text-xs md:text-sm flex items-center gap-1.5">
+                            <i class="fas fa-layer-group text-pink-500"></i> &lt;자료 구성&gt;
+                        </h4>
+                        <ul class="space-y-1 text-slate-600 pl-1 text-xs md:text-sm">
+                            <li>• <strong>본 발표(1~19쪽):</strong> 연구 과정, 설문 결과 비교, 학교장상 제안, 실천 과제</li>
+                            <li>• <strong>부록(20~28쪽):</strong> 현장 564명의 응답 전체. 직위, 경력, 학교 규모, 지역별로 걸러 볼 수 있고, 서술형 응답은 검색할 수 있습니다.</li>
+                            <li>• <strong>발표영상:</strong> 3쪽 표지의 '발표영상 보기'를 누르면 볼 수 있습니다.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-3.5 rounded-lg border border-slate-200 space-y-1.5">
+                        <h4 class="font-bold text-slate-800 text-xs md:text-sm flex items-center gap-1.5">
+                            <i class="fas fa-info-circle text-blue-500"></i> &lt;이용 안내&gt;
+                        </h4>
+                        <ul class="space-y-1 text-slate-600 pl-1 text-xs md:text-sm">
+                            <li>• 설문은 무기명으로 받았고, 서술형 응답에는 개인을 알아볼 수 있는 정보가 없습니다.</li>
+                            <li>• 연수, 자기 성찰, 학교 경영 계획을 세울 때 자유롭게 참고하세요.</li>
+                            <li>• 표본은 응답에 참여한 분들로 한정됩니다. 결과를 전체 학교 현장의 의견으로 넓혀 해석하는 데는 한계가 있습니다.</li>
+                        </ul>
+                    </div>
+
+                    <div class="p-3 bg-amber-50 border border-amber-200 rounded-lg text-center text-amber-900 font-bold text-xs md:text-sm">
+                        <i class="fas fa-envelope-open-text mr-1 text-amber-600"></i>
+                        자료보기를 희망하시는 분은 사용후기 또는 이음톡, 이메일로 요청하시기 바랍니다.
+                    </div>
+                </div>
+                <div class="flex gap-3 pt-2">
+                    <button onclick="closePresentationInfoModal()" class="flex-1 py-3 px-5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold transition-colors text-sm md:text-base">닫기</button>
+                    <button onclick="goToPresentation()" class="flex-1 py-3 px-5 bg-pink-600 hover:bg-pink-700 text-white rounded-xl font-bold transition-colors shadow-lg shadow-pink-500/20 text-sm md:text-base flex items-center justify-center gap-2">
+                        <i class="fas fa-external-link-alt text-xs"></i> 연결하기
+                    </button>
                 </div>
             </div>
         </div>
@@ -1608,6 +1674,33 @@
         window.closeForestInfoModal = closeForestInfoModal;
         window.goToForest = goToForest;
         window.copyForestLink = copyForestLink;
+
+        // 2026-4차 교장자격연수 분임발표 자료 안내 모달 제어 함수
+        function openPresentationInfoModal(e) {
+            if (e) e.preventDefault();
+            const modal = document.getElementById('presentationInfoModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+        }
+
+        function closePresentationInfoModal() {
+            const modal = document.getElementById('presentationInfoModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        function goToPresentation() {
+            window.open('https://letter0033-star.github.io/presentation/', '_blank');
+            closePresentationInfoModal();
+        }
+
+        window.openPresentationInfoModal = openPresentationInfoModal;
+        window.closePresentationInfoModal = closePresentationInfoModal;
+        window.goToPresentation = goToPresentation;
 
         // 문서 로드 완료 시 키보드 입력 및 엔터 이벤트 핸들러 바인딩
         document.addEventListener('DOMContentLoaded', () => {
